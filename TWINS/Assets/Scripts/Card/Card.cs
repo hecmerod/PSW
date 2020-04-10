@@ -29,8 +29,8 @@ public class Card : MonoBehaviour
             rigidbody.AddForce(new Vector3(0, 10, 0) * 20);
             isTurned = true;
 
-            tablero.CheckPair(number);
             this.gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+            tablero.CheckPair(number);            
         }
     }
 
@@ -39,6 +39,7 @@ public class Card : MonoBehaviour
     }
 
     public void TurnCard() {
+        Debug.Log(Number);
         isTurned = false;
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         //FALTA HACER 

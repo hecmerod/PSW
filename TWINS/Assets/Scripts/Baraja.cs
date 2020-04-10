@@ -20,6 +20,7 @@ public class Baraja
 
         this.tablero = tablero;
         CreateCards();
+
     }
 
     public void CreateCards() {
@@ -36,19 +37,18 @@ public class Baraja
     }
     private string borrar = "";
     public void SetCardValues(Card card) {
-        card.Number = cards.Count - 1;
+        card.Number = cards.Count;
         card.Tablero = tablero;
 
         int randomNumber;
         do randomNumber = Random.Range(0, pairs);
         while (pairsCounter[randomNumber] == 2);
+
         borrar += " " + randomNumber;
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;
         card.Dorso.material = Resources.Load<Material>("Animales_Baraja/Materials/Conejo");
-
-        cards.Add(card);
     }
 
     public Card GetCard(int n) {

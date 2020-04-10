@@ -26,19 +26,22 @@ public class Tablero : MonoBehaviour
 
     public void CheckPair(int n) {
         Card card = baraja.GetCard(n);
-        Debug.Log(card.PairNumber);
+
         if (turnedCard is null) {
+            Debug.Log(turno + " - 1ra");
             turnedCard = card;
             
         } else if (turnedCard.IsPair(card)) {
             //FALTA HACER
-            //Debug.Log(turno + "- 2da");
+            Debug.Log(turno + "- 2da");
             turnedCard = null;
             turno++; // a borrar
         } else {
             turnedCard.TurnCard(); card.TurnCard();
-            turnedCard = null;            
+            turnedCard = null;
+            Debug.Log("Borrar");
             turno++; // a borrar
+
         }
     }
     //Hasta aquí

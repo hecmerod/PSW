@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Card : MonoBehaviour
@@ -38,10 +40,12 @@ public class Card : MonoBehaviour
         return this.pairNumber == card.PairNumber;
     }
 
-    public void TurnCard() {
+    async public void TurnCard() {
         Debug.Log(Number);
         isTurned = false;
+        await Task.Delay(1000); // wait for 1 second
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        
         //FALTA HACER 
     }
 

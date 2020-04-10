@@ -48,7 +48,7 @@ public class Baraja
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;
-        card.Dorso.material = Resources.Load<Material>("Animales_Baraja/Materials/Conejo");
+        card.Cara.material = Resources.Load<Material>("Animales_Baraja/Materials/" + randomNumber);
     }
 
     public Card GetCard(int n) {

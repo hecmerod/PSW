@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a36f23c8554a2342aa8d5d8e7bf84f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Card: {fileID: 6484596424842659102, guid: ff5809cf42238ea4e9a7b2fe8ec63927, type: 3}
+  Card: {fileID: 2088407660258500755, guid: 3e534482988d47e48978bb6b2cdf70be, type: 3}
 --- !u!4 &102210760
 Transform:
   m_ObjectHideFlags: 0
@@ -388,6 +388,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Tablero
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582989363965855544, guid: 25c2ced9fa7ec8447a48bf80675e93ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3582989363965855548, guid: 25c2ced9fa7ec8447a48bf80675e93ff,
         type: 3}

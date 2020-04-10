@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-
-    private bool clicked = false;
     private Rigidbody rigidbody;
+    private bool isTurned = false;
+    private int number;
+    public Tablero tablero;
+
+    private int pairNumber;
+
     void Awake() {
         rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
@@ -16,20 +20,24 @@ public class Card : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if (!clicked) {
-            clicked = true;
+        if (!isTurned) {            
             rigidbody.AddForce(new Vector3(0, 10, 0) * 20);
+            isTurned = true;
+
+            tablero.CheckPair(number);
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-
-        if (clicked && collision.gameObject.tag == "Tablero") {
-            Debug.Log("asd");
-            this.gameObject.transform.eulerAngles = new Vector3(this.gameObject.transform.eulerAngles.x, 
-                                                                this.gameObject.transform.eulerAngles.y - 180, 
-                                                                this.gameObject.transform.eulerAngles.z);
-        }
+    public bool IsPair(Card card) {
+        return this.pairNumber == card.PairNumber;
     }
+
+    public void TurnCard() {
+        isTurned = false;
+        //FALTA HACER 
+    }
+
+    public int Number { get => number; set => number = value; }
+    public Tablero Tablero { get => tablero; set => tablero = value; }
+    public int PairNumber { get => pairNumber; set => pairNumber = value; }
 }

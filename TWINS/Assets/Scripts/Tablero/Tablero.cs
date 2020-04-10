@@ -6,59 +6,43 @@ public class Tablero : MonoBehaviour
 {
     private Properties properties;
 
-    public Vector3[] positionCards;
-
-    //public bool isWon = false;
+    [SerializeField] private Vector3[] positionCards;
 
     private Card turnedCard;
-
+    private Baraja baraja;
     private ArrayList cards = new ArrayList();
 
     private void Awake()
     {
         properties = GameObject.FindObjectOfType<Properties>();
-
-        InstantiateCards();
+        baraja = new Baraja(positionCards.Length, this.GetComponent<Tablero>());
     }
 
     private void update() { }
 
-    private void InstantiateCards() {
-        int i = 0;
+    //ESTE METODO PASARLO A PARTIDA ESTANDAR
+    //public bool isWon = false;
+    private int turno = 0;
 
-        foreach (Vector3 positionCard in positionCards)
-        {
-
-            Vector3 fixedPosition = new Vector3(positionCard.x, 0.005f, positionCard.z);
-
-            GameObject card = GameObject.Instantiate(properties.Card, fixedPosition, Quaternion.identity);
-
-            Card cardScript = card.GetComponent<Card>();
-            cardScript.Number = i;
-            cardScript.Tablero = this;
-            cardScript.PairNumber = 0;
-            cards.Add(cardScript);
-
-            i++;
-        }
-    }
-
-    private int turno = 0; //a borrar
-    public void CheckPair(int number) {
-        Card card = (Card)cards[number];
-
+    public void CheckPair(int n) {
+        Card card = baraja.GetCard(n);
+        Debug.Log(card.PairNumber);
         if (turnedCard is null) {
             turnedCard = card;
-            Debug.Log(turno + "- 1ra");
+            
         } else if (turnedCard.IsPair(card)) {
             //FALTA HACER
-            Debug.Log(turno + "- 2da");
+            //Debug.Log(turno + "- 2da");
             turnedCard = null;
             turno++; // a borrar
         } else {
-            turnedCard = null;
             turnedCard.TurnCard(); card.TurnCard();
+            turnedCard = null;            
             turno++; // a borrar
         }
     }
+    //Hasta aquí
+
+    public Vector3[] PositionCards { get => positionCards; set => positionCards = value; }
+    public Properties Properties { get => properties; set => properties = value; }
 }

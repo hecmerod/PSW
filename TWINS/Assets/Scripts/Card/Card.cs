@@ -7,12 +7,17 @@ public class Card : MonoBehaviour
     private Rigidbody rigidbody;
     private bool isTurned = false;
     private int number;
-    public Tablero tablero;
+    private Tablero tablero;
 
     private int pairNumber;
 
+    private MeshRenderer dorso;
+    private MeshRenderer cara;
+
     void Awake() {
-        rigidbody = this.gameObject.GetComponent<Rigidbody>();
+        rigidbody = this.GetComponent<Rigidbody>();
+        dorso = this.GetComponentsInChildren<MeshRenderer>()[0];
+        cara = this.GetComponentsInChildren<MeshRenderer>()[1];
     }
 
     void update() {
@@ -25,6 +30,7 @@ public class Card : MonoBehaviour
             isTurned = true;
 
             tablero.CheckPair(number);
+            this.gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
         }
     }
 
@@ -34,10 +40,13 @@ public class Card : MonoBehaviour
 
     public void TurnCard() {
         isTurned = false;
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         //FALTA HACER 
     }
 
     public int Number { get => number; set => number = value; }
     public Tablero Tablero { get => tablero; set => tablero = value; }
     public int PairNumber { get => pairNumber; set => pairNumber = value; }
+    public MeshRenderer Dorso { get => dorso; set => dorso = value; }
+    public MeshRenderer Cara { get => cara; set => cara = value; }
 }

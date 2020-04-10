@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519d042c8f3ff5e44be7f4216ddf7f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tablero: {fileID: 0}
 --- !u!65 &2006226970657414915
 BoxCollider:
   m_ObjectHideFlags: 0

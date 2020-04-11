@@ -59,8 +59,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Baraja.cs" />
     <Compile Include="Assets\Scripts\Card\Card.cs" />
+    <Compile Include="Assets\Scripts\DerrotaAnimacion.cs" />
     <Compile Include="Assets\Scripts\PartidaEstandar.cs" />
     <Compile Include="Assets\Scripts\Tablero\Tablero.cs" />
+    <Compile Include="Assets\Scripts\VictoriaAnimacion.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

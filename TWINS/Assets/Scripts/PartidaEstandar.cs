@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,7 +50,10 @@ public class PartidaEstandar : MonoBehaviour
         {
             turnedCard = null;
             pairsFound++;
-            if (pairsFound == 6) Win();
+            if (pairsFound == 6)
+            {
+                Win();
+            }
             turno++;
         }
         else

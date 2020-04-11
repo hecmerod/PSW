@@ -27,7 +27,7 @@ public class PartidaEstandar : MonoBehaviour
         positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
         positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
 
-        tablero = new Tablero(this, positionCards);        
+        tablero = new Tablero(this, positionCards);
     }
 
     void Update()

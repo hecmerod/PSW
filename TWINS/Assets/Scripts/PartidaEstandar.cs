@@ -2,11 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PartidaEstandar : MonoBehaviour
 {
     [SerializeField] private GameObject gameObjectCard;
     [SerializeField] private GameObject gameObjectTablero;
+    [SerializeField] private GameObject miCanvas;
+    [SerializeField] private GameObject animacionVictoria;
+    [SerializeField] private GameObject animacionDerrota;
+    [SerializeField] private Text miTiempo;
 
     private float time;
     private bool startedTimer = false;
@@ -66,6 +71,9 @@ public class PartidaEstandar : MonoBehaviour
 
     public void Win() {
         time = Time.time - time;
+        animacionVictoria.SetActive(true);
+        miTiempo.text = ((int)time).ToString();
+        miCanvas.SetActive(true);
         Debug.Log("Has ganado en " + (int) time + " segundos, en el turno " + turno); 
     }
 

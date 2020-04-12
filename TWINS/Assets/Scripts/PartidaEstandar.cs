@@ -13,7 +13,7 @@ public class PartidaEstandar : MonoBehaviour
     [SerializeField] private GameObject animacionDerrota;
     [SerializeField] private Text miTiempo;
 
-    private float time;
+    private float time = 0;
     private bool startedTimer = false;
 
     private int turno = 0;
@@ -23,8 +23,11 @@ public class PartidaEstandar : MonoBehaviour
     private int pairsFound = 0;
     private Card turnedCard;
 
+    private float tiempo = 10;
+
     void Awake()
     {
+        StartCoroutine(Temp());
         Vector3[] positionCards = new Vector3[12];
         positionCards[0] = new Vector3(11, 0, 8.75f); positionCards[1] = new Vector3(10.355f, 0, 7.25f);
         positionCards[2] = new Vector3(11.625f, 0, 7.25f); positionCards[3] = new Vector3(9.75f, 0, 5.75f);
@@ -38,13 +41,12 @@ public class PartidaEstandar : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; time = Time.time; }
-
+        //if (!startedTimer) { startedTimer = true; time = Time.time; }
         Card card = tablero.Baraja.GetCard(n);
 
         if (turnedCard is null)
@@ -70,11 +72,25 @@ public class PartidaEstandar : MonoBehaviour
     }
 
     public void Win() {
-        time = Time.time - time;
+        //time = Time.time - time;
         animacionVictoria.SetActive(true);
         miTiempo.text = ((int)time).ToString();
         miCanvas.SetActive(true);
         Debug.Log("Has ganado en " + (int) time + " segundos, en el turno " + turno); 
+    }
+
+    public void Lost()
+    {
+        miCanvas.SetActive(true);
+        animacionDerrota.SetActive(true);
+        miTiempo.text = ((int)tiempo).ToString();
+        Debug.Log("He perdido " + (int)time + " segundos, en el turno " + turno);
+    }
+
+    IEnumerator Temp()
+    {
+        yield return new WaitForSeconds(tiempo);
+        Lost();
     }
 
     public GameObject Card { get => gameObjectCard; set => gameObjectCard = value; }

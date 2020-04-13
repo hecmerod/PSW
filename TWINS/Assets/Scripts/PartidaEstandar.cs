@@ -27,6 +27,7 @@ public class PartidaEstandar : MonoBehaviour
     private int numCardsTurned = 0;
 
     private float time = 1000;
+    private float timePlayed;
 
     void Awake()
     {        
@@ -48,7 +49,7 @@ public class PartidaEstandar : MonoBehaviour
 
     async public void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; StartCoroutine(Temp()); }
+        if (!startedTimer) { startedTimer = true; StartCoroutine(Temp()); timePlayed = Time.time; }
 
         Card card = tablero.Baraja.GetCard(n);
 
@@ -78,8 +79,9 @@ public class PartidaEstandar : MonoBehaviour
     }
 
     public void Win() {
+        timePlayed = Time.time - timePlayed;
         animacionVictoria.SetActive(true);
-        miTiempo.text = ((int)time).ToString();
+        miTiempo.text = ((int)timePlayed).ToString();
         miCanvas.SetActive(true);
         Debug.Log("Has ganado en " + (int) time + " segundos, en el turno " + turno); 
     }

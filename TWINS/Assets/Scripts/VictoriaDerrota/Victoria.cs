@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Victoria : IAnimacion
+public class Victoria : IAnimacionStrategy
 {
 
     public void MostrarAnimacion(float tiempo, GameObject miCanvas, GameObject animacionVictoria, Text miTiempo)

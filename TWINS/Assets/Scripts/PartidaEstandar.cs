@@ -26,12 +26,12 @@ public class PartidaEstandar : Partida
 
     private int numCardsTurned = 0;
 
-    private float time = 10;
+    private float time = 100;
     private float timePlayed = 0;
 
     IAnimacionStrategy animacion;
 
-    void Awake()
+    public override void Awake()
     {        
         Vector3[] positionCards = new Vector3[12];
         positionCards[0] = new Vector3(11, 0, 8.75f); positionCards[1] = new Vector3(10.355f, 0, 7.25f);
@@ -44,7 +44,7 @@ public class PartidaEstandar : Partida
         tablero = new Tablero(this, positionCards);
     }
 
-    void Update()
+    public override void Update()
     {
         if (startedTimer)
         {
@@ -57,7 +57,7 @@ public class PartidaEstandar : Partida
         }
     }
 
-    async public void CheckPair(int n)
+    async public override void CheckPair(int n)
     {
         if (!startedTimer) { startedTimer = true; }
 

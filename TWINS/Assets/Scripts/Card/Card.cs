@@ -16,23 +16,37 @@ public class Card : MonoBehaviour
     private MeshRenderer dorso;
     private MeshRenderer cara;
 
+    private Vector3 initialPosition;
+
     private void Awake() {
         rigidbody = this.GetComponent<Rigidbody>();
         dorso = this.GetComponentsInChildren<MeshRenderer>()[0];
         cara = this.GetComponentsInChildren<MeshRenderer>()[1];
+
+        initialPosition = gameObject.transform.position;
     }
 
     private void update() {
-
     }
 
-    private void OnMouseDown() {
+    async private void OnMouseDown() {
         if (!isTurned) {            
-            rigidbody.AddForce(new Vector3(0, 10, 0) * 20);
+            rigidbody.AddForce(new Vector3(0, 1, 0) * 176);
             isTurned = true;
 
-            this.gameObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+            await Task.Delay(200);
+            rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
+            ResetTorque();
             partida.CheckPair(number);            
+        }
+    }
+
+    async void ResetTorque() {
+        while (rigidbody.velocity != Vector3.zero) {
+            await Task.Delay(40);
+            gameObject.transform.position = new Vector3(initialPosition.x,
+                                                        gameObject.transform.position.y,
+                                                        initialPosition.z);
         }
     }
 
@@ -41,7 +55,7 @@ public class Card : MonoBehaviour
     }
 
     async public void TurnCard() {        
-        await Task.Delay(1000); // wait for 1 second        
+        await Task.Delay(1000);
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         isTurned = false;
         //FALTA HACER 

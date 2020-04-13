@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class Derrota : IAnimacionStrategy
 {
 
-    public void MostrarAnimacion(float tiempo, GameObject miCanvas, GameObject animacionDerrota, Text miTiempo)
+    public void MostrarAnimacion(float tiempo, GameObject animacionDerrota, Text miTiempo)
     {
-        miCanvas.SetActive(true);
         animacionDerrota.SetActive(true);
         miTiempo.text = ((int)tiempo).ToString();
     }

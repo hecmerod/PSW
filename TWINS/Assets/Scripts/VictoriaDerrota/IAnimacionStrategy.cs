@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public interface IAnimacionStrategy
 {
-    void MostrarAnimacion(float tiempo, GameObject miCanvas, GameObject animacion, Text miTiempo);
+    void MostrarAnimacion(float tiempo, GameObject animacion, Text miTiempo);
 }

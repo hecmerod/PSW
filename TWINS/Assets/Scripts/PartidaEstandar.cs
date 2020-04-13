@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PartidaEstandar : MonoBehaviour
+public class PartidaEstandar : Partida
 {
     [SerializeField] private GameObject gameObjectCard;
     [SerializeField] private GameObject gameObjectTablero;
-    [SerializeField] private GameObject miCanvas;
     [SerializeField] private GameObject animacionVictoria;
     [SerializeField] private GameObject animacionDerrota;
-    [SerializeField] private Text miTiempo;
+    [SerializeField] private Text miTiempoVic;
+    [SerializeField] private Text miTiempoDer;
 
 
     private bool startedTimer = false;
@@ -26,8 +26,8 @@ public class PartidaEstandar : MonoBehaviour
 
     private int numCardsTurned = 0;
 
-    private float time = 1000;
-    private float timePlayed;
+    private float time = 10;
+    private float timePlayed = 0;
 
     IAnimacionStrategy animacion;
 
@@ -46,12 +46,20 @@ public class PartidaEstandar : MonoBehaviour
 
     void Update()
     {
-        
+        if (startedTimer)
+        {
+            timePlayed += Time.deltaTime;
+            if(timePlayed >= time)
+            {
+                animacion = Creador.CrearAnimacion(Animacion.Der);
+                animacion.MostrarAnimacion(time, animacionDerrota, miTiempoDer);
+            }
+        }
     }
 
     async public void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; StartCoroutine(Temp()); timePlayed = Time.time; }
+        if (!startedTimer) { startedTimer = true; }
 
         Card card = tablero.Baraja.GetCard(n);
 
@@ -66,9 +74,8 @@ public class PartidaEstandar : MonoBehaviour
             
             if (pairsFound == 6)
             {
-                timePlayed = Time.time - timePlayed;
                 animacion = Creador.CrearAnimacion(Animacion.Vic);
-                animacion.MostrarAnimacion(timePlayed, miCanvas, animacionVictoria, miTiempo);
+                animacion.MostrarAnimacion(timePlayed, animacionVictoria, miTiempoVic);
             }
             turno++;
             numCardsTurned = 0;
@@ -86,9 +93,4 @@ public class PartidaEstandar : MonoBehaviour
     public GameObject Tablero { get => gameObjectTablero; set => gameObjectTablero = value; }
     public int NumCardsTurned { get => numCardsTurned; set => numCardsTurned = value; }
 
-    IEnumerator Temp() {
-        yield return new WaitForSeconds(time);
-        animacion = Creador.CrearAnimacion(Animacion.Der);
-        animacion.MostrarAnimacion(time, miCanvas, animacionDerrota, miTiempo);
-    }
 }

@@ -30,18 +30,20 @@ public class Card : MonoBehaviour
     }
 
     async private void OnMouseDown() {
-        if (!isTurned) {            
-            rigidbody.AddForce(new Vector3(0, 1, 0) * 176);
+        if (!isTurned && partida.NumCardsTurned < 2) {  
             isTurned = true;
+            partida.NumCardsTurned++;
 
+            rigidbody.AddForce(new Vector3(0, 1, 0) * 176);
             await Task.Delay(200);
             rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
+
             ResetTorque();
-            partida.CheckPair(number);            
+            partida.CheckPair(number);
         }
     }
 
-    async void ResetTorque() {
+    async private void ResetTorque() {
         while (rigidbody.velocity != Vector3.zero) {
             await Task.Delay(40);
             gameObject.transform.position = new Vector3(initialPosition.x,
@@ -54,12 +56,12 @@ public class Card : MonoBehaviour
         return this.pairNumber == card.PairNumber;
     }
 
-    async public void TurnCard() {        
-        await Task.Delay(1000);
+    public void TurnCard() {       
+        
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         isTurned = false;
         //FALTA HACER 
-    }
+     }
 
     public int Number { get => number; set => number = value; }
     public int PairNumber { get => pairNumber; set => pairNumber = value; }

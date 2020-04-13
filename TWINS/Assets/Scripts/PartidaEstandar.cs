@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,8 @@ public class PartidaEstandar : MonoBehaviour
     private int pairsFound = 0;
     private Card turnedCard;
 
+    private int numCardsTurned = 0;
+
     private float time = 1000;
 
     void Awake()
@@ -43,7 +46,7 @@ public class PartidaEstandar : MonoBehaviour
         
     }
 
-    public void CheckPair(int n)
+    async public void CheckPair(int n)
     {
         if (!startedTimer) { startedTimer = true; StartCoroutine(Temp()); }
 
@@ -53,17 +56,23 @@ public class PartidaEstandar : MonoBehaviour
             turnedCard = card;
         }
         else if (turnedCard.IsPair(card)) {
+            await Task.Delay(500);
+
             turnedCard = null;
-            pairsFound++;
+            pairsFound++;      
+            
             if (pairsFound == 6)
             {
                 Win();
             }
             turno++;
+            numCardsTurned = 0;
         }
         else {
+            await Task.Delay(800);
             turnedCard.TurnCard(); card.TurnCard();
-            turnedCard = null;
+            numCardsTurned = 0;
+            turnedCard = null;            
             turno++;
         }
     }
@@ -85,6 +94,7 @@ public class PartidaEstandar : MonoBehaviour
 
     public GameObject Card { get => gameObjectCard; set => gameObjectCard = value; }
     public GameObject Tablero { get => gameObjectTablero; set => gameObjectTablero = value; }
+    public int NumCardsTurned { get => numCardsTurned; set => numCardsTurned = value; }
 
     IEnumerator Temp() {
         yield return new WaitForSeconds(time);

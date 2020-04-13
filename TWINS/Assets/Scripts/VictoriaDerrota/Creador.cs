@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Creador : MonoBehaviour
+public class Creador
 {
-    // Start is called before the first frame update
-    void Start()
+    public static IAnimacion CrearAnimacion(Animacion a)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch (a)
+        {
+            case Animacion.Vic: return new Victoria();
+            case Animacion.Der: return new Derrota();
+            default: return null;
+        }
     }
 }

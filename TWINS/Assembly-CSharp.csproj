@@ -64,6 +64,9 @@
     <Compile Include="Assets\Scripts\Tablero\Tablero.cs" />
     <Compile Include="Assets\Scripts\VictoriaDerrota\Animacion.cs" />
     <Compile Include="Assets\Scripts\VictoriaDerrota\Creador.cs" />
+    <Compile Include="Assets\Scripts\VictoriaDerrota\Derrota.cs" />
+    <Compile Include="Assets\Scripts\VictoriaDerrota\IAnimacion.cs" />
+    <Compile Include="Assets\Scripts\VictoriaDerrota\Victoria.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

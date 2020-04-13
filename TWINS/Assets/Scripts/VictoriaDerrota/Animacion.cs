@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Animacion
+public enum Animacion
 {
-    void MostrarAnimacion();
+    Vic,
+    Der
 }

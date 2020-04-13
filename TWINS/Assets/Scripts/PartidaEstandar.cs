@@ -29,6 +29,8 @@ public class PartidaEstandar : MonoBehaviour
     private float time = 1000;
     private float timePlayed;
 
+    IAnimacion animacion;
+
     void Awake()
     {        
         Vector3[] positionCards = new Vector3[12];
@@ -64,7 +66,9 @@ public class PartidaEstandar : MonoBehaviour
             
             if (pairsFound == 6)
             {
-                Win();
+                timePlayed = Time.time - timePlayed;
+                animacion = Creador.CrearAnimacion(Animacion.Vic);
+                animacion.MostrarAnimacion(timePlayed, miCanvas, animacionVictoria, miTiempo);
             }
             turno++;
             numCardsTurned = 0;
@@ -78,28 +82,13 @@ public class PartidaEstandar : MonoBehaviour
         }
     }
 
-    public void Win() {
-        timePlayed = Time.time - timePlayed;
-        animacionVictoria.SetActive(true);
-        miTiempo.text = ((int)timePlayed).ToString();
-        miCanvas.SetActive(true);
-        Debug.Log("Has ganado en " + (int) time + " segundos, en el turno " + turno); 
-    }
-
-    public void Lost() {
-        miCanvas.SetActive(true);
-        animacionDerrota.SetActive(true);
-        miTiempo.text = ((int)time).ToString();
-        Debug.Log("He perdido " + (int)time + " segundos, en el turno " + turno);
-    }
-
-
     public GameObject Card { get => gameObjectCard; set => gameObjectCard = value; }
     public GameObject Tablero { get => gameObjectTablero; set => gameObjectTablero = value; }
     public int NumCardsTurned { get => numCardsTurned; set => numCardsTurned = value; }
 
     IEnumerator Temp() {
         yield return new WaitForSeconds(time);
-        Lost();
+        animacion = Creador.CrearAnimacion(Animacion.Der);
+        animacion.MostrarAnimacion(time, miCanvas, animacionDerrota, miTiempo);
     }
 }

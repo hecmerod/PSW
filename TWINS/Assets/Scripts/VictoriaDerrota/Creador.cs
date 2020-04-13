@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Creador
 {
-    public static IAnimacion CrearAnimacion(Animacion a)
+    public static IAnimacionStrategy CrearAnimacion(Animacion a)
     {
         switch (a)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Derrota : IAnimacion
+public class Derrota : IAnimacionStrategy
 {
 
     public void MostrarAnimacion(float tiempo, GameObject miCanvas, GameObject animacionDerrota, Text miTiempo)

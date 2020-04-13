@@ -29,7 +29,7 @@ public class PartidaEstandar : MonoBehaviour
     private float time = 1000;
     private float timePlayed;
 
-    IAnimacion animacion;
+    IAnimacionStrategy animacion;
 
     void Awake()
     {        

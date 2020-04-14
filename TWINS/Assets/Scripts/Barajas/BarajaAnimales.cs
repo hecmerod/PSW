@@ -8,7 +8,7 @@ public class BarajaAnimales : Baraja
 
     private ArrayList cards = new ArrayList();
     private Tablero tablero;
-    private PartidaEstandar partida;
+    private Partida partida;
 
     private int[] pairsCounter;
 
@@ -16,10 +16,7 @@ public class BarajaAnimales : Baraja
     {
         pairs = tablero.PositionCards.Length / 2;
         pairsCounter = new int[pairs];
-        for (int i = 0; i < pairs; i++)
-        {
-            pairsCounter[i] = 0;
-        }
+        for (int i = 0; i < pairs; i++) pairsCounter[i] = 0;
 
         this.partida = GameObject.FindObjectOfType<PartidaEstandar>();
         this.tablero = tablero;

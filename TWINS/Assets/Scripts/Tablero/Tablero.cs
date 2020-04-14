@@ -10,16 +10,14 @@ public class Tablero : MonoBehaviour
     private Baraja baraja;
     private ArrayList cards = new ArrayList();
     private PartidaEstandar partida;
+    private string tematica;
 
-
-    public Tablero(PartidaEstandar partida, Vector3[] positionCards, string tematica) {
-        //WIDTH
-        //HEIGHT
+    public void InitializeValues(PartidaEstandar partida, Vector3[] positionCards, string tematica) {
         this.partida = partida;
         this.positionCards = positionCards;
-
-        GameObject.Instantiate(partida.Tablero, new Vector3(7.5f, 0, 5), Quaternion.identity);
-
+        this.tematica = tematica;
+    }
+    public void Start() {
         baraja = CreadorBaraja.CrearBaraja(tematica, this);
     }
 

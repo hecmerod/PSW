@@ -8,7 +8,7 @@ public class BarajaProfesiones : Baraja
 
     private ArrayList cards = new ArrayList();
     private Tablero tablero;
-    private PartidaEstandar partida;
+    private Partida partida;
 
     private int[] pairsCounter;
 

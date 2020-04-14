@@ -9,7 +9,7 @@ public class Card : MonoBehaviour
     private Rigidbody rigidbody;
     private bool isTurned = false;
     private int number;
-    private PartidaEstandar partida;
+    private Partida partida;
 
     private int pairNumber;
 
@@ -67,5 +67,5 @@ public class Card : MonoBehaviour
     public int PairNumber { get => pairNumber; set => pairNumber = value; }
     public MeshRenderer Dorso { get => dorso; set => dorso = value; }
     public MeshRenderer Cara { get => cara; set => cara = value; }
-    public PartidaEstandar Partida { get => partida; set => partida = value; }
+    public Partida Partida { get => partida; set => partida = value; }
 }

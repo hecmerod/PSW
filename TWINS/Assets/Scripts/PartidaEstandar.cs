@@ -61,7 +61,7 @@ public class PartidaEstandar : Partida
     {
         if (!startedTimer) { startedTimer = true; }
 
-        Card card = tablero.Baraja.GetCard(n);
+        Card card = tablero.BarajaAnimales.GetCard(n);
 
         if (turnedCard is null) {
             turnedCard = card;

@@ -7,7 +7,7 @@ public class Tablero : MonoBehaviour
     [SerializeField] private Vector3[] positionCards;
 
     
-    private Baraja baraja;
+    private BarajaAnimales baraja;
     private ArrayList cards = new ArrayList();
     private PartidaEstandar partida;
 
@@ -20,9 +20,9 @@ public class Tablero : MonoBehaviour
 
         GameObject.Instantiate(partida.Tablero, new Vector3(7.5f, 0, 5), Quaternion.identity);
 
-        baraja = new Baraja(partida, this);
+        baraja = new BarajaAnimales(partida, this);
     }
 
     public Vector3[] PositionCards { get => positionCards; set => positionCards = value; }
-    public Baraja Baraja { get => baraja; set => baraja = value; }
+    public BarajaAnimales BarajaAnimales { get => baraja; set => baraja = value; }
 }

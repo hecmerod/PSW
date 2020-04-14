@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Baraja
+public abstract class Baraja : MonoBehaviour
 {
     public abstract void CreateCards();
 

@@ -19,6 +19,7 @@ public class PartidaEstandar : Partida
 
     private int turno = 0;
     private Tablero tablero;
+    string tematica = "animal";
 
 
     private int pairsFound = 0;
@@ -41,7 +42,7 @@ public class PartidaEstandar : Partida
         positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
         positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
 
-        tablero = new Tablero(this, positionCards);
+        tablero = new Tablero(this, positionCards,tematica);
     }
 
     public override void Update()
@@ -61,7 +62,7 @@ public class PartidaEstandar : Partida
     {
         if (!startedTimer) { startedTimer = true; }
 
-        Card card = tablero.BarajaAnimales.GetCard(n);
+        Card card = tablero.Baraja.GetCard(n);
 
         if (turnedCard is null) {
             turnedCard = card;

@@ -12,7 +12,7 @@ public class BarajaAnimales : Baraja
 
     private int[] pairsCounter;
 
-    public BarajaAnimales(PartidaEstandar Partida, Tablero tablero)
+    public BarajaAnimales(Tablero tablero)
     {
         pairs = tablero.PositionCards.Length / 2;
         pairsCounter = new int[pairs];

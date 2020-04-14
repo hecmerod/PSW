@@ -8,6 +8,8 @@ public class CreadorBaraja
     {
         switch (tematica)
         {
+            case "animal": return new BarajaAnimales(tablero);
+            case "profesion": return new BarajaProfesiones(tablero);
             default: return new BarajaAnimales(tablero);
         }
     }

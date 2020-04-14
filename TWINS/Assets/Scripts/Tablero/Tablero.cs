@@ -20,7 +20,7 @@ public class Tablero : MonoBehaviour
 
         GameObject.Instantiate(partida.Tablero, new Vector3(7.5f, 0, 5), Quaternion.identity);
 
-        baraja = CreadorBaraja.CrearBaraja("animal", this);
+        baraja = CreadorBaraja.CrearBaraja(tematica, this);
     }
 
     public Vector3[] PositionCards { get => positionCards; set => positionCards = value; }

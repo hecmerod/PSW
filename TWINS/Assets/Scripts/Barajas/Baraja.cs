@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Baraja : MonoBehaviour
 {
     public abstract void CreateCards();
-
     public abstract void SetCardValues(Card card);
     public abstract Card GetCard(int n);
 }

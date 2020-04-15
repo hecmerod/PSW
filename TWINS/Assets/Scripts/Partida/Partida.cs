@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public abstract class Partida : MonoBehaviour
 {
-    IAnimacionStrategy animacion;
     AudioSource fuenteAudio;
 
     [SerializeField] private GameObject animacionDerrota, animacionVictoria; //ESTO HAY QUE HACERLO POR CÓDIGO
@@ -45,7 +44,8 @@ public abstract class Partida : MonoBehaviour
     public void isLost() {
         if (timePlayed >= time) {
             startedTimer = false;
-            MostrarAnimacion(new Derrota(animacionDerrota, miTiempoDer));
+            animacionDerrota.SetActive(true);
+            miTiempoDer.text = ((int)time).ToString();
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
 
@@ -55,16 +55,11 @@ public abstract class Partida : MonoBehaviour
     protected void isWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
-            MostrarAnimacion(new Victoria(animacionVictoria, miTiempoVic));
+            animacionVictoria.SetActive(true);
+            miTiempoVic.text = ((int)timePlayed).ToString();
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
         }
-    }
-
-    public void MostrarAnimacion(IAnimacionStrategy animacion)
-    {
-        int tiempo = (int)timePlayed;
-        animacion.MostrarAnimacion(tiempo);
     }
 
     abstract public void CheckPair(int n);

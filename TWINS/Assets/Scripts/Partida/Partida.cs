@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public abstract class Partida : MonoBehaviour
 {
     IAnimacionStrategy animacion;
+    AudioSource fuenteAudio;
 
     [SerializeField] private GameObject animacionDerrota, animacionVictoria; //ESTO HAY QUE HACERLO POR CÓDIGO
     protected GameObject gameObjectCard, gameObjectTablero;
@@ -45,6 +46,9 @@ public abstract class Partida : MonoBehaviour
         if (timePlayed >= time) {
             animacion = Creador.CrearAnimacion(Animacion.Der);
             animacion.MostrarAnimacion(time, animacionDerrota, miTiempoDer);
+            fuenteAudio = GetComponent<AudioSource>();
+            fuenteAudio.Stop();
+
         }
     }
 
@@ -52,6 +56,8 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == pairs) {
             animacion = Creador.CrearAnimacion(Animacion.Vic);
             animacion.MostrarAnimacion(timePlayed, animacionVictoria, miTiempoVic);
+            fuenteAudio = GetComponent<AudioSource>();
+            fuenteAudio.Stop();
         }
     }
 

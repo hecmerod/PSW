@@ -13,8 +13,8 @@ public class Card : MonoBehaviour
 
     private int pairNumber;
 
-    private MeshRenderer dorso;
-    private MeshRenderer cara;
+    private MeshRenderer dorso, cara;
+    private GameObject marco;
 
     private Vector3 initialPosition;
 
@@ -22,6 +22,8 @@ public class Card : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody>();
         dorso = this.GetComponentsInChildren<MeshRenderer>()[0];
         cara = this.GetComponentsInChildren<MeshRenderer>()[1];
+
+        marco = this.gameObject.transform.GetChild(2).gameObject;
 
         initialPosition = gameObject.transform.position;
     }
@@ -36,21 +38,21 @@ public class Card : MonoBehaviour
 
             rigidbody.AddForce(new Vector3(0, 1, 0) * 176);
             await Task.Delay(200);
-            rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
 
-            ResetTorque();
+            rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
+            while (rigidbody.velocity != Vector3.zero) {
+                await Task.Delay(40);
+                gameObject.transform.position = new Vector3(initialPosition.x,
+                                                            gameObject.transform.position.y,
+                                                            initialPosition.z);
+            }
+
             partida.CheckPair(number);
         }
     }
 
-    async private void ResetTorque() {
-        while (rigidbody.velocity != Vector3.zero) {
-            await Task.Delay(40);
-            gameObject.transform.position = new Vector3(initialPosition.x,
-                                                        gameObject.transform.position.y,
-                                                        initialPosition.z);
-        }
-    }
+    private void OnMouseOver() { marco.SetActive(true); }
+    void OnMouseExit() { marco.SetActive(false); }
 
     public bool IsPair(Card card) {
         return this.pairNumber == card.PairNumber;

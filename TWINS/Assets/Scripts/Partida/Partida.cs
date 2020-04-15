@@ -65,6 +65,8 @@ public abstract class Partida : MonoBehaviour
     abstract protected void SetTableroValues();
 
     public GameObject Card { get => gameObjectCard; set => gameObjectCard = value; }
+    public GameObject Tablero { get => gameObjectTablero; set => gameObjectTablero = value; }
+
     public int NumCardsTurned { get => numCardsTurned; set => numCardsTurned = value; }
     public string Tematica { get => tematica; set => tematica = value; }
 }

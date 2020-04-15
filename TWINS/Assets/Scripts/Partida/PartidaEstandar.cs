@@ -70,8 +70,11 @@ public class PartidaEstandar : Partida
         }
 
 
-        tablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity)
-                            .GetComponent<Tablero>();
+        gameObjectTablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity);
+        gameObjectTablero.name = "Tablero";
+
+        tablero = gameObjectTablero.GetComponent<Tablero>();
+
         tablero.InitializeValues(this, positionCards);
     }
 

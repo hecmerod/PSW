@@ -25,12 +25,18 @@ public class BarajaAnimales : Baraja
 
     public override void CreateCards()
     {
+        GameObject auxCard;
+
+        int i = 1;
         foreach (Vector3 positionCard in tablero.PositionCards)
         {
             Vector3 fixedPosition = new Vector3(positionCard.x, 0.005f, positionCard.z);
 
-            Card card = GameObject.Instantiate(partida.Card, fixedPosition,
-                                               Quaternion.identity).GetComponent<Card>();
+            auxCard = GameObject.Instantiate(partida.Card, fixedPosition, Quaternion.identity);
+            auxCard.name = "Carta" + i++;
+            auxCard.transform.SetParent(partida.Tablero.transform, true);
+
+            Card card = auxCard.GetComponent<Card>();
             SetCardValues(card);
             cards.Add(card);
         }

@@ -21,7 +21,7 @@ public abstract class Partida : MonoBehaviour
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
-    protected float time = 1000, timePlayed = 0;
+    protected float time = 1, timePlayed = 0;
 
     protected void Awake() {
         gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
@@ -44,8 +44,8 @@ public abstract class Partida : MonoBehaviour
 
     public void isLost() {
         if (timePlayed >= time) {
-            animacion = Creador.CrearAnimacion(Animacion.Der);
-            animacion.MostrarAnimacion(time, animacionDerrota, miTiempoDer);
+            startedTimer = false;
+            MostrarAnimacion(new Derrota(animacionDerrota, miTiempoDer));
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
 
@@ -54,11 +54,17 @@ public abstract class Partida : MonoBehaviour
 
     protected void isWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
-            animacion = Creador.CrearAnimacion(Animacion.Vic);
-            animacion.MostrarAnimacion(timePlayed, animacionVictoria, miTiempoVic);
+            startedTimer = false;
+            MostrarAnimacion(new Victoria(animacionVictoria, miTiempoVic));
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
         }
+    }
+
+    public void MostrarAnimacion(IAnimacionStrategy animacion)
+    {
+        int tiempo = (int)timePlayed;
+        animacion.MostrarAnimacion(tiempo);
     }
 
     abstract public void CheckPair(int n);

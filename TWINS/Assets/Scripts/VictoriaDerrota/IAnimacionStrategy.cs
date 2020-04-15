@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface IAnimacionStrategy
+public abstract class IAnimacionStrategy : MonoBehaviour
 {
-    void MostrarAnimacion(float tiempo, GameObject animacion, Text miTiempo);
+    public abstract void MostrarAnimacion(int tiempoJugado);
 }

@@ -5,10 +5,18 @@ using UnityEngine.UI;
 
 public class Derrota : IAnimacionStrategy
 {
+    public GameObject animacionDerrota;
+    private Text miTiempo;
+    public Derrota(GameObject animacionDerrota, Text miTiempo)
+    {
+        this.animacionDerrota = animacionDerrota;
+        this.miTiempo = miTiempo;
+    }
 
-    public void MostrarAnimacion(float tiempo, GameObject animacionDerrota, Text miTiempo)
+    public override void MostrarAnimacion(int tiempoJugado)
     {
         animacionDerrota.SetActive(true);
-        miTiempo.text = ((int)tiempo).ToString();
+        miTiempo.text = tiempoJugado.ToString();
     }
+
 }

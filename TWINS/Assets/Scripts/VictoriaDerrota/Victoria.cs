@@ -5,10 +5,17 @@ using UnityEngine.UI;
 
 public class Victoria : IAnimacionStrategy
 {
+    public GameObject animacionVictoria;
+    private Text miTiempo;
+    public Victoria(GameObject animacionVictoria, Text miTiempo)
+    {
+        this.animacionVictoria = animacionVictoria;
+        this.miTiempo = miTiempo;
+    }
 
-    public void MostrarAnimacion(float tiempo, GameObject animacionVictoria, Text miTiempo)
+    public override void MostrarAnimacion(int tiempoJugado)
     {
         animacionVictoria.SetActive(true);
-        miTiempo.text = ((int)tiempo).ToString();
+        miTiempo.text = tiempoJugado.ToString();
     }
 }

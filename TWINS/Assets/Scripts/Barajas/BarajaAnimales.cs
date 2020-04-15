@@ -47,12 +47,11 @@ public class BarajaAnimales : Baraja
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;
-        card.Cara.material = Resources.Load<Material>("Animales_Baraja/Materials/" + randomNumber);
-        card.Dorso.material = Resources.Load<Material>("Dorsos/Materials/DORSO_ROJO");
+        card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + randomNumber);
+        card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
     }
 
-    public override Card GetCard(int n)
-    {
+    public override Card GetCard(int n) {
         return (Card)cards[n];
     }
 }

@@ -50,8 +50,8 @@ public class BarajaProfesiones : Baraja
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;
-        card.Cara.material = Resources.Load<Material>("Profesiones_Baraja/Materials/" + randomNumber);
-        card.Dorso.material = Resources.Load<Material>("Dorsos/Materials/DORSO_ROJO");
+        card.Cara.material = Resources.Load<Material>("Barajas/Profesiones_Baraja/Materials/" + randomNumber);
+        card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
     }
 
     public override Card GetCard(int n)

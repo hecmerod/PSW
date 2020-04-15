@@ -15,18 +15,19 @@ public abstract class Partida : MonoBehaviour
     protected Tablero tablero;
     protected Card turnedCard;
 
+    protected string tematica, tamaño;
+
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
     protected float time = 100, timePlayed = 0;
-
-    protected string tematica;    
 
     protected void Awake() {
         gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
         gameObjectTablero = Resources.Load("Prefabs/Tablero") as GameObject;
 
         tematica = ElegirBarajaAPArtida.tematica;
+        tamaño = "grande";
     }
 
     protected void Update() {

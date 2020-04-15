@@ -56,8 +56,7 @@ public class Card : MonoBehaviour
         return this.pairNumber == card.PairNumber;
     }
 
-    public void TurnCard() {       
-        
+    public void TurnCard() {               
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         isTurned = false;
         //FALTA HACER 

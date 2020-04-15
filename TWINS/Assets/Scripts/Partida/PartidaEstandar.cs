@@ -92,7 +92,7 @@ public class PartidaEstandar : Partida
             turnedCard = null;
             pairsFound++;
 
-            isWon(6);
+            isWon();
 
             turno++;
             numCardsTurned = 0;

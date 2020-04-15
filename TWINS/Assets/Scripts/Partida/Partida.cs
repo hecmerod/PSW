@@ -20,7 +20,7 @@ public abstract class Partida : MonoBehaviour
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
-    protected float time = 100, timePlayed = 0;
+    protected float time = 1000, timePlayed = 0;
 
     protected void Awake() {
         gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
@@ -48,8 +48,8 @@ public abstract class Partida : MonoBehaviour
         }
     }
 
-    protected void isWon(int pairs) {
-        if (pairsFound == pairs) {
+    protected void isWon() {
+        if (pairsFound == tablero.PositionCards.Length / 2) {
             animacion = Creador.CrearAnimacion(Animacion.Vic);
             animacion.MostrarAnimacion(timePlayed, animacionVictoria, miTiempoVic);
         }

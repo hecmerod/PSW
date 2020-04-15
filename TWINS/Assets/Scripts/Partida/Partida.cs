@@ -16,7 +16,7 @@ public abstract class Partida : MonoBehaviour
     protected Tablero tablero;
     protected Card turnedCard;
 
-    protected string tematica, tamaño;
+    protected string tamaño, tematica;
 
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
@@ -66,4 +66,5 @@ public abstract class Partida : MonoBehaviour
 
     public GameObject Card { get => gameObjectCard; set => gameObjectCard = value; }
     public int NumCardsTurned { get => numCardsTurned; set => numCardsTurned = value; }
+    public string Tematica { get => tematica; set => tematica = value; }
 }

@@ -10,15 +10,13 @@ public class Tablero : MonoBehaviour
     private Baraja baraja;
     private ArrayList cards = new ArrayList();
     private PartidaEstandar partida;
-    private string tematica;
 
-    public void InitializeValues(PartidaEstandar partida, Vector3[] positionCards, string tematica) {
+    public void InitializeValues(PartidaEstandar partida, Vector3[] positionCards) {
         this.partida = partida;
         this.positionCards = positionCards;
-        this.tematica = tematica;
     }
     public void Start() {
-        baraja = CreadorBaraja.CrearBaraja(tematica, this);
+        baraja = CreadorBaraja.CrearBaraja(partida.Tematica, this);
     }
 
     public Vector3[] PositionCards { get => positionCards; set => positionCards = value; }

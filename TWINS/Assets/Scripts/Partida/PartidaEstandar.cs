@@ -72,7 +72,7 @@ public class PartidaEstandar : Partida
 
         tablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity)
                             .GetComponent<Tablero>();
-        tablero.InitializeValues(this, positionCards, tematica);
+        tablero.InitializeValues(this, positionCards);
     }
 
     async public override void CheckPair(int n)

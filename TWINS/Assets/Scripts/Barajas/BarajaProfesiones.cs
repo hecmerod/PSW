@@ -4,39 +4,8 @@ using UnityEngine;
 
 public class BarajaProfesiones : Baraja
 {
-    private int pairs;
-
-    private ArrayList cards = new ArrayList();
-    private Tablero tablero;
-    private Partida partida;
-
-    private int[] pairsCounter;
-
-    public BarajaProfesiones(Tablero tablero)
+    public BarajaProfesiones(Tablero tablero) : base(tablero)
     {
-        pairs = tablero.PositionCards.Length / 2;
-        pairsCounter = new int[pairs];
-        for (int i = 0; i < pairs; i++)
-        {
-            pairsCounter[i] = 0;
-        }
-
-        this.partida = GameObject.FindObjectOfType<PartidaEstandar>();
-        this.tablero = tablero;
-        CreateCards();
-    }
-
-    public override void CreateCards()
-    {
-        foreach (Vector3 positionCard in tablero.PositionCards)
-        {
-            Vector3 fixedPosition = new Vector3(positionCard.x, 0.005f, positionCard.z);
-
-            Card card = GameObject.Instantiate(partida.Card, fixedPosition,
-                                               Quaternion.identity).GetComponent<Card>();
-            SetCardValues(card);
-            cards.Add(card);
-        }
     }
 
     public override void SetCardValues(Card card)
@@ -52,10 +21,5 @@ public class BarajaProfesiones : Baraja
         card.PairNumber = randomNumber;
         card.Cara.material = Resources.Load<Material>("Barajas/Profesiones_Baraja/Materials/" + randomNumber);
         card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
-    }
-
-    public override Card GetCard(int n)
-    {
-        return (Card)cards[n];
     }
 }

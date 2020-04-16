@@ -164,10 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04ae7f8b7587c64984d80886ec27ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animacionDerrota: {fileID: 0}
-  animacionVictoria: {fileID: 0}
-  miTiempoDer: {fileID: 0}
-  miTiempoVic: {fileID: 0}
 --- !u!1 &145740790
 GameObject:
   m_ObjectHideFlags: 0

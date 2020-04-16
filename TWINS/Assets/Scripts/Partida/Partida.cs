@@ -7,10 +7,9 @@ public abstract class Partida : MonoBehaviour
 {
     AudioSource fuenteAudio;
 
-    [SerializeField] private GameObject animacionDerrota, animacionVictoria; //ESTO HAY QUE HACERLO POR CÓDIGO
-    protected GameObject gameObjectCard, gameObjectTablero;
-
-    [SerializeField] private Text miTiempoDer, miTiempoVic; //ESTO HAY QUE HACERLO POR CÓDIGO
+    protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
+    //protected Transform labelTiempo;
+    //protected Text miTiempo;
 
     protected Tablero tablero;
     protected Card turnedCard;
@@ -23,9 +22,8 @@ public abstract class Partida : MonoBehaviour
     protected float time = 1, timePlayed = 0;
 
     protected void Awake() {
-        gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
-        gameObjectTablero = Resources.Load("Prefabs/Tablero") as GameObject;
-
+        CargarRecursos();
+        IniciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
         tamaño = "grande";
     }
@@ -45,7 +43,7 @@ public abstract class Partida : MonoBehaviour
         if (timePlayed >= time) {
             startedTimer = false;
             animacionDerrota.SetActive(true);
-            miTiempoDer.text = ((int)time).ToString();
+            //miTiempo.text = ((int)time).ToString();
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
 
@@ -56,10 +54,24 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            miTiempoVic.text = ((int)timePlayed).ToString();
+            //miTiempo.text = ((int)timePlayed).ToString();
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
         }
+    }
+    protected void IniciarAnimacion()
+    {
+        Vector3 positionAnimacion = new Vector3(220, 137, 0);
+        animacionDerrota = GameObject.Instantiate(animacionDerrota, positionAnimacion, Quaternion.identity);
+        animacionVictoria = GameObject.Instantiate(animacionVictoria, positionAnimacion, Quaternion.identity);
+    }
+
+    protected void CargarRecursos()
+    {
+        gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
+        gameObjectTablero = Resources.Load("Prefabs/Tablero") as GameObject;
+        animacionDerrota = Resources.Load("Prefabs/Derrota") as GameObject;
+        animacionVictoria = Resources.Load("Prefabs/Victoria") as GameObject;
     }
 
     abstract public void CheckPair(int n);

@@ -95,14 +95,15 @@ public class PartidaEstandar : Partida
             turnedCard = null;
             pairsFound++;
 
-            isWon();
+
+            IsWon();
 
             turno++;
             numCardsTurned = 0;
         }
         else
         {
-            await Task.Delay(800);
+            await Task.Delay(200);
             turnedCard.TurnCard(); card.TurnCard();
             numCardsTurned = 0;
             turnedCard = null;

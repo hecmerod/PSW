@@ -8,8 +8,8 @@ public abstract class Partida : MonoBehaviour
     AudioSource fuenteAudio;
 
     protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
-    //protected Transform labelTiempo;
-    //protected Text miTiempo;
+    public GameObject gameObjectTiempo; //pasar por codigo
+    public Text miTiempo; //pasar por codigo
 
     protected Tablero tablero;
     protected Card turnedCard;
@@ -19,13 +19,13 @@ public abstract class Partida : MonoBehaviour
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
-    protected float time = 1000, timePlayed = 0;
+    protected float time = 100, timePlayed = 0;
 
     protected void Awake() {
         CargarRecursos();
-        IniciarAnimacion();
+        InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
-        tamaño = "grande";
+        tamaño = "pequeño";
     }
 
     protected void Update() {
@@ -33,33 +33,36 @@ public abstract class Partida : MonoBehaviour
     }
 
     public void Timer() {
-        if (startedTimer) {
+        if (startedTimer)
+        {
             timePlayed += Time.deltaTime;
-            isLost();
+        }
+        if (timePlayed >= time)
+        {
+            IsLost();
         }
     }
 
-    public void isLost() {
-        if (timePlayed >= time) {
-            startedTimer = false;
-            animacionDerrota.SetActive(true);
-            //miTiempo.text = ((int)time).ToString();
-            fuenteAudio = GetComponent<AudioSource>();
-            fuenteAudio.Stop();
-
-        }
+    public void IsLost() {
+        startedTimer = false;
+        animacionDerrota.SetActive(true);
+        gameObjectTiempo.SetActive(true);
+        miTiempo.text = ((int)timePlayed).ToString();
+        fuenteAudio = GetComponent<AudioSource>();
+        fuenteAudio.Stop();
     }
 
-    protected void isWon() {
+    protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            //miTiempo.text = ((int)timePlayed).ToString();
+            gameObjectTiempo.SetActive(true);
+            miTiempo.text = ((int)timePlayed).ToString();
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
         }
     }
-    protected void IniciarAnimacion()
+    protected void InstanciarAnimacion()
     {
         Vector3 positionAnimacion = new Vector3(220, 137, 0);
         animacionDerrota = GameObject.Instantiate(animacionDerrota, positionAnimacion, Quaternion.identity);

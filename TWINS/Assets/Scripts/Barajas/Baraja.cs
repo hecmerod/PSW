@@ -18,7 +18,7 @@ public abstract class Baraja
         pairsCounter = new int[pairs];
         for (int i = 0; i < pairs; i++) pairsCounter[i] = 0;
 
-        this.partida = GameObject.FindObjectOfType<PartidaEstandar>();
+        this.partida = GameObject.FindObjectOfType<Partida>();
         this.tablero = tablero;
         CreateCards();
     }
@@ -31,7 +31,7 @@ public abstract class Baraja
         foreach (Vector3 positionCard in tablero.PositionCards)
         {
             Vector3 fixedPosition = new Vector3(positionCard.x, 0.005f, positionCard.z);
-
+            Debug.Log(partida);
             auxCard = GameObject.Instantiate(partida.Card, fixedPosition, Quaternion.identity);
             auxCard.name = "Carta" + i++;
             auxCard.transform.SetParent(partida.Tablero.transform, true);

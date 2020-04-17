@@ -10,9 +10,9 @@ public class Tablero : MonoBehaviour
 
     private Baraja baraja;
     private ArrayList cards = new ArrayList();
-    private PartidaEstandar partida;
+    private Partida partida;
 
-    public void InitializeValues(PartidaEstandar partida, Vector3[] positionCards) {
+    public void InitializeValues(Partida partida, Vector3[] positionCards) {
         this.partida = partida;
         this.positionCards = positionCards;
     }

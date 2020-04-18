@@ -20,7 +20,7 @@ public class BarajaBanderas : Baraja
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;
-        card.Cara.material = Resources.Load<Material>("Barajas/Bandera_Baraja/Materials/" + randomNumber);
+        card.Cara.material = Resources.Load<Material>("Barajas/Banderas_Baraja/Materials/" + randomNumber);
         card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
     }
 }

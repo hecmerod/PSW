@@ -4,15 +4,20 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PartidaPorCategoria : Partida
 {
+    List<String> categorias = new List<String> { "domesticos", "sabana", "bosque" };
+    Text categoria;
+    public String aux = null;
+    public int pairsCategoria;
     public void Start()
     {
         SetTableroValues();
-        Text categoria = GameObject.Find("Canvas/categoria").GetComponent<Text>();
-        categoria.text = "funciona porfa";
-
+        categoria = GameObject.Find("Canvas/categoria").GetComponent<Text>();
+        categoria.text = elegirCategoria();
+        pairsCategoria = 0;
     }
     protected override void SetTableroValues()
     { //ESTO HAY QUE AUTOMATIZARLO
@@ -32,6 +37,7 @@ public class PartidaPorCategoria : Partida
                 positionCards[6] = new Vector3(9.75f, 0, 4.25f); positionCards[7] = new Vector3(11, 0, 4.25f);
                 positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
+                //categoria.rectTransform.position = new Vector3(-480, 0, 0);
                 break;
 
             case "mediano":
@@ -82,6 +88,40 @@ public class PartidaPorCategoria : Partida
 
         tablero.InitializeValues(this, positionCards);
     }
+    public String elegirCategoria()
+    {
+        int indice = Random.Range(0, categorias.Count);
+        String cat = categorias[indice];
+        if(categorias.Count > 1) { categorias.RemoveAt(indice); }
+        return cat;
+    }
+    public void enCategoria()
+    {
+        if (pairsCategoria == 2) { 
+            categoria.text = elegirCategoria();
+            pairsCategoria = 0; 
+        }
+    }
+    public Boolean esCategoria(Card carta)
+    {
+        aux = categoria.text;
+        switch (aux)
+        {
+            case string aux when aux == "bosque":
+               return carta.PairNumber == 3 || carta.PairNumber == 0;
+               break;
+            case string aux when aux == "domesticos":
+              return carta.PairNumber == 1 || carta.PairNumber == 4;
+               break;
+            case string aux when aux == "sabana":
+                return carta.PairNumber == 5 || carta.PairNumber == 2;
+                break;
+            default:
+                return false;
+                break;
+        }
+    }
+
 
     async public override void CheckPair(int n)
     {
@@ -92,6 +132,14 @@ public class PartidaPorCategoria : Partida
         if (turnedCard is null)
         {
             turnedCard = card;
+            if (esCategoria(card) == false)
+            {
+                await Task.Delay(200);
+                turnedCard.TurnCard(); 
+                numCardsTurned = 0;
+                turnedCard = null;
+                turno++;
+            }
         }
         else if (turnedCard.IsPair(card))
         {
@@ -102,6 +150,8 @@ public class PartidaPorCategoria : Partida
 
 
             IsWon();
+            pairsCategoria++;
+            enCategoria();
 
             turno++;
             numCardsTurned = 0;

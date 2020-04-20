@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjectTiempo: {fileID: 527433912}
   miTiempo: {fileID: 527433913}
+  aux: 
 --- !u!4 &44378593
 Transform:
   m_ObjectHideFlags: 0

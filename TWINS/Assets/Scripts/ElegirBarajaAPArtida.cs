@@ -17,4 +17,10 @@ public class ElegirBarajaAPArtida : MonoBehaviour
         tematica = "profesion";
         SceneManager.LoadScene("PartidaEstandar");
     }
+
+    public void Bandera()
+    {
+        tematica = "bandera";
+        SceneManager.LoadScene("PartidaEstandar");
+    }
 }

@@ -19,7 +19,7 @@ public abstract class Partida : MonoBehaviour
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
-    protected float time = 100, timePlayed = 0;
+    protected float time = 1, timePlayed = 0;
 
     protected void Awake() {
         CargarRecursos();
@@ -50,6 +50,7 @@ public abstract class Partida : MonoBehaviour
         miTiempo.text = ((int)timePlayed).ToString();
         fuenteAudio = GetComponent<AudioSource>();
         fuenteAudio.Stop();
+        numCardsTurned = 2;
     }
 
     protected void IsWon() {
@@ -60,6 +61,7 @@ public abstract class Partida : MonoBehaviour
             miTiempo.text = ((int)timePlayed).ToString();
             fuenteAudio = GetComponent<AudioSource>();
             fuenteAudio.Stop();
+            numCardsTurned = 2;
         }
     }
     protected void InstanciarAnimacion()

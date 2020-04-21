@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Baraja
+public class Baraja
 {
     protected int pairs;
 
     protected ArrayList cards = new ArrayList();
     protected Tablero tablero;
     protected Partida partida;
+    protected string tematica;
 
     protected int[] pairsCounter;
 
-    protected Baraja(Tablero tablero)
+    public Baraja(Tablero tablero, string tematica)
     {
         pairs = tablero.PositionCards.Length / 2;
         pairsCounter = new int[pairs];
@@ -20,6 +21,7 @@ public abstract class Baraja
 
         this.partida = GameObject.FindObjectOfType<Partida>();
         this.tablero = tablero;
+        this.tematica = tematica;
         CreateCards();
     }
 
@@ -45,5 +47,33 @@ public abstract class Baraja
     {
         return (Card)cards[n];
     }
-    public abstract void SetCardValues(Card card);
+    public void SetCardValues(Card card)
+    {
+        card.Number = cards.Count;
+        card.Partida = partida;
+
+        int randomNumber;
+        do randomNumber = Random.Range(0, pairs);
+        while (pairsCounter[randomNumber] == 2);
+        pairsCounter[randomNumber]++;
+
+        card.PairNumber = randomNumber;
+        if (tematica.Equals("animal"))
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + randomNumber);
+        }
+        else if (tematica.Equals("profesion"))
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Profesiones_Baraja/Materials/" + randomNumber);
+        }
+        else if (tematica.Equals("bandera"))
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Banderas_Baraja/Materials/" + randomNumber);
+        }
+        else
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + randomNumber);
+        }
+        card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
+    }
 }

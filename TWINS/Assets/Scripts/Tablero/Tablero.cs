@@ -17,7 +17,7 @@ public class Tablero : MonoBehaviour
         this.positionCards = positionCards;
     }
     public void Start() {
-        baraja = new Baraja(this, partida.Tematica);
+        baraja = CreadorBaraja.CrearBaraja(partida.Tematica, this);
         marco = Resources.Load("Prefabs/Marco") as GameObject;
     }
 

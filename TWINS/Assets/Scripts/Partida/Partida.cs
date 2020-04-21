@@ -19,13 +19,13 @@ public abstract class Partida : MonoBehaviour
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
-    protected float time = 1, timePlayed = 0;
+    protected float time = 1000, timePlayed = 0;
 
     protected void Awake() {
         CargarRecursos();
         InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
-        tamaño = "pequeño";
+        tamaño = "pequeña";
     }
 
     protected void Update() {

@@ -15,7 +15,7 @@ public class Card : MonoBehaviour
 
     private MeshRenderer dorso, cara;
     private GameObject marco;
-
+    private bool showMarco = true;
     private Vector3 initialPosition;
 
     private void Awake() {
@@ -37,6 +37,7 @@ public class Card : MonoBehaviour
             partida.NumCardsTurned++;
 
             rigidbody.AddForce(new Vector3(0, 1, 0) * 176);
+            showMarco = false;
             await Task.Delay(200);
 
             rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
@@ -45,13 +46,14 @@ public class Card : MonoBehaviour
                 gameObject.transform.position = new Vector3(initialPosition.x,
                                                             gameObject.transform.position.y,
                                                             initialPosition.z);
-            }
-
+            }            
             partida.CheckPair(number);
         }
     }
 
-    private void OnMouseOver() { marco.SetActive(true); }
+    private void OnMouseOver() { 
+        marco.SetActive(showMarco);
+    }
     void OnMouseExit() { marco.SetActive(false); }
 
     public bool IsPair(Card card) {
@@ -61,6 +63,7 @@ public class Card : MonoBehaviour
     public void TurnCard() {               
         this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         isTurned = false;
+        showMarco = true;
         //FALTA HACER 
      }
 

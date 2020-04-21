@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PartidaPorCarta : Partida
 {
+    List<String> animales = new List<String> { "Conejo", "Gato", "Girafa", "Oso", "Perro", "Elefante" };
+    Boolean[] ids = new Boolean[6];
+
+    public Sprite carta;
+    public Image imagen;
+
     public void Start()
     {
         SetTableroValues();
+        imagen.sprite = carta;
+        //carta = GameObject.Find("Canvas/cartaObjetivo").GetComponent<Sprie>();
+        carta = Resources.Load<Sprite>("Barajas/Animales_Baraja/Elefante") as Sprite;
     }
 
     protected override void SetTableroValues()
@@ -98,7 +108,7 @@ public class PartidaPorCarta : Partida
             turnedCard = null;
             pairsFound++;
 
-
+            //SI TODAS LAS IDS SON TRUE
             IsWon();
 
             turno++;
@@ -113,4 +123,42 @@ public class PartidaPorCarta : Partida
             turno++;
         }
     }
+    /*
+    public String elegirObjetivo()
+    {
+        int indice = Random.Range(0, animales.Count);
+        
+        if(animales.Count > 1) {
+            animales.eliminar(animales(indice));
+            animales.RemoveAt(indice); 
+        }
+    }
+
+    public void eliminar(String animal)
+    {
+        switch (animal)
+        {
+            case Conejo:
+                ids[0] = true;
+                break;
+            case Gato:
+                ids[1] = true;
+                break;
+            case Girafa:
+                ids[2] = true;
+                break;
+            case Oso:
+                ids[3] = true;
+                break;
+            case Perro:
+                ids[4] = true;
+                break;
+            case Elefante:
+                ids[5] = true;
+                break;
+            default:
+                break;
+
+        }
+    }*/
 }

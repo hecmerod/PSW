@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 56ce46ea0e2e01348a3a6d4bf09edc15
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5351466020072668525
+    second: prueba_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +88,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: prueba_0
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 405
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d3102fdf9344a40800000000000000
+      internalID: 5351466020072668525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

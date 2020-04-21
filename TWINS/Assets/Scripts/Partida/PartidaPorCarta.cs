@@ -19,7 +19,10 @@ public class PartidaPorCarta : Partida
         SetTableroValues();
         imagen.sprite = carta;
         //carta = GameObject.Find("Canvas/cartaObjetivo").GetComponent<Sprie>();
-        carta = Resources.Load<Sprite>("Barajas/Animales_Baraja/Elefante") as Sprite;
+        //carta = Resources.Load<Sprite>("Barajas/Animales_Baraja/Elefante") as Sprite;
+
+        GameObject auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(0,0,0), Quaternion.identity);
+        auxCard.GetComponent<Rigidbody>().useGravity = false;
     }
 
     protected override void SetTableroValues()

@@ -9,22 +9,23 @@ using Random = UnityEngine.Random;
 public class PartidaPorCarta : Partida
 {
     //public int parejasPosibles = tablero.PositionCards.Length / 2;
-    Boolean[] ids = new Boolean[6];
+    Boolean[] ids;
     public Sprite carta;
     public Image imagen;
     public Card card;
     public GameObject auxCard;
     public int RandomNumber;
+    public int numParejas;
 
     public void Start()
     {
         SetTableroValues();
         imagen.sprite = carta;
-        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(6.06f, 5.18f, 2.69f), Quaternion.identity);
+        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(6.06f, 5.18f, 2.69f), Quaternion.Euler(200, 180, 0));
         auxCard.GetComponent<Rigidbody>().useGravity = false;
         card = auxCard.GetComponent<Card>();
-        card.Dorso.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + elegirObjetivo());
-        //card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
+        card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + elegirObjetivo());
+        card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
     }
 
     protected override void SetTableroValues()
@@ -94,6 +95,10 @@ public class PartidaPorCarta : Partida
         tablero = gameObjectTablero.GetComponent<Tablero>();
 
         tablero.InitializeValues(this, positionCards);
+
+        numParejas = positionCards.Length / 2;
+
+        ids = new Boolean[numParejas];
     }
 
     async public override void CheckPair(int n)
@@ -107,9 +112,9 @@ public class PartidaPorCarta : Partida
             turnedCard = card;
             if (card.PairNumber != RandomNumber)
             {
+                numCardsTurned = 0;
                 await Task.Delay(200);
                 turnedCard.TurnCard();
-                numCardsTurned = 0;
                 turnedCard = null;
                 turno++;
             }
@@ -122,7 +127,7 @@ public class PartidaPorCarta : Partida
             pairsFound++;
 
             IsWon();
-            if (pairsFound != 6)
+            if (pairsFound != numParejas)
             {
                 elegirObjetivo();
             }
@@ -142,7 +147,7 @@ public class PartidaPorCarta : Partida
 
     public void cambiarCarta(int indice)
     {
-        card.Dorso.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + indice);
+        card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + indice);
     }
 
     public int elegirObjetivo()

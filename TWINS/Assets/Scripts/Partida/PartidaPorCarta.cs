@@ -8,21 +8,23 @@ using Random = UnityEngine.Random;
 
 public class PartidaPorCarta : Partida
 {
-    List<String> animales = new List<String> { "Conejo", "Gato", "Girafa", "Oso", "Perro", "Elefante" };
+    //public int parejasPosibles = tablero.PositionCards.Length / 2;
     Boolean[] ids = new Boolean[6];
-
     public Sprite carta;
     public Image imagen;
+    public Card card;
+    public GameObject auxCard;
+    public int RandomNumber;
 
     public void Start()
     {
         SetTableroValues();
         imagen.sprite = carta;
-        //carta = GameObject.Find("Canvas/cartaObjetivo").GetComponent<Sprie>();
-        //carta = Resources.Load<Sprite>("Barajas/Animales_Baraja/Elefante") as Sprite;
-
-        GameObject auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(0,0,0), Quaternion.identity);
+        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(6.06f, 5.18f, 2.69f), Quaternion.identity);
         auxCard.GetComponent<Rigidbody>().useGravity = false;
+        card = auxCard.GetComponent<Card>();
+        card.Dorso.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + elegirObjetivo());
+        //card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
     }
 
     protected override void SetTableroValues()
@@ -103,6 +105,14 @@ public class PartidaPorCarta : Partida
         if (turnedCard is null)
         {
             turnedCard = card;
+            if (card.PairNumber != RandomNumber)
+            {
+                await Task.Delay(200);
+                turnedCard.TurnCard();
+                numCardsTurned = 0;
+                turnedCard = null;
+                turno++;
+            }
         }
         else if (turnedCard.IsPair(card))
         {
@@ -111,8 +121,11 @@ public class PartidaPorCarta : Partida
             turnedCard = null;
             pairsFound++;
 
-            //SI TODAS LAS IDS SON TRUE
             IsWon();
+            if (pairsFound != 6)
+            {
+                elegirObjetivo();
+            }
 
             turno++;
             numCardsTurned = 0;
@@ -126,42 +139,22 @@ public class PartidaPorCarta : Partida
             turno++;
         }
     }
-    /*
-    public String elegirObjetivo()
+
+    public void cambiarCarta(int indice)
     {
-        int indice = Random.Range(0, animales.Count);
-        
-        if(animales.Count > 1) {
-            animales.eliminar(animales(indice));
-            animales.RemoveAt(indice); 
-        }
+        card.Dorso.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + indice);
     }
 
-    public void eliminar(String animal)
+    public int elegirObjetivo()
     {
-        switch (animal)
+        int indice;
+        do
         {
-            case Conejo:
-                ids[0] = true;
-                break;
-            case Gato:
-                ids[1] = true;
-                break;
-            case Girafa:
-                ids[2] = true;
-                break;
-            case Oso:
-                ids[3] = true;
-                break;
-            case Perro:
-                ids[4] = true;
-                break;
-            case Elefante:
-                ids[5] = true;
-                break;
-            default:
-                break;
-
-        }
-    }*/
+            indice = Random.Range(0, ids.Length);
+        } while (ids[indice]);
+        ids[indice] = true;
+        cambiarCarta(indice);
+        RandomNumber = indice;
+        return indice;
+    }
 }

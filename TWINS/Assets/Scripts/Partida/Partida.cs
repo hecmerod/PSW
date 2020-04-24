@@ -25,7 +25,7 @@ public abstract class Partida : MonoBehaviour
         CargarRecursos();
         InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
-        tamaño = "pequeña";
+        tamaño = "pequeño";
     }
 
     protected void Update() {

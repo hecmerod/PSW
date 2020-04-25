@@ -8,22 +8,41 @@ using Random = UnityEngine.Random;
 
 public class PartidaPorCategoria : Partida
 {
-    List<String> categorias = new List<String> { "domesticos", "sabana", "bosque" };
+    List<String> categorias = new List<String>(); //{ "domesticos", "sabana", "bosque" };
     Text categoria;
     public String aux = null;
-    public int pairsCategoria;
+    public int pairsCategoria2;
+    public int pairsCategoria4;
     public void Start()
     {
         SetTableroValues();
         categoria = GameObject.Find("Canvas/categoria").GetComponent<Text>();
+        iniciarCategoria();
         categoria.text = elegirCategoria();
-        pairsCategoria = 0;
+        pairsCategoria2 = 0;
+        pairsCategoria4 = 0;
+}
+    public void iniciarCategoria()
+    {
+        List<String> c1 = new List<String> { "domesticos", "sabana", "bosque" };
+        List<String> c2 = new List<String> { "domesticos", "sabana", "pradera", "bosque" };
+        switch (tamaño)
+        {
+            case "pequeño":
+                categorias.AddRange(c1);
+                break;
+            case "grande":
+                categorias.AddRange(c2);
+                break;
+        }
     }
     protected override void SetTableroValues()
     { //ESTO HAY QUE AUTOMATIZARLO
 
         Vector3[] positionCards = new Vector3[0];
         Vector3 positionTablero = Vector3.zero;
+        //RectTransform categoriapos = categoria.GetComponent<RectTransform>();
+
 
         switch (tamaño)
         {
@@ -37,7 +56,7 @@ public class PartidaPorCategoria : Partida
                 positionCards[6] = new Vector3(9.75f, 0, 4.25f); positionCards[7] = new Vector3(11, 0, 4.25f);
                 positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
-                //categoria.rectTransform.position = new Vector3(-480, 0, 0);
+                //categoriapos.anchoredPosition = new Vector3(0, 0, 0);
                 break;
 
             case "mediano":
@@ -97,28 +116,64 @@ public class PartidaPorCategoria : Partida
     }
     public void enCategoria()
     {
-        if (pairsCategoria == 2) { 
-            categoria.text = elegirCategoria();
-            pairsCategoria = 0; 
+        switch (tamaño) {
+            case "pequeño":
+                if (pairsCategoria2 == 2)
+                {
+                    categoria.text = elegirCategoria();
+                    pairsCategoria2 = 0;
+                }
+                break;
+            case "grande":
+                if(pairsCategoria4 == 4)
+                {
+                    categoria.text = elegirCategoria();
+                    pairsCategoria4 = 0;
+                }
+                break;
         }
     }
     public Boolean esCategoria(Card carta)
     {
         aux = categoria.text;
-        switch (aux)
+        if (tamaño == "pequeño")
         {
-            case string aux when aux == "bosque":
-               return carta.PairNumber == 3 || carta.PairNumber == 0;
-               break;
-            case string aux when aux == "domesticos":
-              return carta.PairNumber == 1 || carta.PairNumber == 4;
-               break;
-            case string aux when aux == "sabana":
-                return carta.PairNumber == 5 || carta.PairNumber == 2;
-                break;
-            default:
-                return false;
-                break;
+            switch (aux)
+            {
+                case string aux when aux == "bosque":
+                    return carta.PairNumber == 3 || carta.PairNumber == 0;
+                    break;
+                case string aux when aux == "domesticos":
+                    return carta.PairNumber == 1 || carta.PairNumber == 4;
+                    break;
+                case string aux when aux == "sabana":
+                    return carta.PairNumber == 5 || carta.PairNumber == 2;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+        }
+        else
+        {
+            switch (aux)
+            {
+                case string aux when aux == "domesticos":
+                    return carta.PairNumber == 1 || carta.PairNumber == 4 || carta.PairNumber == 10 || carta.PairNumber == 15;
+                    break;
+                case string aux when aux == "pradera":
+                    return carta.PairNumber == 12 || carta.PairNumber == 13 || carta.PairNumber == 0 || carta.PairNumber == 11;
+                    break;
+                case string aux when aux == "sabana":
+                    return carta.PairNumber == 6 || carta.PairNumber == 2 || carta.PairNumber == 5 || carta.PairNumber == 8;
+                    break;
+                case string aux when aux == "bosque":
+                    return carta.PairNumber == 6 || carta.PairNumber == 2 || carta.PairNumber == 5 || carta.PairNumber == 8;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
         }
     }
 
@@ -134,7 +189,7 @@ public class PartidaPorCategoria : Partida
             turnedCard = card;
             if (esCategoria(card) == false)
             {
-                await Task.Delay(200);
+                await Task.Delay(500);
                 turnedCard.TurnCard(); 
                 numCardsTurned = 0;
                 turnedCard = null;
@@ -150,7 +205,8 @@ public class PartidaPorCategoria : Partida
 
 
             IsWon();
-            pairsCategoria++;
+            pairsCategoria2++;
+            pairsCategoria4++;
             enCategoria();
 
             turno++;
@@ -158,7 +214,7 @@ public class PartidaPorCategoria : Partida
         }
         else
         {
-            await Task.Delay(200);
+            await Task.Delay(500);
             turnedCard.TurnCard(); card.TurnCard();
             numCardsTurned = 0;
             turnedCard = null;

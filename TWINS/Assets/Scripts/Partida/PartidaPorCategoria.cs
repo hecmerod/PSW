@@ -187,16 +187,8 @@ public class PartidaPorCategoria : Partida
         if (turnedCard is null)
         {
             turnedCard = card;
-            if (esCategoria(card) == false)
-            {
-                await Task.Delay(500);
-                turnedCard.TurnCard(); 
-                numCardsTurned = 0;
-                turnedCard = null;
-                turno++;
-            }
         }
-        else if (turnedCard.IsPair(card))
+        else if (turnedCard.IsPair(card) && esCategoria(card) == true)
         {
             await Task.Delay(500);
 

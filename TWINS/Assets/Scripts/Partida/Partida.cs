@@ -34,7 +34,7 @@ public abstract class Partida : MonoBehaviour
         if (tamaño.Equals("pequeño"))
         {
             time = 60f;
-            posicionContador = new Vector3(100.7f, 350.7f, 0);
+            posicionContador = new Vector3(250.7f, 200.7f, 0);
         }
         else
         {

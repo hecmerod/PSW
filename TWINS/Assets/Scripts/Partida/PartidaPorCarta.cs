@@ -21,7 +21,7 @@ public class PartidaPorCarta : Partida
     {
         SetTableroValues();
         imagen.sprite = carta;
-        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(6.06f, 5.18f, 2.69f), Quaternion.Euler(200, 180, 0));
+        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(5.36f, 2.38f, 2.69f), Quaternion.Euler(180, 180, 0));
         auxCard.GetComponent<Rigidbody>().useGravity = false;
         card = auxCard.GetComponent<Card>();
         card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + elegirObjetivo());

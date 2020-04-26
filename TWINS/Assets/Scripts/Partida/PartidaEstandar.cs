@@ -14,7 +14,8 @@ public class PartidaEstandar : Partida
     protected override void SetTableroValues() { //ESTO HAY QUE AUTOMATIZARLO
 
         Vector3[] positionCards = new Vector3[0];
-        Vector3 positionTablero = Vector3.zero;        
+        Vector3 positionTablero = Vector3.zero;
+        Vector3 positionContador = Vector3.zero;
 
         switch (tamaño) {
             case "pequeño":

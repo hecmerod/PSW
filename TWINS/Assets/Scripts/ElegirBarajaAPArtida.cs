@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ElegirBarajaAPArtida : MonoBehaviour
 {
-    public static string tematica;
+    public static string tematica = "animal";
     public void Animal()
     {
         tematica = "animal";

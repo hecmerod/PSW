@@ -9,7 +9,7 @@ public abstract class Partida : MonoBehaviour
 
     protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
     public GameObject gameObjectTiempo; //pasar por codigo
-    public Text miTiempo; //pasar por codigo
+    public Text miTiempo, textContador; //pasar por codigo
 
     protected Tablero tablero;
     protected Card turnedCard;
@@ -19,13 +19,31 @@ public abstract class Partida : MonoBehaviour
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
     protected bool startedTimer = false;
-    protected float time = 1000, timePlayed = 0;
+    protected float time, timePlayed = 0, contador;
+    Vector3 posicionContador = Vector3.zero;
 
+    protected void Start()
+    {
+
+    }
     protected void Awake() {
         CargarRecursos();
         InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
         tamaño = "pequeño";
+        if (tamaño.Equals("pequeño"))
+        {
+            time = 60f;
+            posicionContador = new Vector3(100.7f, 350.7f, 0);
+        }
+        else
+        {
+            time = 160f;
+            posicionContador = new Vector3(220.7f, 242.7f, 0);
+        }
+        textContador.transform.position = posicionContador;
+        contador = time;
+        textContador.text = "Tiempo: " + time.ToString();
     }
 
     protected void Update() {
@@ -36,6 +54,8 @@ public abstract class Partida : MonoBehaviour
         if (startedTimer)
         {
             timePlayed += Time.deltaTime;
+            contador -= Time.deltaTime;
+            textContador.text = "Tiempo: " + ((int)contador).ToString();
         }
         if (timePlayed >= time)
         {

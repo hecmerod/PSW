@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Baraja
+public class Baraja : MonoBehaviour
 {
     protected int pairs;
 
@@ -12,7 +12,7 @@ public abstract class Baraja
 
     protected int[] pairsCounter;
 
-    protected Baraja(Tablero tablero)
+    public Baraja(Tablero tablero)
     {
         pairs = tablero.PositionCards.Length / 2;
         pairsCounter = new int[pairs];
@@ -41,9 +41,34 @@ public abstract class Baraja
             cards.Add(card);
         }
     }
+
+    protected void SetCardValues(Card card)
+    {
+        card.Number = cards.Count;
+        card.Partida = partida;
+
+        int randomNumber;
+        do randomNumber = Random.Range(0, pairs);
+        while (pairsCounter[randomNumber] == 2);
+        pairsCounter[randomNumber]++;
+
+        card.PairNumber = randomNumber;
+        if (partida.Tematica  == "animal")
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + randomNumber);
+        }
+        else if (partida.Tematica == "profesion")
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Profesiones_Baraja/Materials/" + randomNumber);
+        }
+        else if (partida.Tematica == "bandera")
+        {
+            card.Cara.material = Resources.Load<Material>("Barajas/Banderas_Baraja/Materials/" + randomNumber);
+        }
+        card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
+    }
     public Card GetCard(int n)
     {
         return (Card)cards[n];
     }
-    public abstract void SetCardValues(Card card);
 }

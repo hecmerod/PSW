@@ -34,14 +34,14 @@ public abstract class Partida : MonoBehaviour
         if (tamaño.Equals("pequeño"))
         {
             time = 60f;
-            posicionContador = new Vector3(250.7f, 200.7f, 0);
+            posicionContador = new Vector3(-118f, 140f, 0);
         }
         else
         {
             time = 160f;
-            posicionContador = new Vector3(220.7f, 242.7f, 0);
+            posicionContador = new Vector3(-170f, 233.7f, 0);
         }
-        textContador.transform.position = posicionContador;
+        textContador.transform.localPosition = posicionContador;
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();
     }

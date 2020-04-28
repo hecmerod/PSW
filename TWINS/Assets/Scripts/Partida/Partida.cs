@@ -30,7 +30,7 @@ public abstract class Partida : MonoBehaviour
         CargarRecursos();
         InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
-        tamaño = "pequeño";
+        tamaño = "grande";
         if (tamaño.Equals("pequeño"))
         {
             time = 60f;
@@ -66,23 +66,24 @@ public abstract class Partida : MonoBehaviour
     public void IsLost() {
         startedTimer = false;
         animacionDerrota.SetActive(true);
-        gameObjectTiempo.SetActive(true);
-        miTiempo.text = ((int)timePlayed).ToString();
-        fuenteAudio = GetComponent<AudioSource>();
-        fuenteAudio.Stop();
-        numCardsTurned = 2;
+        TerminarPartida();
     }
 
     protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            gameObjectTiempo.SetActive(true);
-            miTiempo.text = ((int)timePlayed).ToString();
-            fuenteAudio = GetComponent<AudioSource>();
-            fuenteAudio.Stop();
-            numCardsTurned = 2;
+            TerminarPartida();
         }
+    }
+
+    protected void TerminarPartida()
+    {
+        gameObjectTiempo.SetActive(true);
+        miTiempo.text = ((int)timePlayed).ToString();
+        fuenteAudio = GetComponent<AudioSource>();
+        fuenteAudio.Stop();
+        numCardsTurned = 2;
     }
     protected void InstanciarAnimacion()
     {

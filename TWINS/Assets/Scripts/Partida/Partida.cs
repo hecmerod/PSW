@@ -30,18 +30,18 @@ public abstract class Partida : MonoBehaviour
         CargarRecursos();
         InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
-        tamaño = "pequeño";
+        tamaño = "grande";
         if (tamaño.Equals("pequeño"))
         {
             time = 60f;
-            posicionContador = new Vector3(250.7f, 200.7f, 0);
+            posicionContador = new Vector3(-118f, 140f, 0);
         }
         else
         {
             time = 160f;
-            posicionContador = new Vector3(220.7f, 242.7f, 0);
+            posicionContador = new Vector3(-170f, 233.7f, 0);
         }
-        textContador.transform.position = posicionContador;
+        textContador.transform.localPosition = posicionContador;
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();
     }
@@ -66,23 +66,24 @@ public abstract class Partida : MonoBehaviour
     public void IsLost() {
         startedTimer = false;
         animacionDerrota.SetActive(true);
-        gameObjectTiempo.SetActive(true);
-        miTiempo.text = ((int)timePlayed).ToString();
-        fuenteAudio = GetComponent<AudioSource>();
-        fuenteAudio.Stop();
-        numCardsTurned = 2;
+        TerminarPartida();
     }
 
     protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            gameObjectTiempo.SetActive(true);
-            miTiempo.text = ((int)timePlayed).ToString();
-            fuenteAudio = GetComponent<AudioSource>();
-            fuenteAudio.Stop();
-            numCardsTurned = 2;
+            TerminarPartida();
         }
+    }
+
+    protected void TerminarPartida()
+    {
+        gameObjectTiempo.SetActive(true);
+        miTiempo.text = ((int)timePlayed).ToString();
+        fuenteAudio = GetComponent<AudioSource>();
+        fuenteAudio.Stop();
+        numCardsTurned = 2;
     }
     protected void InstanciarAnimacion()
     {

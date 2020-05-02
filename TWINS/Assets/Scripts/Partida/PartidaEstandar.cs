@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PartidaEstandar : Partida
 {   
+    private ContextoPuntuacion contexto = new ContextoPuntuacion();
+    private int puntos;
     public void Start() {
         SetTableroValues();
     }
@@ -28,6 +30,9 @@ public class PartidaEstandar : Partida
                 positionCards[6] = new Vector3(9.75f, 0, 4.25f); positionCards[7] = new Vector3(11, 0, 4.25f);
                 positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
+
+                IPuntuacion puntuacionFacil = new PuntuacionFacil();
+                contexto.TipoPuntuacion = puntuacionFacil;
                 break;
 
             case "mediano":
@@ -95,7 +100,8 @@ public class PartidaEstandar : Partida
 
             turnedCard = null;
             pairsFound++;
-
+            puntos = contexto.SumarPuntos();
+            puntuacion.text = "Puntuacion: " + puntos.ToString();
 
             IsWon();
 

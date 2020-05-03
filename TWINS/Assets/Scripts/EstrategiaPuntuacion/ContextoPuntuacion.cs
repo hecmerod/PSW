@@ -26,4 +26,12 @@ public class ContextoPuntuacion : MonoBehaviour
     {
         return this.tipoPuntuacion.RestarPuntos();
     }
+    public int Fallo()
+    {
+        return this.tipoPuntuacion.Fallo();
+    }
+    public void HaAcertado()
+    {
+        this.tipoPuntuacion.HaAcertado();
+    }
 }

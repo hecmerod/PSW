@@ -2,17 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuntuacionDificil : MonoBehaviour
+public class PuntuacionDificil : IPuntuacion
 {
-    // Start is called before the first frame update
-    void Start()
+
+    int puntuacion = 0;
+    int fallosIniciales = 6;
+    bool haAcertado = false;
+    public override int GetFallosInicial()
     {
-        
+        return fallosIniciales;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override int SumarPuntos()
     {
-        
+        haAcertado = true;
+        puntuacion += 10;
+        return puntuacion;
+    }
+
+    public override int RestarPuntos()
+    {
+        if (haAcertado)
+        {
+            puntuacion -= 2;
+        }
+        return puntuacion;
+    }
+    public override int Fallo()
+    {
+        if (!haAcertado)
+        {
+            fallosIniciales--;
+        }
+        return fallosIniciales;
+    }
+    public override bool HaAcertado()
+    {
+        return haAcertado;
     }
 }

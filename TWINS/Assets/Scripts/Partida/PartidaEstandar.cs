@@ -6,7 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PartidaEstandar : Partida
-{   
+{
+    IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
+    private ContextoPuntuacion contexto = new ContextoPuntuacion();
+    private int puntos;
     public void Start() {
         SetTableroValues();
     }
@@ -28,10 +31,15 @@ public class PartidaEstandar : Partida
                 positionCards[6] = new Vector3(9.75f, 0, 4.25f); positionCards[7] = new Vector3(11, 0, 4.25f);
                 positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
+
+                puntuacionFacil = new PuntuacionFacil();
+                contexto.TipoPuntuacion = puntuacionFacil;
                 break;
 
             case "mediano":
                 positionTablero = new Vector3();
+                puntuacionNormal = new PuntuacionNormal();
+                contexto.TipoPuntuacion = puntuacionNormal;
                 break;
             case "grande":
                 positionCards = new Vector3[32];
@@ -56,10 +64,15 @@ public class PartidaEstandar : Partida
                 positionCards[26] = new Vector3(5.3575f, 0, 7.5f); positionCards[27] = new Vector3(6.786f, 0, 7.5f);
                 positionCards[28] = new Vector3(8.2145f, 0, 7.5f); positionCards[29] = new Vector3(9.643f, 0, 7.5f);
                 positionCards[30] = new Vector3(11.0715f, 0, 7.5f); positionCards[31] = new Vector3(12.5f, 0, 7.5f);
+
+                puntuacionDificil = new PuntuacionDificil();
+                contexto.TipoPuntuacion = puntuacionDificil;
                 break;
             default: //A BORRAR
                 positionCards = new Vector3[12];
                 positionTablero = new Vector3(7.5f, 0, 5);
+                puntuacionFacil = new PuntuacionFacil();
+                contexto.TipoPuntuacion = puntuacionFacil;
 
                 positionCards[0] = new Vector3(11, 0, 8.75f); positionCards[1] = new Vector3(10.355f, 0, 7.25f);
                 positionCards[2] = new Vector3(11.625f, 0, 7.25f); positionCards[3] = new Vector3(9.75f, 0, 5.75f);
@@ -95,7 +108,8 @@ public class PartidaEstandar : Partida
 
             turnedCard = null;
             pairsFound++;
-
+            puntos = contexto.SumarPuntos();
+            puntuacion.text = "Puntuacion: " + puntos.ToString();
 
             IsWon();
 
@@ -109,6 +123,17 @@ public class PartidaEstandar : Partida
             numCardsTurned = 0;
             turnedCard = null;
             turno++;
+            puntos = contexto.RestarPuntos();
+            if(puntos < 0)
+            {
+                puntos = 0;
+                IsLost();
+            }
+            puntuacion.text = "Puntuacion: " + puntos.ToString();
+            if (contexto.Fallo() == 0)
+            {
+                IsLost();
+            }
         }
     }
 }

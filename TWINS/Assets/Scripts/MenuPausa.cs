@@ -10,6 +10,8 @@ public class MenuPausa : MonoBehaviour
     public static bool checkerReiniciar = false;
     public GameObject menuPausaUI;
     public GameObject salirPreguntaUI;
+    public string sceneName;
+    public Scene mi_escena;
 
     void Update()
     {
@@ -60,7 +62,9 @@ public class MenuPausa : MonoBehaviour
         if(checkerSalir == true) { SceneManager.LoadScene("PantallaInicio"); }
         else
         {
-            SceneManager.LoadScene("PartidaEstandar");
+            mi_escena = SceneManager.GetActiveScene();
+            sceneName = mi_escena.name;
+            SceneManager.LoadScene(sceneName);
         }
     }
     public void vuelvoDeQuitar()

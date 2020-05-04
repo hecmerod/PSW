@@ -46,7 +46,7 @@ public abstract class Partida : MonoBehaviour
             posicionPuntuacion = new Vector3(-23, 233.7f, 0);
         }
         puntuacion.transform.localPosition = posicionPuntuacion;
-        puntuacion.text = "Puntuación: 00";
+        puntuacion.text = "Puntuación: 0";
 
         textContador.transform.localPosition = posicionContador;
         contador = time;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +12,6 @@ public class ContextoPuntuacion : MonoBehaviour
         get { return tipoPuntuacion; }
         set { this.tipoPuntuacion = value; }
     }
-
-    public int GetFallosInicial()
-    {
-        return this.tipoPuntuacion.GetFallosInicial();
-    }
-
     public int SumarPuntos()
     {
         return this.tipoPuntuacion.SumarPuntos();
@@ -26,12 +21,8 @@ public class ContextoPuntuacion : MonoBehaviour
     {
         return this.tipoPuntuacion.RestarPuntos();
     }
-    public int Fallo()
+    internal void HaVueltoACero()
     {
-        return this.tipoPuntuacion.Fallo();
-    }
-    public void HaAcertado()
-    {
-        this.tipoPuntuacion.HaAcertado();
+        this.tipoPuntuacion.HaVueltoACero();
     }
 }

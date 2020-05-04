@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public static bool Pausado = false;
-    public static bool checker = false;
+    public static bool checkerSalir = false;
+    public static bool checkerReiniciar = false;
     public GameObject menuPausaUI;
     public GameObject salirPreguntaUI;
 
@@ -14,7 +15,7 @@ public class MenuPausa : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (checker == false)
+            if (checkerSalir == false && checkerReiniciar == false)
             {
                 if (Pausado)
                 {
@@ -51,17 +52,31 @@ public class MenuPausa : MonoBehaviour
     {
         menuPausaUI.SetActive(false);
         salirPreguntaUI.SetActive(true);
-        checker = true;
+        checkerSalir = true;
     }
     public void quitarDefinitivo()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("PantallaInicio");
+        if(checkerSalir == true) { SceneManager.LoadScene("PantallaInicio"); }
+        else
+        {
+            SceneManager.LoadScene("PartidaEstandar");
+        }
     }
     public void vuelvoDeQuitar()
     {
         menuPausaUI.SetActive(true);
         salirPreguntaUI.SetActive(false);
-        checker = false;
+        if(checkerSalir == true) { checkerSalir = false; }
+        else { checkerReiniciar = false; }
     }
+    public void reiniciar()
+    {
+        menuPausaUI.SetActive(false); 
+        salirPreguntaUI.SetActive(true);
+        checkerReiniciar = true;
+    }
+
+
+    
 }

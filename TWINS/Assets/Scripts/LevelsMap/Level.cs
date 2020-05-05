@@ -1,12 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    void Update()
-    {
-        
+    public Vector3[] cardsPosition;
+
+    private LevelProperties levelProperties;
+    private int level;
+    public IPuntuacion puntuacion;
+
+    private void Start() {
+        levelProperties = GameObject.FindObjectOfType<LevelProperties>();
+    }
+
+    private void OnMouseDown() {
+        levelProperties.SetProperties(level, cardsPosition, new PuntuacionFacil());
+
+        SceneManager.LoadScene("PartidaEstandar");        
     }
 
     private void OnMouseEnter()

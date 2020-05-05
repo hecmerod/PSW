@@ -14,15 +14,35 @@ public class PartidaEstandar : Partida
         SetTableroValues();
     }
 
+
+    private Vector3[] positionCards = new Vector3[0];
+    private Vector3 positionTablero = Vector3.zero;
     protected override void SetTableroValues() { //ESTO HAY QUE AUTOMATIZARLO
 
-        Vector3[] positionCards = new Vector3[0];
-        Vector3 positionTablero = Vector3.zero;
-        Vector3 positionContador = Vector3.zero;
+        
 
-        switch (tamaño) {
+        LevelProperties levelProperties = GameObject.FindObjectOfType<LevelProperties>();
+        if (levelProperties == null) SwitchSize();
+        else {
+            positionCards = levelProperties.CardsPositions;
+            contexto.TipoPuntuacion = levelProperties.PuntuacionFacil;
+            positionTablero = new Vector3(7.5f, 0, 5);
+        }
+            
+
+
+        gameObjectTablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity);
+        gameObjectTablero.name = "Tablero";
+
+        tablero = gameObjectTablero.GetComponent<Tablero>();
+
+        tablero.InitializeValues(this, positionCards);
+    }
+    private void SwitchSize() {
+        switch (tamaño)
+        {
             case "pequeño":
-                positionCards= new Vector3[12];
+                positionCards = new Vector3[12];
                 positionTablero = new Vector3(7.5f, 0, 5);
 
                 positionCards[0] = new Vector3(11, 0, 8.75f); positionCards[1] = new Vector3(10.355f, 0, 7.25f);
@@ -36,11 +56,11 @@ public class PartidaEstandar : Partida
                 contexto.TipoPuntuacion = puntuacionFacil;
                 break;
 
-            case "mediano":
+            /*case "mediano":
                 positionTablero = new Vector3();
                 puntuacionNormal = new PuntuacionNormal();
                 contexto.TipoPuntuacion = puntuacionNormal;
-                break;
+                break;*/
             case "grande":
                 positionCards = new Vector3[32];
                 positionTablero = new Vector3(7.5f, 0, 5);
@@ -68,7 +88,8 @@ public class PartidaEstandar : Partida
                 puntuacionDificil = new PuntuacionDificil();
                 contexto.TipoPuntuacion = puntuacionDificil;
                 break;
-            default: //A BORRAR
+
+            default:
                 positionCards = new Vector3[12];
                 positionTablero = new Vector3(7.5f, 0, 5);
                 puntuacionFacil = new PuntuacionFacil();
@@ -82,16 +103,7 @@ public class PartidaEstandar : Partida
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
                 break;
         }
-
-
-        gameObjectTablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity);
-        gameObjectTablero.name = "Tablero";
-
-        tablero = gameObjectTablero.GetComponent<Tablero>();
-
-        tablero.InitializeValues(this, positionCards);
     }
-
     async public override void CheckPair(int n)
     {
         if (!startedTimer) { startedTimer = true; }
@@ -109,7 +121,7 @@ public class PartidaEstandar : Partida
             turnedCard = null;
             pairsFound++;
             puntos = contexto.SumarPuntos();
-            puntuacion.text = "Puntuacion: " + puntos.ToString();
+            puntuacion.text = "Puntuación: " + puntos.ToString();
 
             IsWon();
 
@@ -126,14 +138,9 @@ public class PartidaEstandar : Partida
             puntos = contexto.RestarPuntos();
             if(puntos < 0)
             {
-                puntos = 0;
                 IsLost();
             }
-            puntuacion.text = "Puntuacion: " + puntos.ToString();
-            if (contexto.Fallo() == 0)
-            {
-                IsLost();
-            }
+            puntuacion.text = "Puntuación: " + puntos.ToString();
         }
     }
 }

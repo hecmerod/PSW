@@ -7,9 +7,7 @@ using UnityEngine.UI;
 
 public class PartidaEstandar : Partida
 {
-    IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
-    private ContextoPuntuacion contexto = new ContextoPuntuacion();
-    private int puntos;
+    
     public void Start() {
         SetTableroValues();
     }

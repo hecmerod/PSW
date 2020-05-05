@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
 
     private LevelProperties levelProperties;
     private int level;
+    public IPuntuacion puntuacion;
 
     private void Start() {
         levelProperties = GameObject.FindObjectOfType<LevelProperties>();

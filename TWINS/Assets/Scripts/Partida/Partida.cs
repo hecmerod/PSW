@@ -28,6 +28,7 @@ public abstract class Partida : MonoBehaviour
     {
 
     }
+
     protected void Awake() {
         CargarRecursos();
         InstanciarAnimacion();

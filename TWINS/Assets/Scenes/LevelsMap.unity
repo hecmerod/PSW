@@ -317,6 +317,7 @@ MonoBehaviour:
   - {x: 7.5, y: 0, z: 2.5}
   - {x: 10, y: 0, z: 2.5}
   - {x: 12.5, y: 0, z: 2.5}
+  puntuacion: {fileID: 0}
 --- !u!135 &257814854
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -530,6 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &620789764
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &761360705
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &788118417
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +947,7 @@ MonoBehaviour:
   - {x: 7.5, y: 0, z: 7.5}
   - {x: 7.5, y: 0, z: 5.75}
   - {x: 7.5, y: 0, z: 4.25}
+  puntuacion: {fileID: 0}
 --- !u!135 &788118422
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1147,6 +1152,7 @@ MonoBehaviour:
   - {x: 10, y: 0, z: 7.5}
   - {x: 5, y: 0, z: 2.5}
   - {x: 10, y: 0, z: 2.5}
+  puntuacion: {fileID: 0}
 --- !u!135 &957046462
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1267,6 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1123769346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1362653532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2037,7 @@ MonoBehaviour:
   - {x: 10.5, y: 0, z: 6}
   - {x: 12.25, y: 0, z: 7.5}
   - {x: 13.75, y: 0, z: 7.5}
+  puntuacion: {fileID: 0}
 --- !u!135 &1362653537
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2242,6 +2251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1488246903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,6 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!135 &1516514518
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2596,6 +2607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1590586436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1741151742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3365,6 +3378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1854515003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,6 +3486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1958169630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &1992332520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3779,6 +3795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsPosition: []
+  puntuacion: {fileID: 0}
 --- !u!1 &2073754340
 GameObject:
   m_ObjectHideFlags: 0

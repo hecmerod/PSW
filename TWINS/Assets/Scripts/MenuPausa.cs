@@ -59,7 +59,10 @@ public class MenuPausa : MonoBehaviour
     public void quitarDefinitivo()
     {
         Time.timeScale = 1f;
-        if(checkerSalir == true) { SceneManager.LoadScene("PantallaInicio"); }
+        if(checkerSalir == true) {
+            //METER AQUI DELETE LEVELPROPERTIES SI HAY
+            SceneManager.LoadScene("PantallaInicio"); 
+        }
         else
         {
             mi_escena = SceneManager.GetActiveScene();

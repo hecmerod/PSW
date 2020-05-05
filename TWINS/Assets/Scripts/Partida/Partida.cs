@@ -7,6 +7,7 @@ public abstract class Partida : MonoBehaviour
 {
     AudioSource fuenteAudio;
 
+
     protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
     public GameObject gameObjectTiempo; //pasar por codigo
     public Text miTiempo, textContador, puntuacion; //pasar por codigo
@@ -45,7 +46,7 @@ public abstract class Partida : MonoBehaviour
             posicionPuntuacion = new Vector3(-23, 233.7f, 0);
         }
         puntuacion.transform.localPosition = posicionPuntuacion;
-        puntuacion.text = "Puntuación: 00";
+        puntuacion.text = "Puntuación: 0";
 
         textContador.transform.localPosition = posicionContador;
         contador = time;
@@ -54,6 +55,20 @@ public abstract class Partida : MonoBehaviour
 
     protected void Update() {
         Timer();
+        music();
+
+    }
+    protected void music()
+    {
+        fuenteAudio = GetComponent<AudioSource>();
+        if (MenuPausa.Pausado)
+        {
+            fuenteAudio.volume = 0.1f;
+            if(MenuPausa.checkerReiniciar || MenuPausa.checkerSalir)
+            {
+                fuenteAudio.volume = 0.0f;
+            }
+        }else fuenteAudio.volume = 0.256f;
     }
 
     public void Timer() {
@@ -67,6 +82,7 @@ public abstract class Partida : MonoBehaviour
         {
             IsLost();
         }
+        
     }
 
     public void IsLost() {

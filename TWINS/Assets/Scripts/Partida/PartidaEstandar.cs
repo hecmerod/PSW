@@ -109,7 +109,7 @@ public class PartidaEstandar : Partida
             turnedCard = null;
             pairsFound++;
             puntos = contexto.SumarPuntos();
-            puntuacion.text = "Puntuacion: " + puntos.ToString();
+            puntuacion.text = "Puntuación: " + puntos.ToString();
 
             IsWon();
 
@@ -126,14 +126,9 @@ public class PartidaEstandar : Partida
             puntos = contexto.RestarPuntos();
             if(puntos < 0)
             {
-                puntos = 0;
                 IsLost();
             }
-            puntuacion.text = "Puntuacion: " + puntos.ToString();
-            if (contexto.Fallo() == 0)
-            {
-                IsLost();
-            }
+            puntuacion.text = "Puntuación: " + puntos.ToString();
         }
     }
 }

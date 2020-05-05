@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PantallaInicio : MonoBehaviour
 {
@@ -13,10 +14,20 @@ public class PantallaInicio : MonoBehaviour
     public InputField RegisterContrasenya;
     public InputField RegisterContrasenya2;
     public Button registrarBoton;
+    public Button iniciarBoton;
+    public Text jugadorLogeado;
 
+    public void Start()
+    {
+        if (DBManager.LoggedIn) { jugadorLogeado.text = "Player: " + DBManager.username; }
+    }
     public void CallRegister()
     {
         StartCoroutine(Registerment());
+    }
+    public void CallLogin()
+    {
+        StartCoroutine(LoginIn());
     }
 
     IEnumerator Registerment()
@@ -34,13 +45,36 @@ public class PantallaInicio : MonoBehaviour
         else
         {
             Debug.Log("User creation failed. Error #" + www.text);
-
         }
         
+    }
+    IEnumerator LoginIn()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name", LoginNombre.text);
+        form.AddField("password", LoginContrasenya.text);
+        WWW www = new WWW("http://localhost/sqlconnect/login.php", form);
+        yield return www;
+        if(www.text[0] == '0')
+        {
+            DBManager.username = LoginNombre.text;
+            string[] webResults = www.text.Split('\t');
+            foreach(string s in webResults)
+            {
+                //De prueba, cada string es un dato del jugador sobre las jugadas
+                Debug.Log(s);
+            }
+            UnityEngine.SceneManagement.SceneManager.LoadScene("PantallaInicio");
+        }
+        else
+        {
+            Debug.Log("User login failed. Error #" + www.text);
+        }
     }
     public void VerifyInputs()
     {
         registrarBoton.interactable = (RegisterNombre.text.Length >= 5 && RegisterContrasenya.text.Length >= 5);
+        iniciarBoton.interactable = (LoginNombre.text.Length >= 5 && LoginContrasenya.text.Length >= 5);
     }
 
     void Update()

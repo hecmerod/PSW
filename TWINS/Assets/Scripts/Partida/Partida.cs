@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public abstract class Partida : MonoBehaviour
 {
     AudioSource fuenteAudio;
@@ -53,7 +54,42 @@ public abstract class Partida : MonoBehaviour
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();
     }
+    public void CallSaveData()
+    {
+        StartCoroutine(SavePlayerData());
+    }
+    public void UpdaterData()
+    {
+        if (DBManager.LoggedIn)
+        {
+            // Actualizar puntuacion cuando averigue como coño va
+            DBManager.partidasJugadas++;
+            DBManager.partidasGanadas++;
+            DBManager.puntuacionTotal++;
+            //if la puntuacion > max se updatea etc etc
+        }
+    }
+    IEnumerator SavePlayerData()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name", DBManager.username);
+        form.AddField("totalscore", DBManager.puntuacionTotal);
+        //form.AddField("maxscore", DBManager.puntuacionMax);
+        form.AddField("gamesplayed", DBManager.partidasJugadas);
+        form.AddField("gameswon", DBManager.partidasGanadas);
+        //form.AddField("nivel", DBManager.nivel);
+        WWW www = new WWW("https://twinsproject2.000webhostapp.com/savedata.php", form);
+        yield return www;
+        if(www.text == "0")
+        {
+            Debug.Log("Data saved");
+        }
+        else
+        {
+            Debug.Log("Algo ha pasao");
+        }
 
+    }
     protected void Update() {
         Timer();
         music();
@@ -81,6 +117,8 @@ public abstract class Partida : MonoBehaviour
         }
         if (timePlayed >= time)
         {
+            UpdaterData();
+            CallSaveData();
             IsLost();
         }
         
@@ -89,6 +127,8 @@ public abstract class Partida : MonoBehaviour
     public void IsLost() {
         startedTimer = false;
         animacionDerrota.SetActive(true);
+        UpdaterData();
+        CallSaveData();
         TerminarPartida();
     }
 
@@ -96,6 +136,9 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
+            DBManager.partidasGanadas++;
+            UpdaterData();
+            CallSaveData();
             TerminarPartida();
         }
     }

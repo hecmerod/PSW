@@ -35,7 +35,7 @@ public class PantallaInicio : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", RegisterNombre.text);
         form.AddField("password", RegisterContrasenya.text);
-        WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
+        WWW www = new WWW("https://twinsproject2.000webhostapp.com/register.php", form);
         yield return www;
         if (www.text == "0")
         {
@@ -53,18 +53,21 @@ public class PantallaInicio : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", LoginNombre.text);
         form.AddField("password", LoginContrasenya.text);
-        WWW www = new WWW("http://localhost/sqlconnect/login.php", form);
+        WWW www = new WWW("https://twinsproject2.000webhostapp.com/login.php", form);
         yield return www;
         if(www.text[0] == '0')
         {
             DBManager.username = LoginNombre.text;
             string[] webResults = www.text.Split('\t');
-            foreach(string s in webResults)
-            {
-                //De prueba, cada string es un dato del jugador sobre las jugadas
-                Debug.Log(s);
-            }
+            DBManager.puntuacionTotal = int.Parse(webResults[0]);
+            DBManager.puntuacionMax = int.Parse(webResults[1]);
+            DBManager.partidasJugadas = int.Parse(webResults[2]);
+            DBManager.partidasGanadas = int.Parse(webResults[3]);
+            DBManager.nivel = int.Parse(webResults[4]);
             UnityEngine.SceneManagement.SceneManager.LoadScene("PantallaInicio");
+            Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
+            Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
+            Debug.Log("puntos: " + DBManager.puntuacionMax);
         }
         else
         {
@@ -120,5 +123,9 @@ public class PantallaInicio : MonoBehaviour
         {
 
         }
+    }
+    public void partidaEstandar()
+    {
+        SceneManager.LoadScene("PartidaEstandar");
     }
 }

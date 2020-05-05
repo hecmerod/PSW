@@ -5,20 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    void Update()
-    {
-        
+    public Vector3[] cardsPosition;
+
+    private LevelProperties levelProperties;
+    private int level;
+
+    private void Start() {
+        levelProperties = GameObject.FindObjectOfType<LevelProperties>();
     }
 
-    private void onMouseDown() {
-        //cargar partidaEstandar
-        SceneManager.LoadScene("PartidaEstandar", LoadSceneMode.Additive);
+    private void OnMouseDown() {
+        levelProperties.SetProperties(level, cardsPosition, new PuntuacionFacil());
 
-    }
-
-    private void onDisable()
-    {
-
+        SceneManager.LoadScene("PartidaEstandar");        
     }
 
     private void OnMouseEnter()

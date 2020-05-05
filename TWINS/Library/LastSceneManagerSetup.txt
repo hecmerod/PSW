@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/PartidaEstandar.unity
+- path: Assets/Scenes/LevelsMap.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1,12 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
     void Update()
     {
         
+    }
+
+    private void onMouseDown() {
+        //cargar partidaEstandar
+        SceneManager.LoadScene("PartidaEstandar", LoadSceneMode.Additive);
+
+    }
+
+    private void onDisable()
+    {
+
     }
 
     private void OnMouseEnter()

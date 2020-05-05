@@ -10,7 +10,11 @@ public abstract class Partida : MonoBehaviour
 
     protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
     public GameObject gameObjectTiempo; //pasar por codigo
+    public Text textPuntuacion;
+    protected IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
+    protected ContextoPuntuacion contexto = new ContextoPuntuacion();
     public Text miTiempo, textContador, puntuacion; //pasar por codigo
+    protected int puntos;
 
     protected Tablero tablero;
     protected Card turnedCard;
@@ -103,7 +107,12 @@ public abstract class Partida : MonoBehaviour
     protected void TerminarPartida()
     {
         gameObjectTiempo.SetActive(true);
-        miTiempo.text = ((int)timePlayed).ToString();
+        if (puntos < 0)
+        {
+            puntos = 0;
+        }
+        textPuntuacion.text = "Puntuación: " + puntos.ToString();
+        miTiempo.text = "Tiempo: " + ((int)timePlayed).ToString();
         fuenteAudio = GetComponent<AudioSource>();
         fuenteAudio.Stop();
         numCardsTurned = 2;

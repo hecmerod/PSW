@@ -46,10 +46,16 @@ public class PartidaPorCarta : Partida
                 positionCards[6] = new Vector3(9.75f, 0, 4.25f); positionCards[7] = new Vector3(11, 0, 4.25f);
                 positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
+
+                puntuacionFacil = new PuntuacionFacil();
+                contexto.TipoPuntuacion = puntuacionFacil;
                 break;
 
             case "mediano":
                 positionTablero = new Vector3();
+
+                puntuacionNormal = new PuntuacionNormal();
+                contexto.TipoPuntuacion = puntuacionNormal;
                 break;
             case "grande":
                 positionCards = new Vector3[32];
@@ -74,6 +80,9 @@ public class PartidaPorCarta : Partida
                 positionCards[26] = new Vector3(5.3575f, 0, 7.5f); positionCards[27] = new Vector3(6.786f, 0, 7.5f);
                 positionCards[28] = new Vector3(8.2145f, 0, 7.5f); positionCards[29] = new Vector3(9.643f, 0, 7.5f);
                 positionCards[30] = new Vector3(11.0715f, 0, 7.5f); positionCards[31] = new Vector3(12.5f, 0, 7.5f);
+
+                puntuacionDificil = new PuntuacionDificil();
+                contexto.TipoPuntuacion = puntuacionDificil;
                 break;
             default: //A BORRAR
                 positionCards = new Vector3[12];
@@ -85,6 +94,9 @@ public class PartidaPorCarta : Partida
                 positionCards[6] = new Vector3(9.75f, 0, 4.25f); positionCards[7] = new Vector3(11, 0, 4.25f);
                 positionCards[8] = new Vector3(12.25f, 0, 4.25f); positionCards[9] = new Vector3(10.355f, 0, 2.75f);
                 positionCards[10] = new Vector3(11.625f, 0, 2.75f); positionCards[11] = new Vector3(11, 0, 1.25f);
+
+                puntuacionFacil = new PuntuacionFacil();
+                contexto.TipoPuntuacion = puntuacionFacil;
                 break;
         }
 
@@ -110,21 +122,23 @@ public class PartidaPorCarta : Partida
         if (turnedCard is null)
         {
             turnedCard = card;
-            if (card.PairNumber != RandomNumber)
+            /*if (card.PairNumber != RandomNumber)
             {
                 numCardsTurned = 0;
                 await Task.Delay(200);
                 turnedCard.TurnCard();
                 turnedCard = null;
                 turno++;
-            }
+            }*/
         }
-        else if (turnedCard.IsPair(card))
+        else if (turnedCard.IsPair(card) && card.PairNumber == RandomNumber)
         {
             await Task.Delay(500);
 
             turnedCard = null;
             pairsFound++;
+            puntos = contexto.SumarPuntos();
+            puntuacion.text = "Puntuación: " + puntos.ToString();
 
             IsWon();
             if (pairsFound != numParejas)
@@ -142,6 +156,12 @@ public class PartidaPorCarta : Partida
             numCardsTurned = 0;
             turnedCard = null;
             turno++;
+            puntos = contexto.RestarPuntos();
+            if (puntos < 0)
+            {
+                IsLost();
+            }
+            puntuacion.text = "Puntuación: " + puntos.ToString();
         }
     }
 

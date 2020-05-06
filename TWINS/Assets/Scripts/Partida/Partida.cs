@@ -143,9 +143,9 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            DBManager.partidasGanadas++;
+            /*DBManager.partidasGanadas++;
             if (nextLevel()) DBManager.nivel++;
-            CallSaveData();
+            CallSaveData();*/
             TerminarPartida();
         }
     }

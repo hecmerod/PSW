@@ -40,7 +40,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         Pausado = false;
     }
-    void Pausar()
+    public void Pausar()
     {
         menuPausaUI.SetActive(true);
         Time.timeScale = 0f;

@@ -67,7 +67,9 @@ public class PantallaInicio : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("PantallaInicio");
             Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
             Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
-            Debug.Log("puntos: " + DBManager.puntuacionMax);
+            Debug.Log("score: " + DBManager.puntuacionTotal);
+            Debug.Log("max: " + DBManager.puntuacionMax);
+            Debug.Log("nivel: " + DBManager.nivel);
         }
         else
         {

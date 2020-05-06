@@ -15,6 +15,7 @@ public class PantallaInicio : MonoBehaviour
     public InputField RegisterContrasenya2;
     public Button registrarBoton;
     public Button iniciarBoton;
+    public Button nivelBoton;
     public Text jugadorLogeado;
 
     public void Start()
@@ -59,8 +60,7 @@ public class PantallaInicio : MonoBehaviour
         {
             DBManager.username = LoginNombre.text;
             string[] webResults = www.text.Split('\t');
-            DBManager.puntuacionTotal = int.Parse(webResults[0]);
-            DBManager.puntuacionMax = int.Parse(webResults[1]);
+            DBManager.puntuacionTotal = int.Parse(webResults[1]);
             DBManager.partidasJugadas = int.Parse(webResults[2]);
             DBManager.partidasGanadas = int.Parse(webResults[3]);
             DBManager.nivel = int.Parse(webResults[4]);
@@ -68,7 +68,6 @@ public class PantallaInicio : MonoBehaviour
             Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
             Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
             Debug.Log("score: " + DBManager.puntuacionTotal);
-            Debug.Log("max: " + DBManager.puntuacionMax);
             Debug.Log("nivel: " + DBManager.nivel);
         }
         else
@@ -129,5 +128,9 @@ public class PantallaInicio : MonoBehaviour
     public void partidaEstandar()
     {
         SceneManager.LoadScene("PartidaEstandar");
+    }
+    public void niveles()
+    {
+        SceneManager.LoadScene("LevelsMap");
     }
 }

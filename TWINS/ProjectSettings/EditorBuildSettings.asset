@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantallaInicio.unity
     guid: 17e35aacb2b08a24d9a1ffaf42fd7297
+  - enabled: 1
+    path: Assets/Scenes/LevelsMap.unity
+    guid: 17f37b7f8bfb38b40a373c5559aeafbc
   m_configObjects: {}

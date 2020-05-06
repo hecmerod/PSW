@@ -69,8 +69,8 @@ public abstract class Partida : MonoBehaviour
             // Actualizar puntuacion cuando averigue como coño va
             DBManager.partidasJugadas++;
             DBManager.partidasGanadas++;
-            //DBManager.puntuacionTotal++;
-            //DBManager.puntuacionMax++;
+            DBManager.puntuacionTotal++;
+            DBManager.puntuacionMax++;
             DBManager.nivel++;
             //if la puntuacion > max se updatea etc etc
         }
@@ -79,7 +79,7 @@ public abstract class Partida : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("name", DBManager.username);
-        //form.AddField("score", DBManager.puntuacionTotal);
+        form.AddField("score", DBManager.puntuacionTotal);
         //form.AddField("maxscore", DBManager.puntuacionMax);
         form.AddField("gamesplayed", DBManager.partidasJugadas);
         form.AddField("gameswon", DBManager.partidasGanadas);

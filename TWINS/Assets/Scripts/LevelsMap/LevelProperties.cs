@@ -8,7 +8,9 @@ public class LevelProperties : MonoBehaviour
     private PuntuacionFacil puntuacionFacil;
     private int level;
 
-    private void Awake() { DontDestroyOnLoad(this); }
+    private void Awake() { DontDestroyOnLoad(this);
+        Debug.Log(DBManager.nivel);
+    }
 
     public void SetProperties(int level, Vector3[] cardsPositions, PuntuacionFacil puntuacionFacil) {
         //contador

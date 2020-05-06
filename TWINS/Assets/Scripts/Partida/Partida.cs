@@ -16,6 +16,7 @@ public abstract class Partida : MonoBehaviour
     protected ContextoPuntuacion contexto = new ContextoPuntuacion();
     public Text miTiempo, textContador, puntuacion; //pasar por codigo
     protected int puntos;
+    protected LevelProperties levelProperties;
 
     protected Tablero tablero;
     protected Card turnedCard;
@@ -143,10 +144,14 @@ public abstract class Partida : MonoBehaviour
             startedTimer = false;
             animacionVictoria.SetActive(true);
             DBManager.partidasGanadas++;
-            UpdaterData();
+            if (nextLevel()) DBManager.nivel++;
             CallSaveData();
             TerminarPartida();
         }
+    }
+
+    private bool nextLevel() {
+        return DBManager.nivel == levelProperties.Level;
     }
 
     protected void TerminarPartida()

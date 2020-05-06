@@ -14,12 +14,13 @@ public class PartidaEstandar : Partida
 
 
     private Vector3[] positionCards = new Vector3[0];
-    private Vector3 positionTablero = Vector3.zero;
+    private Vector3 positionTablero = Vector3.zero;    
+
     protected override void SetTableroValues() { //ESTO HAY QUE AUTOMATIZARLO
 
         
 
-        LevelProperties levelProperties = GameObject.FindObjectOfType<LevelProperties>();
+        levelProperties = GameObject.FindObjectOfType<LevelProperties>();
         if (levelProperties == null) SwitchSize();
         else {
             positionCards = levelProperties.CardsPositions;

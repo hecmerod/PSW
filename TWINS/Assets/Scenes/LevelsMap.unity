@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 2
   cardsPosition:
   - {x: 5, y: 0, z: 7.5}
   - {x: 7.5, y: 0, z: 7.5}
@@ -530,6 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 12
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &620789764
@@ -731,6 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 7
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &761360705
@@ -839,6 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 16
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &788118417
@@ -934,6 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 4
   cardsPosition:
   - {x: 2.5, y: 0, z: 2.5}
   - {x: 5, y: 0, z: 2.5}
@@ -1147,6 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   cardsPosition:
   - {x: 5, y: 0, z: 7.5}
   - {x: 10, y: 0, z: 7.5}
@@ -1272,6 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 17
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1123769346
@@ -1933,6 +1940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 13
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1362653532
@@ -2028,6 +2036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 3
   cardsPosition:
   - {x: 2.5, y: 0, z: 3}
   - {x: 4, y: 0, z: 3}
@@ -2250,6 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 10
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1488246903
@@ -2438,6 +2448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 5
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!135 &1516514518
@@ -2606,6 +2617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 15
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1590586436
@@ -3129,6 +3141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 6
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1741151742
@@ -3377,6 +3390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 14
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1854515003
@@ -3485,6 +3499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 9
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1958169630
@@ -3686,6 +3701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 8
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &1992332520
@@ -3794,6 +3810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0cd11c31d89c74fa8271a4091dd850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 11
   cardsPosition: []
   puntuacion: {fileID: 0}
 --- !u!1 &2073754340

@@ -131,6 +131,8 @@ public class PantallaInicio : MonoBehaviour
     }
     public void niveles()
     {
-        SceneManager.LoadScene("LevelsMap");
+        if (DBManager.LoggedIn)
+            SceneManager.LoadScene("LevelsMap");
+        else Debug.Log("no estás loggeado"); //HACERLO EN PANTALLA
     }
 }

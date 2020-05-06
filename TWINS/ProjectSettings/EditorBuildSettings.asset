@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelsMap.unity
     guid: 17f37b7f8bfb38b40a373c5559aeafbc
+  - enabled: 1
+    path: Assets/Scenes/PantallaPerfil.unity
+    guid: ca2591e6069cf004b984eb96a3caf7d0
   m_configObjects: {}

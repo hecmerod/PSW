@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PantallaInicio : MonoBehaviour
 {
@@ -16,11 +17,15 @@ public class PantallaInicio : MonoBehaviour
     public Button registrarBoton;
     public Button iniciarBoton;
     public Button nivelBoton;
+    public Button perfilButon;
     public Text jugadorLogeado;
 
     public void Start()
     {
-        if (DBManager.LoggedIn) { jugadorLogeado.text = "Player: " + DBManager.username; }
+        if (DBManager.LoggedIn) { 
+            jugadorLogeado.text = "Player: " + DBManager.username;
+            perfilButon.interactable = true;
+        }
     }
     public void CallRegister()
     {
@@ -81,6 +86,7 @@ public class PantallaInicio : MonoBehaviour
         iniciarBoton.interactable = (LoginNombre.text.Length >= 5 && LoginContrasenya.text.Length >= 5);
     }
 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -134,5 +140,9 @@ public class PantallaInicio : MonoBehaviour
         if (DBManager.LoggedIn)
             SceneManager.LoadScene("LevelsMap");
         else Debug.Log("no estás loggeado"); //HACERLO EN PANTALLA
+    }
+    public void perfilBoton()
+    {
+        SceneManager.LoadScene("PantallaPerfil");
     }
 }

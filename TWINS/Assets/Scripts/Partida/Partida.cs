@@ -67,13 +67,8 @@ public abstract class Partida : MonoBehaviour
     {
         if (DBManager.LoggedIn)
         {
-            // Actualizar puntuacion cuando averigue como coño va
             DBManager.partidasJugadas++;
-            DBManager.partidasGanadas++;
-            DBManager.puntuacionTotal++;
-            DBManager.puntuacionMax++;
-            DBManager.nivel++;
-            //if la puntuacion > max se updatea etc etc
+            DBManager.puntuacionTotal+= puntos;
         }
     }
     IEnumerator SavePlayerData()

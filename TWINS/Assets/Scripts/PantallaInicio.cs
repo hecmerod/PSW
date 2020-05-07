@@ -145,4 +145,10 @@ public class PantallaInicio : MonoBehaviour
     {
         SceneManager.LoadScene("PantallaPerfil");
     }
+
+    public void salir()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
 }

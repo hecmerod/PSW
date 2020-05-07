@@ -18,7 +18,7 @@ public class Perfil : MonoBehaviour
         nombre.text = DBManager.username;
         partidas.text = DBManager.partidasJugadas.ToString();
         wins.text = DBManager.partidasGanadas.ToString();
-        niveles.text = DBManager.nivel.ToString();
+        niveles.text = (DBManager.nivel - 1).ToString();
         score.text = DBManager.puntuacionTotal.ToString();
     }
 

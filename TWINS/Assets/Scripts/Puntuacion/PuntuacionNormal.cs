@@ -38,4 +38,8 @@ public class PuntuacionNormal : IPuntuacion
             haAcertado = false;
         }
     }
+    public override void ResetearPuntuacion()
+    {
+        puntuacion = 0;
+    }
 }

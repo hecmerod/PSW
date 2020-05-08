@@ -39,4 +39,8 @@ public class PuntuacionDificil : IPuntuacion
             haAcertado = false;
         }
     }
+    public override void ResetearPuntuacion()
+    {
+        puntuacion = 0;
+    }
 }

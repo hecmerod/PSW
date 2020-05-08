@@ -152,4 +152,12 @@ public class PantallaInicio : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
+    public void Desafio()
+    {
+        if (DBManager.LoggedIn)
+        {
+            SceneManager.LoadScene("Desafios");
+        }
+        else { Debug.Log("No estás logeado"); }
+    }
 }

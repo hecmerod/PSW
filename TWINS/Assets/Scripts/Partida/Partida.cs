@@ -127,6 +127,7 @@ public abstract class Partida : MonoBehaviour
 
         startedTimer = false;
         animacionDerrota.SetActive(true);
+        contexto.ResetearPuntuacion();
         UpdaterData();
         CallSaveData();
         TerminarPartida();
@@ -136,9 +137,10 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            /*DBManager.partidasGanadas++;
+            contexto.ResetearPuntuacion();
+            DBManager.partidasGanadas++;
             if (nextLevel()) DBManager.nivel++;
-            CallSaveData();*/
+            CallSaveData();
             TerminarPartida();
         }
     }

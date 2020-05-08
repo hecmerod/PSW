@@ -16,7 +16,6 @@ public abstract class Partida : MonoBehaviour
     protected ContextoPuntuacion contexto = new ContextoPuntuacion();
     public Text miTiempo, textContador, puntuacion; //pasar por codigo
     protected int puntos;
-    protected LevelProperties levelProperties;
 
     protected Tablero tablero;
     protected Card turnedCard;
@@ -29,6 +28,9 @@ public abstract class Partida : MonoBehaviour
     protected float time, timePlayed = 0, contador;
     Vector3 posicionContador = Vector3.zero;
     Vector3 posicionPuntuacion = Vector3.zero;
+    protected Vector3[] positionCards = new Vector3[0];
+    protected Vector3 positionTablero = Vector3.zero;
+
 
     protected void Start()
     {
@@ -146,7 +148,7 @@ public abstract class Partida : MonoBehaviour
     }
 
     private bool nextLevel() {
-        return DBManager.nivel == levelProperties.Level;
+        return DBManager.nivel == GameProperties.level;
     }
 
     protected void TerminarPartida()

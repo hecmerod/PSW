@@ -70,10 +70,10 @@ public class PantallaInicio : MonoBehaviour
             DBManager.partidasGanadas = int.Parse(webResults[3]);
             DBManager.nivel = int.Parse(webResults[4]);
             UnityEngine.SceneManagement.SceneManager.LoadScene("PantallaInicio");
-            Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
+            /*Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
             Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
             Debug.Log("score: " + DBManager.puntuacionTotal);
-            Debug.Log("nivel: " + DBManager.nivel);
+            Debug.Log("nivel: " + DBManager.nivel);*/
         }
         else
         {
@@ -133,6 +133,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void partidaEstandar()
     {
+        GameProperties.SwitchSize("pequeño");
         SceneManager.LoadScene("PartidaEstandar");
     }
     public void niveles()

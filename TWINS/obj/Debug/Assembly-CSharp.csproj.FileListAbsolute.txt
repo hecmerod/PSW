@@ -544,3 +544,5 @@ D:\PSW\PSW\TWINS\obj\Debug\Assembly-CSharp.dll
 D:\PSW\PSW\TWINS\obj\Debug\Assembly-CSharp.pdb
 F:\Projects\PSW\TWINS\Temp\bin\Debug\Unity.2D.Sprite.Editor.dll
 F:\Projects\PSW\TWINS\Temp\bin\Debug\Unity.2D.Sprite.Editor.pdb
+F:\Projects\PSW\TWINS\Temp\bin\Debug\GETween.dll
+F:\Projects\PSW\TWINS\Temp\bin\Debug\GUIAnimatorFREE.dll

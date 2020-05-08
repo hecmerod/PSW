@@ -20,7 +20,7 @@ public abstract class Partida : MonoBehaviour
     protected Tablero tablero;
     protected Card turnedCard;
 
-    protected string tamaño, tematica;
+    protected string tematica;
 
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
@@ -31,29 +31,24 @@ public abstract class Partida : MonoBehaviour
     protected Vector3[] positionCards = new Vector3[0];
     protected Vector3 positionTablero = Vector3.zero;
 
-
-    protected void Start()
-    {
-
-    }
-
     protected void Awake() {
         CargarRecursos();
         InstanciarAnimacion();
         tematica = ElegirBarajaAPArtida.tematica;
-        tamaño = "pequeño";
-        if (tamaño.Equals("pequeño"))
-        {
-            time = 60f;
-            posicionContador = new Vector3(-118f, 140f, 0);
-            posicionPuntuacion = new Vector3(-106, 87, 0);
-        }
-        else
-        {
-            time = 160f;
-            posicionContador = new Vector3(-170f, 233.7f, 0);
-            posicionPuntuacion = new Vector3(-23, 233.7f, 0);
-        }
+        LoadSettings();
+    }
+
+    public void LoadSettings() {
+        if (GameProperties.cardsPositions == null) GameProperties.PresetSettings("pequeño");
+
+        positionCards = GameProperties.cardsPositions;
+        contexto.TipoPuntuacion = GameProperties.puntuacion;
+        positionTablero = GameProperties.positionTablero;
+
+        time = GameProperties.time;
+        posicionContador = GameProperties.cronoPosition;
+        posicionPuntuacion = GameProperties.posicionPuntuacion;
+
         puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
 
@@ -61,6 +56,7 @@ public abstract class Partida : MonoBehaviour
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();
     }
+
     public void CallSaveData()
     {
         StartCoroutine(SavePlayerData());
@@ -84,12 +80,10 @@ public abstract class Partida : MonoBehaviour
         form.AddField("nivel", DBManager.nivel);
         WWW www = new WWW("https://twinsproject2.000webhostapp.com/savedata.php", form);
         yield return www;
-        if(www.text == "0")
-        {
+        if(www.text == "0") {
             Debug.Log("Data saved");
         }
-        else
-        {
+        else {
             Debug.Log("Algo ha pasao");
         }
 
@@ -129,6 +123,8 @@ public abstract class Partida : MonoBehaviour
     }
 
     public void IsLost() {
+        GameProperties.PresetSettings("pequeño");
+
         startedTimer = false;
         animacionDerrota.SetActive(true);
         UpdaterData();

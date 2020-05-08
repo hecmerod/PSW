@@ -35,6 +35,7 @@ public class Level : MonoBehaviour
 
     private void OnMouseDown() {
         if (locked) return;
+
         GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil());
 
         SceneManager.LoadScene("PartidaEstandar");        

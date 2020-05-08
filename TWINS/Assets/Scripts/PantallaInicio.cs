@@ -133,7 +133,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void partidaEstandar()
     {
-        GameProperties.SwitchSize("pequeño");
+        GameProperties.PresetSettings("pequeño");
         SceneManager.LoadScene("PartidaEstandar");
     }
     public void niveles()

@@ -19,8 +19,7 @@ public class MenuPausa : MonoBehaviour
         {
             if (checkerSalir == false && checkerReiniciar == false)
             {
-                if (Pausado)
-                {
+                if (Pausado) {
                     Reanudar();
                 }
                 else
@@ -60,7 +59,7 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         if(checkerSalir == true) {
-            //METER AQUI DELETE LEVELPROPERTIES SI HAY
+            //ASDASDA
             SceneManager.LoadScene("PantallaInicio"); 
         }
         else
@@ -77,8 +76,8 @@ public class MenuPausa : MonoBehaviour
         if(checkerSalir == true) { checkerSalir = false; }
         else { checkerReiniciar = false; }
     }
-    public void reiniciar()
-    {
+    public void reiniciar() {
+        GameProperties.PresetSettings("pequeño");
         menuPausaUI.SetActive(false); 
         salirPreguntaUI.SetActive(true);
         checkerReiniciar = true;

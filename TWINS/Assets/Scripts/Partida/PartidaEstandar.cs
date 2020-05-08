@@ -12,16 +12,7 @@ public class PartidaEstandar : Partida
         SetTableroValues();
     }
 
-    protected override void SetTableroValues() {        
-
-        positionCards = GameProperties.cardsPositions;
-        contexto.TipoPuntuacion = GameProperties.puntuacionFacil;
-        positionTablero = GameProperties.positionTablero;
-
-        /*CAMBIAAAAAAAAAAAAAAR*/        
-        puntuacionFacil = new PuntuacionFacil();
-        contexto.TipoPuntuacion = puntuacionFacil;
-        /*asdddddddddddd*/
+    protected override void SetTableroValues() {       
 
         gameObjectTablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity);
         gameObjectTablero.name = "Tablero";

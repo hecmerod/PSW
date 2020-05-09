@@ -13,6 +13,7 @@ public class Level : MonoBehaviour
     public IPuntuacion puntuacion;
     private bool locked = false;
     private Renderer renderer;
+    public string tematica;
 
     private void Awake() {
         renderer = GetComponent<Renderer>();
@@ -36,7 +37,7 @@ public class Level : MonoBehaviour
     private void OnMouseDown() {
         if (locked) return;
 
-        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil());
+        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil(), tematica);
 
         SceneManager.LoadScene("PartidaEstandar");        
     }

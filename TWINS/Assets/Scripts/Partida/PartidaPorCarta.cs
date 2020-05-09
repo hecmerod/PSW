@@ -25,11 +25,29 @@ public class PartidaPorCarta : Partida
 
     private void InitializeMainCard() {
         imagen.sprite = carta;
-        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(5.36f, 2.38f, 2.69f), Quaternion.Euler(180, 180, 0));
+        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(2.36f, 2.38f, 2.69f), Quaternion.Euler(180, 180, 335));
         auxCard.GetComponent<Rigidbody>().useGravity = false;
         card = auxCard.GetComponent<Card>();
-        card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + elegirObjetivo());
+        card.Cara.material = Resources.Load<Material>("Barajas/"+  ElegirCartaObjetivo()  + "/Materials/" + elegirObjetivo());
         card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
+    }
+
+    private string ElegirCartaObjetivo()
+    {
+        string res = "";
+        switch (GameProperties.baraja)
+        {
+            case "animal":
+                res = "Animales_Baraja";
+                break;
+            case "profesion":
+                res = "Profesiones_Baraja";
+                break;
+            case "bandera":
+                res = "Banderas_Baraja";
+                break;
+        }
+        return res;
     }
 
     protected override void SetTableroValues() {
@@ -103,7 +121,7 @@ public class PartidaPorCarta : Partida
 
     public void cambiarCarta(int indice)
     {
-        card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + indice);
+        card.Cara.material = Resources.Load<Material>("Barajas/" + ElegirCartaObjetivo() +"/Materials/" + indice);
     }
 
     public int elegirObjetivo()

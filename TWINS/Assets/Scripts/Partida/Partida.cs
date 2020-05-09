@@ -34,12 +34,12 @@ public abstract class Partida : MonoBehaviour
     protected void Awake() {
         CargarRecursos();
         InstanciarAnimacion();
-        tematica = ElegirBarajaAPArtida.tematica;
+        tematica = GameProperties.baraja;
         LoadSettings();
     }
 
     public void LoadSettings() {
-        if (GameProperties.cardsPositions == null) GameProperties.PresetSettings("pequeño");
+        GameProperties.PresetSettings(GameProperties.tamaño);
 
         positionCards = GameProperties.cardsPositions;
         contexto.TipoPuntuacion = GameProperties.puntuacion;
@@ -123,10 +123,9 @@ public abstract class Partida : MonoBehaviour
     }
 
     public void IsLost() {
-        GameProperties.PresetSettings("pequeño");
-
         startedTimer = false;
         animacionDerrota.SetActive(true);
+        contexto.ResetearPuntuacion();
         UpdaterData();
         CallSaveData();
         TerminarPartida();
@@ -136,9 +135,10 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 2) {
             startedTimer = false;
             animacionVictoria.SetActive(true);
-            /*DBManager.partidasGanadas++;
+            contexto.ResetearPuntuacion();
+            DBManager.partidasGanadas++;
             if (nextLevel()) DBManager.nivel++;
-            CallSaveData();*/
+            CallSaveData();
             TerminarPartida();
         }
     }

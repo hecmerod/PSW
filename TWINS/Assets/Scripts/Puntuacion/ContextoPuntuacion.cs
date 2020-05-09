@@ -25,4 +25,8 @@ public class ContextoPuntuacion : MonoBehaviour
     {
         this.tipoPuntuacion.HaVueltoACero();
     }
+    public void ResetearPuntuacion()
+    {
+        this.tipoPuntuacion.ResetearPuntuacion();
+    }
 }

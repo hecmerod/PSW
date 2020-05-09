@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantallaPerfil.unity
     guid: ca2591e6069cf004b984eb96a3caf7d0
+  - enabled: 1
+    path: Assets/Scenes/Desafios.unity
+    guid: 06d94b06fe6f1e247ad0490312205ce0
+  - enabled: 1
+    path: Assets/Scenes/PartidaPorCarta.unity
+    guid: 7740e72f5bb8bab4aa92edcd733818e6
+  - enabled: 1
+    path: Assets/Scenes/PartidaPorCategoria.unity
+    guid: ac8dfe4d3fe73e9429300c86aa718f05
   m_configObjects: {}

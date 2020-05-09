@@ -14,11 +14,12 @@ public static class GameProperties
     public static string baraja;
     public static string tamaño;
     public static bool reload;
-
+    public static string tipoPartida;
+    
     public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono,
-                                     PuntuacionFacil pntFacil) {
+                                     PuntuacionFacil pntFacil , string tematica) {
         cardsPositions = posCard; level = lv; puntuacion = pntFacil;
-        cronoPosition = posCrono; positionTablero = posTablero;
+        cronoPosition = posCrono; positionTablero = posTablero; baraja = tematica; time = 60f;
     }   
 
     public static void PresetSettings(string tamaño)
@@ -75,8 +76,8 @@ public static class GameProperties
                 cardsPositions[30] = new Vector3(11.0715f, 0, 7.5f); cardsPositions[31] = new Vector3(12.5f, 0, 7.5f);
                 puntuacion = new PuntuacionDificil();
                 time = 160f;
-                cronoPosition = new Vector3(-170f, 233.7f, 0);
-                posicionPuntuacion = new Vector3(-23, 233.7f, 0);
+                cronoPosition = new Vector3(-180f, 233.7f, 0);
+                posicionPuntuacion = new Vector3(7, 233.7f, 0);
                 break;
         }
     }

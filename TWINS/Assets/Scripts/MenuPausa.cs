@@ -59,7 +59,7 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         if(checkerSalir == true) {
-            //ASDASDA
+            GameProperties.Reset();
             SceneManager.LoadScene("PantallaInicio"); 
         }
         else

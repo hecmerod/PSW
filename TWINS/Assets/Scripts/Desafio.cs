@@ -9,6 +9,7 @@ public class Desafio : MonoBehaviour
     public Vector3[] cardsPosition;
     public Vector3 positionTablero;
     public Vector3 cronoPosition;
+    public Vector3 puntuacionPosition;
     public IPuntuacion puntuacion;
     private Renderer renderer;
     private GameObject marco;
@@ -21,7 +22,7 @@ public class Desafio : MonoBehaviour
     private void OnMouseDown()
     {
 
-        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil(), "animales");
+        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), "animales");
 
         SceneManager.LoadScene("PartidaEstandar");
     }

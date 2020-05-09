@@ -677,9 +677,10 @@ MonoBehaviour:
   - {x: 10, y: 0, z: 2.5}
   - {x: 12.5, y: 0, z: 2.5}
   positionTablero: {x: 7.5, y: 0, z: 5}
-  cronoPosition: {x: 0, y: 0, z: 0}
+  cronoPosition: {x: -118, y: 120, z: 0}
+  puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
-  baraja: animal
+  baraja: profesion
 --- !u!135 &257814854
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -896,6 +897,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &620789764
@@ -1168,6 +1170,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &761360705
@@ -1280,6 +1283,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &788118417
@@ -1391,7 +1395,8 @@ MonoBehaviour:
   - {x: 7.5, y: 0, z: 5.75}
   - {x: 7.5, y: 0, z: 4.25}
   positionTablero: {x: 7.5, y: 0, z: 5}
-  cronoPosition: {x: 0, y: 0, z: 0}
+  cronoPosition: {x: -118, y: 140, z: 0}
+  puntuacionPosition: {x: -106, y: 87, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
 --- !u!135 &788118422
@@ -1683,7 +1688,8 @@ MonoBehaviour:
   - {x: 5, y: 0, z: 2.5}
   - {x: 10, y: 0, z: 2.5}
   positionTablero: {x: 7.5, y: 0, z: 5}
-  cronoPosition: {x: 0, y: 0, z: 0}
+  cronoPosition: {x: -118, y: 120, z: 0}
+  puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
 --- !u!135 &957046462
@@ -1809,6 +1815,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1090306510
@@ -2637,6 +2644,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1362653532
@@ -2744,7 +2752,8 @@ MonoBehaviour:
   - {x: 12.25, y: 0, z: 7.5}
   - {x: 13.75, y: 0, z: 7.5}
   positionTablero: {x: 7.5, y: 0, z: 5}
-  cronoPosition: {x: 0, y: 0, z: 0}
+  cronoPosition: {x: -118, y: 140, z: 0}
+  puntuacionPosition: {x: -106, y: 87, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
 --- !u!135 &1362653537
@@ -2963,6 +2972,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1488246903
@@ -3156,6 +3166,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
 --- !u!135 &1516514518
@@ -3328,6 +3339,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1590586436
@@ -3941,6 +3953,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1741151742
@@ -4193,6 +4206,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1854515003
@@ -4306,6 +4320,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1909066917
@@ -4676,6 +4691,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &1990858415
@@ -4870,6 +4886,7 @@ MonoBehaviour:
   cardsPosition: []
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
+  puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
 --- !u!1 &2073754340

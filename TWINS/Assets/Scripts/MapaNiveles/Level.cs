@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     public Vector3[] cardsPosition;
     public Vector3 positionTablero;
     public Vector3 cronoPosition;
+    public Vector3 puntuacionPosition;
     public IPuntuacion puntuacion;
     private bool locked = false;
     private Renderer renderer;
@@ -37,7 +38,7 @@ public class Level : MonoBehaviour
     private void OnMouseDown() {
         if (locked) return;
 
-        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil(), baraja);
+        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
         Debug.Log(baraja);
         SceneManager.LoadScene("PartidaEstandar");        
     }

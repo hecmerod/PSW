@@ -44,6 +44,8 @@ public abstract class Partida : MonoBehaviour
         contexto.TipoPuntuacion = GameProperties.puntuacion;
         positionTablero = GameProperties.positionTablero;
 
+        tematica = GameProperties.baraja;
+
         time = GameProperties.time;
         posicionContador = GameProperties.cronoPosition;
         posicionPuntuacion = GameProperties.posicionPuntuacion;
@@ -55,8 +57,7 @@ public abstract class Partida : MonoBehaviour
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();
 
-        tematica = GameProperties.baraja;
-        Debug.Log(GameProperties.baraja);
+        
     }
 
     public void CallSaveData()

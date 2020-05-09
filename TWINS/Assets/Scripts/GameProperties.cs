@@ -11,19 +11,21 @@ public static class GameProperties
     public static Vector3[] cardsPositions;
     public static IPuntuacion puntuacion;
     public static int level;
+    public static bool isLevel = false;
     public static string baraja = "animal";
     public static string tamaño = "pequeño";
-    public static bool reload;
     public static string tipoPartida = "PartidaEstandar";
     
-    public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono,
+    public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
                                      PuntuacionFacil pntFacil , string brja) {
         cardsPositions = posCard; level = lv; puntuacion = pntFacil;
-        cronoPosition = posCrono; positionTablero = posTablero; baraja = brja; time = 60f;
+        cronoPosition = posCrono; posicionPuntuacion = posPuntuacion; 
+        positionTablero = posTablero; baraja = brja; time = 60f;
+        isLevel = true;
     }   
 
-    public static void PresetSettings(string tamaño)
-    {
+    public static void PresetSettings(string tamaño) {
+        if (isLevel) return;
         GameProperties.tamaño = tamaño;
         GameProperties.level = -1;
 
@@ -80,5 +82,12 @@ public static class GameProperties
                 posicionPuntuacion = new Vector3(7, 233.7f, 0);
                 break;
         }
+    }
+
+    public static void Reset() {
+        baraja = "animal";
+        tamaño = "pequeño";
+        tipoPartida = "PartidaEstandar";
+        isLevel = false;
     }
 }

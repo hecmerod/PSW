@@ -9,6 +9,7 @@ public class PantallaInicio : MonoBehaviour
 {
     public GameObject Login;
     public GameObject Register;
+    public GameObject caracteristicas;
     public InputField LoginContrasenya;
     public InputField LoginNombre;
     public InputField RegisterNombre;
@@ -165,4 +166,10 @@ public class PantallaInicio : MonoBehaviour
     {
         SceneManager.LoadScene("ElegirBaraja");
     }
+
+    public void MostrarCaracteristicas()
+    {
+        caracteristicas.SetActive(true);
+    }
 }
+

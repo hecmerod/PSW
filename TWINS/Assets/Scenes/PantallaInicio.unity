@@ -504,7 +504,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 580954983}
+        m_MethodName: HandleInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &77344533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3440,7 +3451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &553957551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3538,6 +3549,9 @@ GameObject:
   - component: {fileID: 580954979}
   - component: {fileID: 580954978}
   - component: {fileID: 580954982}
+  - component: {fileID: 580954984}
+  - component: {fileID: 580954983}
+  - component: {fileID: 580954985}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3651,6 +3665,9 @@ MonoBehaviour:
   Login: {fileID: 1983100136}
   Register: {fileID: 1382401617}
   caracteristicas: {fileID: 553957550}
+  partidaSel: {fileID: 0}
+  tableroSel: {fileID: 0}
+  barajaSel: {fileID: 0}
   LoginContrasenya: {fileID: 703091706}
   LoginNombre: {fileID: 78762405}
   RegisterNombre: {fileID: 1558831049}
@@ -3661,6 +3678,42 @@ MonoBehaviour:
   nivelBoton: {fileID: 0}
   perfilButon: {fileID: 1657066532}
   jugadorLogeado: {fileID: 1268482788}
+--- !u!114 &580954983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580954977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14cee15e5b45bc40b13600ff6355f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &580954984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580954977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a7a11ff472dae4bbc02b40eb5d23d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &580954985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580954977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56655b998491e348bdcbf041ba586a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &581662441
 GameObject:
   m_ObjectHideFlags: 0
@@ -5410,7 +5463,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 580954982}
-        m_MethodName: Inicio
+        m_MethodName: comenzarPartida
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5553,7 +5606,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 580954984}
+        m_MethodName: HandleInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &961559021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8558,7 +8622,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 580954985}
+        m_MethodName: HandleInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1591984978
 MonoBehaviour:
   m_ObjectHideFlags: 0

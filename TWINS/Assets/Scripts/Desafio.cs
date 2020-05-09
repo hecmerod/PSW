@@ -21,7 +21,7 @@ public class Desafio : MonoBehaviour
     private void OnMouseDown()
     {
 
-        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil());
+        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, new PuntuacionFacil(), "animales");
 
         SceneManager.LoadScene("PartidaEstandar");
     }

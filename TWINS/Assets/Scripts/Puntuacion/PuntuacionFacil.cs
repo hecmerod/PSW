@@ -42,5 +42,7 @@ public class PuntuacionFacil : IPuntuacion
     public override void ResetearPuntuacion()
     {
         puntuacion = 0;
+        fallosIniciales = 4;
+        haAcertado = false;
     }
 }

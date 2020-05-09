@@ -10,6 +10,9 @@ public class PantallaInicio : MonoBehaviour
     public GameObject Login;
     public GameObject Register;
     public GameObject caracteristicas;
+    public Dropdown partidaSel;
+    public Dropdown tableroSel;
+    public Dropdown barajaSel;
     public InputField LoginContrasenya;
     public InputField LoginNombre;
     public InputField RegisterNombre;
@@ -27,6 +30,7 @@ public class PantallaInicio : MonoBehaviour
             jugadorLogeado.text = "Player: " + DBManager.username;
             perfilButon.interactable = true;
         }
+        GameProperties.tamaño = "";
     }
     public void CallRegister()
     {
@@ -132,10 +136,10 @@ public class PantallaInicio : MonoBehaviour
 
         }
     }
-    public void partidaEstandar()
+    public void comenzarPartida()
     {
-        GameProperties.PresetSettings("pequeño");
-        SceneManager.LoadScene("PartidaEstandar");
+        GameProperties.PresetSettings(GameProperties.tamaño);
+        SceneManager.LoadScene(GameProperties.tipoPartida);
     }
     public void niveles()
     {

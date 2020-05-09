@@ -13,8 +13,8 @@ public class PartidaPorCategoria : Partida
     public String aux = null;
     public int pairsCategoria2;
     public int pairsCategoria4;
-    IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
-    private ContextoPuntuacion contexto = new ContextoPuntuacion();
+    //IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
+    //private ContextoPuntuacion contexto = new ContextoPuntuacion();
     public void Start()
     {
         SetTableroValues();

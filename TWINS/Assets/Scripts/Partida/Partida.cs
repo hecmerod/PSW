@@ -39,7 +39,7 @@ public abstract class Partida : MonoBehaviour
     }
 
     public void LoadSettings() {
-        if (GameProperties.cardsPositions == null) GameProperties.PresetSettings("pequeño");
+        if (GameProperties.cardsPositions == null) GameProperties.PresetSettings("grande");
 
         positionCards = GameProperties.cardsPositions;
         contexto.TipoPuntuacion = GameProperties.puntuacion;

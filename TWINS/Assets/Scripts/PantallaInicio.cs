@@ -160,4 +160,9 @@ public class PantallaInicio : MonoBehaviour
         }
         else { Debug.Log("No estás logeado"); }
     }
+
+    public void seleccionarBaraja()
+    {
+        SceneManager.LoadScene("ElegirBaraja");
+    }
 }

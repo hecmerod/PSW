@@ -11,15 +11,15 @@ public static class GameProperties
     public static Vector3[] cardsPositions;
     public static IPuntuacion puntuacion;
     public static int level;
-    public static string baraja;
-    public static string tamaño;
+    public static string baraja = "animal";
+    public static string tamaño = "pequeño";
     public static bool reload;
-    public static string tipoPartida;
+    public static string tipoPartida = "PartidaEstandar";
     
     public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono,
-                                     PuntuacionFacil pntFacil , string tematica) {
+                                     PuntuacionFacil pntFacil , string brja) {
         cardsPositions = posCard; level = lv; puntuacion = pntFacil;
-        cronoPosition = posCrono; positionTablero = posTablero; baraja = tematica; time = 60f;
+        cronoPosition = posCrono; positionTablero = posTablero; baraja = brja; time = 60f;
     }   
 
     public static void PresetSettings(string tamaño)

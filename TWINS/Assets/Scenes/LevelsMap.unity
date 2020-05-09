@@ -679,7 +679,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: animal
 --- !u!135 &257814854
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &620789764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &761360705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &788118417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1393,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: animal
 --- !u!135 &788118422
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1685,7 +1685,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: animales
+  baraja: animal
 --- !u!135 &957046462
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1090306510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1362653532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: animal
 --- !u!135 &1362653537
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2964,7 +2964,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1488246903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,7 +3157,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: animal
 --- !u!135 &1516514518
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3329,7 +3329,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1590586436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,7 +3942,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1741151742
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,7 +4194,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1854515003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4307,7 +4307,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1909066917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,7 +4677,7 @@ MonoBehaviour:
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &1990858415
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,7 +4871,7 @@ MonoBehaviour:
   positionTablero: {x: 0, y: 0, z: 0}
   cronoPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
-  tematica: 
+  baraja: 
 --- !u!1 &2073754340
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,6 +97,7 @@ public class PantallaInicio : MonoBehaviour
         {
             Login.SetActive(false);
             Register.SetActive(false);
+            caracteristicas.SetActive(false);
         }
     }
     public void Ingreso()

@@ -33,8 +33,7 @@ public abstract class Partida : MonoBehaviour
 
     protected void Awake() {
         CargarRecursos();
-        InstanciarAnimacion();
-        tematica = GameProperties.baraja;
+        InstanciarAnimacion();        
         LoadSettings();
     }
 
@@ -48,13 +47,16 @@ public abstract class Partida : MonoBehaviour
         time = GameProperties.time;
         posicionContador = GameProperties.cronoPosition;
         posicionPuntuacion = GameProperties.posicionPuntuacion;
-
+        
         puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
 
         textContador.transform.localPosition = posicionContador;
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();
+
+        tematica = GameProperties.baraja;
+        Debug.Log(GameProperties.baraja);
     }
 
     public void CallSaveData()

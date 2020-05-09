@@ -30,7 +30,6 @@ public class PantallaInicio : MonoBehaviour
             jugadorLogeado.text = "Player: " + DBManager.username;
             perfilButon.interactable = true;
         }
-        GameProperties.tamaño = "";
     }
     public void CallRegister()
     {
@@ -74,7 +73,7 @@ public class PantallaInicio : MonoBehaviour
             DBManager.partidasJugadas = int.Parse(webResults[2]);
             DBManager.partidasGanadas = int.Parse(webResults[3]);
             DBManager.nivel = int.Parse(webResults[4]);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("PantallaInicio");
+            SceneManager.LoadScene("PantallaInicio");
             /*Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
             Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
             Debug.Log("score: " + DBManager.puntuacionTotal);

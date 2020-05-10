@@ -22,13 +22,27 @@ public class PantallaInicio : MonoBehaviour
     public Button iniciarBoton;
     public Button nivelBoton;
     public Button perfilButon;
+    public Button cerrarsesionBoton;
     public Text jugadorLogeado;
 
     public void Start()
     {
-        if (DBManager.LoggedIn) { 
+
+    }
+    private void Awake()
+    {
+        if (DBManager.username == null)
+        {
+            jugadorLogeado.text = "Usuario no logeado";
+            perfilButon.interactable = false;
+            cerrarsesionBoton.interactable = false;
+
+        }
+        else
+        {
             jugadorLogeado.text = "Player: " + DBManager.username;
             perfilButon.interactable = true;
+            cerrarsesionBoton.interactable = true;
         }
     }
     public void CallRegister()
@@ -174,6 +188,11 @@ public class PantallaInicio : MonoBehaviour
     public void MostrarCaracteristicas()
     {
         caracteristicas.SetActive(true);
+    }
+    public void cerrarSesion()
+    {
+        DBManager.LogOut();
+        SceneManager.LoadScene("PantallaInicio");
     }
 }
 

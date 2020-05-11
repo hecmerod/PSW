@@ -17,10 +17,15 @@ public class PartidaPorCarta : Partida
     public int RandomNumber;
     public int numParejas;
 
+    AudioSource parejaCorrecta;
+    GameObject camara;
+
     public void Start()
     {
         SetTableroValues();
-        InitializeMainCard();
+        InitializeMainCard(); 
+        camara = GameObject.Find("Main Camera");
+        parejaCorrecta = camara.GetComponent<AudioSource>();
     }
 
     private void InitializeMainCard() {
@@ -87,6 +92,9 @@ public class PartidaPorCarta : Partida
         }
         else if (turnedCard.IsPair(card) && card.PairNumber == RandomNumber)
         {
+            
+            parejaCorrecta.Play();
+
             await Task.Delay(500);
 
             turnedCard = null;

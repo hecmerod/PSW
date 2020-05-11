@@ -15,6 +15,10 @@ public class PartidaPorCategoria : Partida
     public int pairsCategoria4;
     //IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     //private ContextoPuntuacion contexto = new ContextoPuntuacion();
+
+    AudioSource parejaCorrecta;
+    GameObject camara;
+
     public void Start()
     {
         SetTableroValues();
@@ -23,6 +27,8 @@ public class PartidaPorCategoria : Partida
         categoria.text = elegirCategoria();
         pairsCategoria2 = 0;
         pairsCategoria4 = 0;
+        camara = GameObject.Find("Main Camera");
+        parejaCorrecta = camara.GetComponent<AudioSource>();
     }
     public void iniciarCategoria()
     {
@@ -131,6 +137,8 @@ public class PartidaPorCategoria : Partida
         }
         else if (turnedCard.IsPair(card) && esCategoria(card) == true)
         {
+            parejaCorrecta.Play();
+
             await Task.Delay(500);
 
             turnedCard = null;

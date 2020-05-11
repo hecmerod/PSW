@@ -7,9 +7,13 @@ using UnityEngine.UI;
 
 public class PartidaEstandar : Partida
 {
-    
+    AudioSource parejaCorrecta;
+    GameObject camara;
+
     public void Start() {
         SetTableroValues();
+        camara = GameObject.Find("Main Camera");
+        parejaCorrecta = camara.GetComponent<AudioSource>();
     }
 
     protected override void SetTableroValues() {       
@@ -34,8 +38,11 @@ public class PartidaEstandar : Partida
         }
         else if (turnedCard.IsPair(card))
         {
-            await Task.Delay(500);
+            parejaCorrecta.Play();
 
+            await Task.Delay(500);
+            
+            
             turnedCard = null;
             pairsFound++;
             puntos = contexto.SumarPuntos();

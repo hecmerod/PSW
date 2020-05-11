@@ -18,6 +18,10 @@ public class Card : MonoBehaviour
     private bool showMarco = true;
     private Vector3 initialPosition;
 
+    AudioSource audioSource;
+
+
+
     private void Awake() {
         rigidbody = this.GetComponent<Rigidbody>();
         dorso = this.GetComponentsInChildren<MeshRenderer>()[0];
@@ -26,6 +30,8 @@ public class Card : MonoBehaviour
         marco = this.gameObject.transform.GetChild(2).gameObject;
 
         initialPosition = gameObject.transform.position;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void update() {
@@ -41,6 +47,7 @@ public class Card : MonoBehaviour
             await Task.Delay(200);
 
             rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
+            audioSource.Play();
             while (rigidbody.velocity != Vector3.zero) {
                 await Task.Delay(40);
                 gameObject.transform.position = new Vector3(initialPosition.x,

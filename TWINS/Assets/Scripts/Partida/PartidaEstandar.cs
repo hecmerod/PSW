@@ -14,6 +14,7 @@ public class PartidaEstandar : Partida
         SetTableroValues();
         camara = GameObject.Find("Main Camera");
         parejaCorrecta = camara.GetComponent<AudioSource>();
+        Debug.Log("sad");
     }
 
     protected override void SetTableroValues() {       

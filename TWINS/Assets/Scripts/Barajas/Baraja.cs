@@ -18,7 +18,7 @@ public class Baraja : MonoBehaviour
         pairsCounter = new int[pairs];
         for (int i = 0; i < pairs; i++) pairsCounter[i] = 0;
 
-        this.partida = GameObject.FindObjectOfType<Partida>();
+        this.partida = GameObject.FindObjectOfType<FactoryPartida>().Partida;
         this.tablero = tablero;
         CreateCards();
     }

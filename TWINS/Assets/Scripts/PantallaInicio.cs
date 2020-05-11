@@ -153,7 +153,8 @@ public class PantallaInicio : MonoBehaviour
     public void comenzarPartida()
     {
         GameProperties.PresetSettings(GameProperties.tamaño);
-        SceneManager.LoadScene(GameProperties.tipoPartida);
+
+        SceneManager.LoadScene("Partida");
     }
     public void niveles()
     {

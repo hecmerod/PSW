@@ -10,10 +10,10 @@ public class PartidaPorCarta : Partida
 {
     //public int parejasPosibles = tablero.PositionCards.Length / 2;
     Boolean[] ids;
-    public Sprite carta;
+    private Sprite carta;
     public Image imagen;
-    public Card card;
-    public GameObject auxCard;
+    private Card card;
+    private GameObject auxCard;
     public int RandomNumber;
     public int numParejas;
 

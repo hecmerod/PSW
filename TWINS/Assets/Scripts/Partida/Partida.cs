@@ -11,10 +11,9 @@ public abstract class Partida : MonoBehaviour
 
     protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
     public GameObject gameObjectTiempo; //pasar por codigo
-    public Text textPuntuacion;
     protected IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     protected ContextoPuntuacion contexto = new ContextoPuntuacion();
-    public Text miTiempo, textContador, puntuacion; //pasar por codigo
+    public Text miTiempo, textContador, puntuacion, textPuntuacion; //pasar por codigo
     protected int puntos;
 
     protected Tablero tablero;
@@ -31,7 +30,7 @@ public abstract class Partida : MonoBehaviour
     protected Vector3[] positionCards = new Vector3[0];
     protected Vector3 positionTablero = Vector3.zero;
 
-    protected void Awake() {
+    public void Awake() {
         CargarRecursos();
         InstanciarAnimacion();        
         LoadSettings();
@@ -39,6 +38,8 @@ public abstract class Partida : MonoBehaviour
 
     public void LoadSettings() {
         GameProperties.PresetSettings(GameProperties.tamaño);
+
+        miTiempo = GameObject.Find("CanvasTiempo/Tiempo").GetComponent<Text>();
 
         positionCards = GameProperties.cardsPositions;
         contexto.TipoPuntuacion = GameProperties.puntuacion;
@@ -50,12 +51,12 @@ public abstract class Partida : MonoBehaviour
         posicionContador = GameProperties.cronoPosition;
         posicionPuntuacion = GameProperties.posicionPuntuacion;
         
-        puntuacion.transform.localPosition = posicionPuntuacion;
+        /*puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
 
         textContador.transform.localPosition = posicionContador;
         contador = time;
-        textContador.text = "Tiempo: " + time.ToString();
+        textContador.text = "Tiempo: " + time.ToString();*/
 
         
     }

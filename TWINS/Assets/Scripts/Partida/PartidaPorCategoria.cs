@@ -10,9 +10,9 @@ public class PartidaPorCategoria : Partida
 {
     List<String> categorias = new List<String>(); //{ "domesticos", "sabana", "bosque" };
     Text categoria;
-    public String aux = null;
-    public int pairsCategoria2;
-    public int pairsCategoria4;
+    private String aux = null;
+    private int pairsCategoria2;
+    private int pairsCategoria4;
     //IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     //private ContextoPuntuacion contexto = new ContextoPuntuacion();
 

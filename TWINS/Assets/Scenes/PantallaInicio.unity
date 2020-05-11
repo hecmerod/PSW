@@ -500,6 +500,8 @@ MonoBehaviour:
     m_Options:
     - m_Text: "Peque\xF1o"
       m_Image: {fileID: 0}
+    - m_Text: Mediano
+      m_Image: {fileID: 0}
     - m_Text: Grande
       m_Image: {fileID: 0}
   m_OnValueChanged:

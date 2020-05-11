@@ -30,7 +30,7 @@ public class PartidaPorCarta : Partida
 
     private void InitializeMainCard() {
         imagen.sprite = carta;
-        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(5, 1, 3), Quaternion.Euler(180, 180, 0));
+        auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(1.75f, 1, 3), Quaternion.Euler(180, 180, 335));
         auxCard.GetComponent<Rigidbody>().useGravity = false;
         card = auxCard.GetComponent<Card>();
         card.Cara.material = Resources.Load<Material>("Barajas/"+  ElegirCartaObjetivo()  + "/Materials/" + elegirObjetivo());

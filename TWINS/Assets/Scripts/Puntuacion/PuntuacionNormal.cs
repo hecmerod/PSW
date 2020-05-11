@@ -5,7 +5,7 @@ using UnityEngine;
 public class PuntuacionNormal : IPuntuacion
 {
     int puntuacion = 0;
-    int fallosIniciales = 7;
+    int fallosIniciales = 5;
     bool haAcertado = false;
     public override int SumarPuntos()
     {
@@ -34,14 +34,14 @@ public class PuntuacionNormal : IPuntuacion
     {
         if (haAcertado)
         {
-            fallosIniciales = 7;
+            fallosIniciales = 5;
             haAcertado = false;
         }
     }
     public override void ResetearPuntuacion()
     {
         puntuacion = 0;
-        fallosIniciales = 7;
+        fallosIniciales = 5;
         haAcertado = false;
     }
 }

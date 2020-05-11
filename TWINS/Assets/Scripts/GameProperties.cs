@@ -17,8 +17,8 @@ public static class GameProperties
     public static string tipoPartida = "PartidaEstandar";
     
     public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
-                                     PuntuacionFacil pntFacil , string brja) {
-        cardsPositions = posCard; level = lv; puntuacion = pntFacil;
+                                     IPuntuacion pnt , string brja) {
+        cardsPositions = posCard; level = lv; puntuacion = pnt;
         cronoPosition = posCrono; posicionPuntuacion = posPuntuacion; 
         positionTablero = posTablero; baraja = brja; time = 60f;
         isLevel = true;

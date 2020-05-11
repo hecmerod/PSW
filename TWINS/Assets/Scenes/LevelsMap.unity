@@ -668,14 +668,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   cardsPosition:
-  - {x: 5, y: 0, z: 7.5}
-  - {x: 7.5, y: 0, z: 7.5}
-  - {x: 10, y: 0, z: 7.5}
-  - {x: 2.5, y: 0, z: 7.5}
-  - {x: 5, y: 0, z: 2.5}
-  - {x: 7.5, y: 0, z: 2.5}
-  - {x: 10, y: 0, z: 2.5}
-  - {x: 12.5, y: 0, z: 2.5}
+  - {x: 6.5, y: 0, z: 2}
+  - {x: 6.5, y: 0, z: 4}
+  - {x: 6.5, y: 0, z: 6}
+  - {x: 6.5, y: 0, z: 8}
+  - {x: 8, y: 0, z: 5}
+  - {x: 9.5, y: 0, z: 2}
+  - {x: 9.5, y: 0, z: 4}
+  - {x: 9.5, y: 0, z: 6}
+  - {x: 9.5, y: 0, z: 8}
+  - {x: 12.5, y: 0, z: 2}
+  - {x: 12.5, y: 0, z: 3.5}
+  - {x: 12.5, y: 0, z: 5}
+  - {x: 12.5, y: 0, z: 6.5}
+  - {x: 12.5, y: 0, z: 8.5}
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: -118, y: 120, z: 0}
   puntuacionPosition: {x: -106, y: 67, z: 0}
@@ -1683,10 +1689,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   cardsPosition:
-  - {x: 5, y: 0, z: 7.5}
-  - {x: 10, y: 0, z: 7.5}
-  - {x: 5, y: 0, z: 2.5}
-  - {x: 10, y: 0, z: 2.5}
+  - {x: 12.5, y: 0, z: 2}
+  - {x: 11, y: 0, z: 2}
+  - {x: 12.5, y: 0, z: 4}
+  - {x: 11, y: 0, z: 4}
+  - {x: 9.5, y: 0, z: 6}
+  - {x: 8, y: 0, z: 6}
+  - {x: 9.5, y: 0, z: 8}
+  - {x: 8, y: 0, z: 8}
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: -118, y: 120, z: 0}
   puntuacionPosition: {x: -106, y: 67, z: 0}

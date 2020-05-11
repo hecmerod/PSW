@@ -140,6 +140,7 @@ public abstract class Partida : MonoBehaviour
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
             DBManager.partidasGanadas++;
+            UpdaterData();
             if (nextLevel()) DBManager.nivel++;
             CallSaveData();
             TerminarPartida();

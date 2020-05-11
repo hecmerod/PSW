@@ -13,8 +13,8 @@ public class Desafio1 : MonoBehaviour
     public Vector3 puntuacionPosition;
     public string baraja;
     public IPuntuacion puntuacion;
-    public bool ganado;
-    private GameObject marco;
+    public bool ganado = true;
+    private GameObject marco, copa;
     public GameObject panel;
     public GameObject desafio1;
     public GameObject desafio2;
@@ -24,7 +24,9 @@ public class Desafio1 : MonoBehaviour
     private void Awake()
     {
         marco = this.gameObject.transform.GetChild(0).gameObject;
+        copa = this.gameObject.transform.GetChild(2).gameObject;
     }
+
     private void OnMouseDown()
     {
         GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
@@ -38,10 +40,19 @@ public class Desafio1 : MonoBehaviour
     }
     private void OnMouseEnter()
     {
+        if (ganado)
+        {
+            copa.SetActive(true);
+        }
+        
         marco.SetActive(true);
     }
     void OnMouseExit()
     {
+        if (copa.activeSelf)
+        {
+            copa.SetActive(false);
+        }
         marco.SetActive(false);
     }
 }

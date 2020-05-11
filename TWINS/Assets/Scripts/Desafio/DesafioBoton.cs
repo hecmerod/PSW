@@ -1,35 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DesafioBoton : MonoBehaviour
 {
-    public GameObject desafio1;
-    public GameObject desafio2;
-    public GameObject desafio3;
+    public GameObject gameObjectDesafio1;
+    public GameObject gameObjectDesafio2;
+    public GameObject gameObjectDesafio3;
     public GameObject volver;
-    public GameObject descripcion1;
-    public GameObject descripcion2;
-    public GameObject descripcion3;
-    public GameObject panel;
+    public GameObject panel1, panel2, panel3;
+
+
     public void NoPressed()
     {
-        desafio1.SetActive(true);
-        desafio2.SetActive(true);
-        desafio3.SetActive(true);
+        gameObjectDesafio1.SetActive(true);
+        gameObjectDesafio2.SetActive(true);
+        gameObjectDesafio3.SetActive(true);
         volver.SetActive(true);
-        panel.SetActive(false);
-        if (descripcion1.activeSelf)
+        if (panel1.activeSelf)
         {
-            descripcion1.SetActive(false);
+            panel1.SetActive(false);
         }
-        else if (descripcion2.activeSelf)
+        else if (panel2.activeSelf)
         {
-            descripcion2.SetActive(false);
+            panel2.SetActive(false);
         }
-        else if (descripcion3.activeSelf)
+        else if (panel3.activeSelf)
         {
-            descripcion3.SetActive(false);
+            panel3.SetActive(false);
         }
+    }
+
+    public void CargarPartidaEstandar()
+    {
+        SceneManager.LoadScene("PartidaEstandar");
+    }
+
+    public void CargarPartidaPorCarta()
+    {
+        SceneManager.LoadScene("PartidaPorCarta");
     }
 }

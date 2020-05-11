@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Desafio1 : IDesafio
+public class Desafio1 : MonoBehaviour
 {
     public int desafio;
     public Vector3[] cardsPosition;
@@ -14,10 +14,8 @@ public class Desafio1 : IDesafio
     public string baraja;
     public IPuntuacion puntuacion;
     public bool ganado;
-    private Renderer renderer;
     private GameObject marco;
     public GameObject panel;
-    public GameObject descripcion;
     public GameObject desafio1;
     public GameObject desafio2;
     public GameObject desafio3;
@@ -26,12 +24,13 @@ public class Desafio1 : IDesafio
     private void Awake()
     {
         marco = this.gameObject.transform.GetChild(0).gameObject;
-        renderer = GetComponent<Renderer>();
     }
     private void OnMouseDown()
     {
+        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
+        GameProperties.tamaño = "pequeño";
+        GameProperties.time = 30;
         panel.SetActive(true);
-        descripcion.SetActive(true);
         desafio1.SetActive(false);
         desafio2.SetActive(false);
         desafio3.SetActive(false);
@@ -44,13 +43,6 @@ public class Desafio1 : IDesafio
     void OnMouseExit()
     {
         marco.SetActive(false);
-    }
-    public override void SetPartida()
-    {
-        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
-        GameProperties.tamaño = "pequeño";
-        GameProperties.time = 30;
-        SceneManager.LoadScene("PartidaPorCarta");
     }
 }
 

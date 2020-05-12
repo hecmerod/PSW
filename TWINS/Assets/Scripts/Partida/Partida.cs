@@ -100,7 +100,10 @@ public abstract class Partida : MonoBehaviour
     }
     public void Update() {
         music();
-
+        if(tiempo.timePlayed > tiempo.time)
+        {
+            IsLost();
+        }
     }
     protected void music()
     {
@@ -132,6 +135,7 @@ public abstract class Partida : MonoBehaviour
 
     public void IsLost() {
         //startedTimer = false;
+        numCardsTurned = 2;
         tiempo.partidaTerminada = true;
         tiempo.comenzarTiempo = false;
         animacionDerrota.SetActive(true);
@@ -144,6 +148,7 @@ public abstract class Partida : MonoBehaviour
 
     protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
+            numCardsTurned = 2;
             //startedTimer = false;
             tiempo.partidaTerminada = true;
             tiempo.comenzarTiempo = false;
@@ -164,7 +169,10 @@ public abstract class Partida : MonoBehaviour
 
     protected void TerminarPartida()
     {
-        gameObjectTiempo.SetActive(true);
+        if (!gameObject.activeSelf)
+        {
+            gameObjectTiempo.SetActive(true);
+        }
         numCardsTurned = 2;
     }
     protected void InstanciarAnimacion()

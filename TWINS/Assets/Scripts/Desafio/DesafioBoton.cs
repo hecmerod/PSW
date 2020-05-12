@@ -34,11 +34,11 @@ public class DesafioBoton : MonoBehaviour
 
     public void CargarPartidaEstandar()
     {
-        SceneManager.LoadScene("PartidaEstandar");
+        SceneManager.LoadScene("Partida");
     }
 
     public void CargarPartidaPorCarta()
     {
-        SceneManager.LoadScene("PartidaPorCarta");
+        SceneManager.LoadScene("Partida");
     }
 }

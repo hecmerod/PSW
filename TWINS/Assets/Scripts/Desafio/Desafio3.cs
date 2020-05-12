@@ -30,6 +30,7 @@ public class Desafio3 : MonoBehaviour
         GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionDificil(), baraja);
         GameProperties.tamaño = "grande";
         GameProperties.time = 90;
+        GameProperties.tipoPartida = "PartidaEstandar";
         panel.SetActive(true);
         desafio1.SetActive(false);
         desafio2.SetActive(false);

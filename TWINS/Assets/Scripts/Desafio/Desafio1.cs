@@ -32,6 +32,7 @@ public class Desafio1 : MonoBehaviour
         GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
         GameProperties.tamaño = "pequeño";
         GameProperties.time = 30;
+        GameProperties.tipoPartida = "PartidaPorCarta";
         panel.SetActive(true);
         desafio1.SetActive(false);
         desafio2.SetActive(false);

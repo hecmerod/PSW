@@ -29,7 +29,7 @@ public class PartidaEstandar : Partida
    
     async public override void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; }
+        if (!startedTimer) { startedTimer = true; tiempo.comenzarTiempo = true; }
 
         Card card = tablero.Baraja.GetCard(n);
 

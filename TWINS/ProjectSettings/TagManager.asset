@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Card
   - Tablero
+  - Canvas
   layers:
   - Default
   - TransparentFX

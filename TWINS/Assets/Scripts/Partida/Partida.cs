@@ -13,18 +13,16 @@ public abstract class Partida : MonoBehaviour
     public GameObject gameObjectTiempo; //pasar por codigo
     protected IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     protected ContextoPuntuacion contexto = new ContextoPuntuacion();
-    public Text miTiempo, textContador, puntuacion, textPuntuacion; //pasar por codigo
-    protected int puntos;
-
+    public int puntos;
+    private GameObject canvas;
     protected Tablero tablero;
     protected Card turnedCard;
-
+    public bool startedTimer = false;
     protected string tematica;
-
+    public Text textPuntuacion, puntuacion;
+    protected Tiempo tiempo;
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
 
-    protected bool startedTimer = false;
-    protected float time, timePlayed = 0, contador;
     Vector3 posicionContador = Vector3.zero;
     Vector3 posicionPuntuacion = Vector3.zero;
     protected Vector3[] positionCards = new Vector3[0];
@@ -32,14 +30,17 @@ public abstract class Partida : MonoBehaviour
 
     public void Awake() {
         CargarRecursos();
-        InstanciarAnimacion();        
         LoadSettings();
+        InstanciarAnimacion();        
     }
 
     public void LoadSettings() {
         GameProperties.PresetSettings(GameProperties.tamaño);
-
-        miTiempo = GameObject.Find("CanvasTiempo/Tiempo").GetComponent<Text>();
+        canvas = GameObject.Find("Canvas");
+        puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
+        textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
+        tiempo = GameObject.FindObjectOfType<Tiempo>();
+        tiempo.InicializarPartida(this);
 
         positionCards = GameProperties.cardsPositions;
         contexto.TipoPuntuacion = GameProperties.puntuacion;
@@ -47,14 +48,12 @@ public abstract class Partida : MonoBehaviour
 
         tematica = GameProperties.baraja;
 
-        time = GameProperties.time;
         posicionContador = GameProperties.cronoPosition;
         posicionPuntuacion = GameProperties.posicionPuntuacion;
-        
-        /*puntuacion.transform.localPosition = posicionPuntuacion;
+        puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
 
-        textContador.transform.localPosition = posicionContador;
+        /*textContador.transform.localPosition = posicionContador;
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();*/
 
@@ -93,7 +92,7 @@ public abstract class Partida : MonoBehaviour
 
     }
     protected void Update() {
-        Timer();
+        if(tiempo)
         music();
 
     }
@@ -110,7 +109,7 @@ public abstract class Partida : MonoBehaviour
         }else fuenteAudio.volume = 0.256f;
     }
 
-    public void Timer() {
+    /*public void Timer() {
         if (startedTimer)
         {
             timePlayed += Time.deltaTime;
@@ -124,10 +123,12 @@ public abstract class Partida : MonoBehaviour
             IsLost();
         }
         
-    }
+    }*/
 
     public void IsLost() {
-        startedTimer = false;
+        //startedTimer = false;
+        tiempo.partidaTerminada = true;
+        tiempo.comenzarTiempo = false;
         animacionDerrota.SetActive(true);
         contexto.ResetearPuntuacion();
         UpdaterData();
@@ -137,7 +138,9 @@ public abstract class Partida : MonoBehaviour
 
     protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
-            startedTimer = false;
+            //startedTimer = false;
+            tiempo.partidaTerminada = true;
+            tiempo.comenzarTiempo = false;
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
             DBManager.partidasGanadas++;
@@ -160,24 +163,29 @@ public abstract class Partida : MonoBehaviour
             puntos = 0;
         }
         textPuntuacion.text = "Puntuación: " + puntos.ToString();
-        miTiempo.text = "Tiempo: " + ((int)timePlayed).ToString();
         fuenteAudio = GetComponent<AudioSource>();
         fuenteAudio.Stop();
         numCardsTurned = 2;
     }
     protected void InstanciarAnimacion()
     {
-        Vector3 positionAnimacion = new Vector3(220, 137, 0);
+        Vector3 positionAnimacion = new Vector3(0, 0, 0);
         animacionDerrota = GameObject.Instantiate(animacionDerrota, positionAnimacion, Quaternion.identity);
         animacionVictoria = GameObject.Instantiate(animacionVictoria, positionAnimacion, Quaternion.identity);
+        animacionDerrota.transform.parent = canvas.transform;
+        animacionVictoria.transform.parent = canvas.transform;
+        animacionDerrota.transform.SetSiblingIndex(2);
+        animacionVictoria.transform.SetSiblingIndex(3);
+        animacionDerrota.transform.localPosition = positionAnimacion;
+        animacionVictoria.transform.localPosition = positionAnimacion;
     }
 
     protected void CargarRecursos()
     {
         gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
         gameObjectTablero = Resources.Load("Prefabs/Tablero") as GameObject;
-        animacionDerrota = Resources.Load("Prefabs/Derrota") as GameObject;
-        animacionVictoria = Resources.Load("Prefabs/Victoria") as GameObject;
+        animacionDerrota = Resources.Load("Prefabs/AnimacionDerrota") as GameObject;
+        animacionVictoria = Resources.Load("Prefabs/AnimacionVictoria") as GameObject;
     }
 
     abstract public void CheckPair(int n);

@@ -13,7 +13,7 @@ public abstract class Partida : MonoBehaviour
     public GameObject gameObjectTiempo; //pasar por codigo
     protected IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     protected ContextoPuntuacion contexto = new ContextoPuntuacion();
-    public int puntos;
+    public int puntos, desafiosDesbloqueados = 0;
     private GameObject canvas;
     protected Tablero tablero;
     protected Card turnedCard;

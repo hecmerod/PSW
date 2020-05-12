@@ -14,8 +14,8 @@ public class Desafio1 : MonoBehaviour
     public string baraja;
     public IPuntuacion puntuacion;
     public bool ganado = true;
-    private GameObject marco, copa;
-    public GameObject panel;
+    private GameObject marco;
+    public GameObject panel, copa;
     public GameObject desafio1;
     public GameObject desafio2;
     public GameObject desafio3;
@@ -25,6 +25,7 @@ public class Desafio1 : MonoBehaviour
     {
         marco = this.gameObject.transform.GetChild(0).gameObject;
         copa = this.gameObject.transform.GetChild(2).gameObject;
+
     }
 
     private void OnMouseDown()
@@ -41,7 +42,7 @@ public class Desafio1 : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        if (ganado)
+        if (desafio <= GameProperties.desafios)
         {
             copa.SetActive(true);
         }

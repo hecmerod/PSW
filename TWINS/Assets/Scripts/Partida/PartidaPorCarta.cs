@@ -105,6 +105,7 @@ public class PartidaPorCarta : Partida
             turnedCard = null;
             pairsFound++;
             puntos = contexto.SumarPuntos();
+            puntuacion.text = "Puntuación: " + puntos.ToString();
 
             IsWon();
             if (pairsFound != numParejas)
@@ -127,6 +128,7 @@ public class PartidaPorCarta : Partida
             {
                 IsLost();
             }
+            puntuacion.text = "Puntuación: " + puntos.ToString();
         }
     }
 

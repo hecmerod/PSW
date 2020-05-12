@@ -168,6 +168,7 @@ public class PartidaPorCategoria : Partida
             puntos = contexto.RestarPuntos();
             if(puntos < 0)
             {
+                base.categoria.SetActive(false);
                 IsLost();
             }
             puntuacion.text = "Puntuación: " + puntos.ToString();

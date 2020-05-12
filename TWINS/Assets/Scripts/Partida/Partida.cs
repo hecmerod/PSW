@@ -143,11 +143,11 @@ public abstract class Partida : MonoBehaviour
         fuenteAudio.Stop();
         UpdaterData();
         CallSaveData();
-        TerminarPartida();
     }
 
     protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
+            categoria.SetActive(false);
             numCardsTurned = 2;
             //startedTimer = false;
             tiempo.partidaTerminada = true;
@@ -159,7 +159,6 @@ public abstract class Partida : MonoBehaviour
             UpdaterData();
             if (nextLevel()) DBManager.nivel++;
             CallSaveData();
-            TerminarPartida();
         }
     }
 
@@ -167,14 +166,6 @@ public abstract class Partida : MonoBehaviour
         return DBManager.nivel == GameProperties.level;
     }
 
-    protected void TerminarPartida()
-    {
-        if (!gameObject.activeSelf)
-        {
-            gameObjectTiempo.SetActive(true);
-        }
-        numCardsTurned = 2;
-    }
     protected void InstanciarAnimacion()
     {
         Vector3 positionAnimacion = new Vector3(0, 0, 0);

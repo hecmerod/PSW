@@ -40,7 +40,7 @@ public class Level : MonoBehaviour
 
         GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
         Debug.Log(baraja);
-        SceneManager.LoadScene("PartidaEstandar");        
+        SceneManager.LoadScene("Partida");        
     }
     private void OnMouseEnter()
     {

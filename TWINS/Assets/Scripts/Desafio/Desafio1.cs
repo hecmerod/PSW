@@ -24,8 +24,6 @@ public class Desafio1 : MonoBehaviour
     private void Awake()
     {
         marco = this.gameObject.transform.GetChild(0).gameObject;
-        copa = this.gameObject.transform.GetChild(2).gameObject;
-
     }
 
     private void OnMouseDown()

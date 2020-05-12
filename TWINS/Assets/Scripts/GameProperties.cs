@@ -15,7 +15,7 @@ public static class GameProperties
     public static string baraja = "animal";
     public static string tamaño = "pequeño";
     public static string tipoPartida = "PartidaEstandar";
-    public static int desafios = 1;
+    public static int desafios = 0;
     
     public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
                                      IPuntuacion pnt , string brja) {

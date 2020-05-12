@@ -169,7 +169,7 @@ public class PantallaInicio : MonoBehaviour
 
     public void salir()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
     public void Desafio()

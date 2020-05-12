@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class PartidaPorCategoria : Partida
 {
     List<String> categorias = new List<String>(); //{ "domesticos", "sabana", "bosque" };
-    Text categoria;
+    private Text categoria;
     private String aux = null;
     private int pairsCategoria2;
     private int pairsCategoria4;
@@ -22,13 +22,14 @@ public class PartidaPorCategoria : Partida
     public void Start()
     {
         SetTableroValues();
-        categoria = GameObject.Find("Canvas/categoria").GetComponent<Text>();
         iniciarCategoria();
+        categoria = base.categoria.GetComponent<Text>();
         categoria.text = elegirCategoria();
         pairsCategoria2 = 0;
         pairsCategoria4 = 0;
         camara = GameObject.Find("Main Camera");
         parejaCorrecta = camara.GetComponent<AudioSource>();
+
     }
     public void iniciarCategoria()
     {
@@ -127,7 +128,10 @@ public class PartidaPorCategoria : Partida
 
     async public override void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; }
+        if (!startedTimer) { 
+            startedTimer = true; 
+            tiempo.comenzarTiempo = true; 
+        }
 
         Card card = tablero.Baraja.GetCard(n);
 

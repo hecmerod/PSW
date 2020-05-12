@@ -10,8 +10,6 @@ public class PartidaPorCarta : Partida
 {
     //public int parejasPosibles = tablero.PositionCards.Length / 2;
     Boolean[] ids;
-    private Sprite carta;
-    public Image imagen;
     private Card card;
     private GameObject auxCard;
     public int RandomNumber;
@@ -26,10 +24,10 @@ public class PartidaPorCarta : Partida
         InitializeMainCard(); 
         camara = GameObject.Find("Main Camera");
         parejaCorrecta = camara.GetComponent<AudioSource>();
+        categoria.SetActive(false);
     }
 
     private void InitializeMainCard() {
-        imagen.sprite = carta;
         if (GameProperties.tamaño == "grande")
         {
             auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(1.75f, 1, 3), Quaternion.Euler(180, 180, 0));
@@ -81,7 +79,7 @@ public class PartidaPorCarta : Partida
 
     async public override void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; }
+        if (!startedTimer) { startedTimer = true; tiempo.comenzarTiempo = true; }
 
         Card card = tablero.Baraja.GetCard(n);
 

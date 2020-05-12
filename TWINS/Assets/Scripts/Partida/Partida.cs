@@ -22,6 +22,7 @@ public abstract class Partida : MonoBehaviour
     public Text textPuntuacion, puntuacion;
     protected Tiempo tiempo;
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
+    protected GameObject categoria;
 
     Vector3 posicionContador = Vector3.zero;
     Vector3 posicionPuntuacion = Vector3.zero;
@@ -31,7 +32,8 @@ public abstract class Partida : MonoBehaviour
     public void Awake() {
         CargarRecursos();
         LoadSettings();
-        InstanciarAnimacion();        
+        InstanciarAnimacion();   
+        
     }
 
     public void LoadSettings() {
@@ -57,12 +59,17 @@ public abstract class Partida : MonoBehaviour
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();*/
 
-        
+        fuenteAudio = GameObject.Find("SonidoFondo").GetComponent<AudioSource>();
+
+        categoria = GameObject.Find("Canvas/categoria");
     }
 
     public void CallSaveData()
     {
-        StartCoroutine(SavePlayerData());
+        if (DBManager.LoggedIn)
+        {
+            StartCoroutine(SavePlayerData());
+        }
     }
     public void UpdaterData()
     {
@@ -91,14 +98,12 @@ public abstract class Partida : MonoBehaviour
         }
 
     }
-    protected void Update() {
-        if(tiempo)
+    public void Update() {
         music();
 
     }
     protected void music()
     {
-        fuenteAudio = GetComponent<AudioSource>();
         if (MenuPausa.Pausado)
         {
             fuenteAudio.volume = 0.1f;
@@ -131,6 +136,7 @@ public abstract class Partida : MonoBehaviour
         tiempo.comenzarTiempo = false;
         animacionDerrota.SetActive(true);
         contexto.ResetearPuntuacion();
+        fuenteAudio.Stop();
         UpdaterData();
         CallSaveData();
         TerminarPartida();
@@ -143,6 +149,7 @@ public abstract class Partida : MonoBehaviour
             tiempo.comenzarTiempo = false;
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
+            fuenteAudio.Stop();
             DBManager.partidasGanadas++;
             UpdaterData();
             if (nextLevel()) DBManager.nivel++;
@@ -158,13 +165,6 @@ public abstract class Partida : MonoBehaviour
     protected void TerminarPartida()
     {
         gameObjectTiempo.SetActive(true);
-        if (puntos < 0)
-        {
-            puntos = 0;
-        }
-        textPuntuacion.text = "Puntuación: " + puntos.ToString();
-        fuenteAudio = GetComponent<AudioSource>();
-        fuenteAudio.Stop();
         numCardsTurned = 2;
     }
     protected void InstanciarAnimacion()

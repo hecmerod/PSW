@@ -10,6 +10,11 @@ public class FactoryPartida : MonoBehaviour
         CreatePartida();
     }
 
+    protected void Update()
+    {
+        partida.Update();
+    }
+
     private void CreatePartida() {
         switch (GameProperties.tipoPartida)
         {

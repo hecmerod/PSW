@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -10,8 +11,10 @@ public class MenuPausa : MonoBehaviour
     public static bool checkerReiniciar = false;
     public GameObject menuPausaUI;
     public GameObject salirPreguntaUI;
+    public GameObject ajustes;
     public string sceneName;
     public Scene mi_escena;
+    public AudioMixer audioMixer;
 
     void Update()
     {
@@ -47,7 +50,8 @@ public class MenuPausa : MonoBehaviour
     }
     public void cargarOpciones()
     {
-        //Sprint 3
+        ajustes.SetActive(true);
+        menuPausaUI.SetActive(false);
     }
     public void quitarPartida()
     {
@@ -82,7 +86,20 @@ public class MenuPausa : MonoBehaviour
         salirPreguntaUI.SetActive(true);
         checkerReiniciar = true;
     }
+    public void CambiarVolumen(float volumen)
+    {
+        audioMixer.SetFloat("Volumen", volumen);
+    }
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+    public void vuelvoAjustes()
+    {
+        menuPausaUI.SetActive(true);
+        ajustes.SetActive(false);
+    }
 
 
-    
+
 }

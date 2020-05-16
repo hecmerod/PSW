@@ -39,30 +39,22 @@ public class Trios : Partida
         {
             turnedCard = card;
         }
-        else if(turnedCard2 is null)
+        else if (turnedCard2 is null)
         {
             turnedCard2 = card;
         }
-        else if (turnedCard.IsPair(card))
+        else if (turnedCard.IsPair(card) && turnedCard2.IsPair(card))
         {
-            if(trios == 3 && numCardsTurned == 3)
-            {
-                parejaCorrecta.Play();
-                await Task.Delay(500);
-                turnedCard = null;
-                pairsFound++;
-                puntos = contexto.SumarPuntos();
-                puntuacion.text = "Puntuación: " + puntos.ToString();
+            parejaCorrecta.Play();
+            await Task.Delay(500);
+            turnedCard = null; turnedCard2 = null;
+            pairsFound++;
+            puntos = contexto.SumarPuntos();
+            puntuacion.text = "Puntuación: " + puntos.ToString();
 
-                TriosWon();
-                numCardsTurned = 0;
-                trios = 0;
-            }
-            else
-            {
-                numCardsTurned++;
-                trios++;
-            }
+            TriosWon();
+            numCardsTurned = 0;
+            trios = 0;
             /*parejaCorrecta.Play();
 
             await Task.Delay(500);
@@ -80,20 +72,17 @@ public class Trios : Partida
         }
         else
         {
-            numCardsTurned++;
-            if(numCardsTurned == 3)
+            await Task.Delay(200);
+            turnedCard2.TurnCard(); turnedCard.TurnCard(); card.TurnCard();
+            numCardsTurned = 0;
+            turnedCard = null; turnedCard2 = null;
+            trios = 0;
+            puntos = contexto.RestarPuntos();
+            if (puntos < 0)
             {
-                await Task.Delay(200);
-                turnedCard.TurnCard(); card.TurnCard();
-                numCardsTurned = 0;
-                trios = 0;
-                puntos = contexto.RestarPuntos();
-                if (puntos < 0)
-                {
-                    IsLost();
-                }
-                puntuacion.text = "Puntuación: " + puntos.ToString();
+                IsLost();
             }
+            puntuacion.text = "Puntuación: " + puntos.ToString();
             /*await Task.Delay(200);
             turnedCard.TurnCard(); card.TurnCard();
             numCardsTurned = 0;

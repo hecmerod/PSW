@@ -29,6 +29,8 @@ public abstract class Partida : MonoBehaviour
     protected Vector3[] positionCards = new Vector3[0];
     protected Vector3 positionTablero = Vector3.zero;
 
+    private DBPartida dBPartida;
+
     public void Awake() {
         CargarRecursos();
         LoadSettings();
@@ -37,21 +39,27 @@ public abstract class Partida : MonoBehaviour
     }
 
     public void LoadSettings() {
+        dBPartida = GameObject.FindObjectOfType<DBPartida>();
+
         GameProperties.PresetSettings(GameProperties.tamaño);
+
         canvas = GameObject.Find("Canvas");
+        fuenteAudio = GameObject.Find("SonidoFondo").GetComponent<AudioSource>();
+        categoria = GameObject.Find("Canvas/categoria");
+
         puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
         textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
         tiempo = GameObject.FindObjectOfType<Tiempo>();
+
         tiempo.InicializarPartida(this);
 
-        positionCards = GameProperties.cardsPositions;
+        positionCards =           GameProperties.cardsPositions;
         contexto.TipoPuntuacion = GameProperties.puntuacion;
-        positionTablero = GameProperties.positionTablero;
+        positionTablero =         GameProperties.positionTablero;
+        tematica =                GameProperties.baraja;
+        posicionContador =        GameProperties.cronoPosition;
+        posicionPuntuacion =      GameProperties.posicionPuntuacion;
 
-        tematica = GameProperties.baraja;
-
-        posicionContador = GameProperties.cronoPosition;
-        posicionPuntuacion = GameProperties.posicionPuntuacion;
         puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
 
@@ -59,47 +67,13 @@ public abstract class Partida : MonoBehaviour
         contador = time;
         textContador.text = "Tiempo: " + time.ToString();*/
 
-        fuenteAudio = GameObject.Find("SonidoFondo").GetComponent<AudioSource>();
-
-        categoria = GameObject.Find("Canvas/categoria");
     }
 
-    public void CallSaveData()
-    {
-        if (DBManager.LoggedIn)
-        {
-            StartCoroutine(SavePlayerData());
-        }
-    }
-    public void UpdaterData()
-    {
-        if (DBManager.LoggedIn)
-        {
-            DBManager.partidasJugadas++;
-            DBManager.puntuacionTotal+= puntos;
-        }
-    }
-    IEnumerator SavePlayerData()
-    {
-        WWWForm form = new WWWForm();
-        form.AddField("name", DBManager.username);
-        form.AddField("score", DBManager.puntuacionTotal);
-        //form.AddField("maxscore", DBManager.puntuacionMax);
-        form.AddField("gamesplayed", DBManager.partidasJugadas);
-        form.AddField("gameswon", DBManager.partidasGanadas);
-        form.AddField("nivel", DBManager.nivel);
-        WWW www = new WWW("https://twinsproject2.000webhostapp.com/savedata.php", form);
-        yield return www;
-        if(www.text == "0") {
-            Debug.Log("Data saved");
-        }
-        else {
-            Debug.Log("Algo ha pasao");
-        }
+   
 
-    }
     public void Update() {
         music();
+
         if(tiempo.timePlayed > tiempo.time)
         {
             IsLost();
@@ -141,8 +115,8 @@ public abstract class Partida : MonoBehaviour
         animacionDerrota.SetActive(true);
         contexto.ResetearPuntuacion();
         fuenteAudio.Stop();
-        UpdaterData();
-        CallSaveData();
+        DBManager.UpdaterData(puntos);
+        dBPartida.CallSaveData();
     }
 
     protected void IsWon() {
@@ -155,10 +129,12 @@ public abstract class Partida : MonoBehaviour
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
             fuenteAudio.Stop();
+
             DBManager.partidasGanadas++;
-            UpdaterData();
-            if (nextLevel()) DBManager.nivel++;
-            CallSaveData();
+            DBManager.UpdaterData(puntos);
+            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+
+            dBPartida.CallSaveData();
         }
     }
     protected void TriosWon()
@@ -173,26 +149,28 @@ public abstract class Partida : MonoBehaviour
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
             fuenteAudio.Stop();
-            DBManager.partidasGanadas++;
-            UpdaterData();
-            if (nextLevel()) DBManager.nivel++;
-            CallSaveData();
-        }
-    }
 
-    private bool nextLevel() {
-        return DBManager.nivel == GameProperties.level;
+            DBManager.partidasGanadas++;
+            DBManager.UpdaterData(puntos);
+            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+
+            dBPartida.CallSaveData();
+        }
     }
 
     protected void InstanciarAnimacion()
     {
         Vector3 positionAnimacion = new Vector3(0, 0, 0);
+
         animacionDerrota = GameObject.Instantiate(animacionDerrota, positionAnimacion, Quaternion.identity);
         animacionVictoria = GameObject.Instantiate(animacionVictoria, positionAnimacion, Quaternion.identity);
+
         animacionDerrota.transform.parent = canvas.transform;
         animacionVictoria.transform.parent = canvas.transform;
+
         animacionDerrota.transform.SetSiblingIndex(2);
         animacionVictoria.transform.SetSiblingIndex(3);
+
         animacionDerrota.transform.localPosition = positionAnimacion;
         animacionVictoria.transform.localPosition = positionAnimacion;
     }

@@ -16,7 +16,7 @@ public abstract class Partida : MonoBehaviour
     public int puntos, desafiosDesbloqueados = 0;
     private GameObject canvas;
     protected Tablero tablero;
-    protected Card turnedCard;
+    protected Card turnedCard, turnedCard2;
     public bool startedTimer = false;
     protected string tematica;
     public Text textPuntuacion, puntuacion;

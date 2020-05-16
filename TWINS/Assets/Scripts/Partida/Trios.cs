@@ -38,13 +38,13 @@ public class Trios : Partida
         if (turnedCard is null)
         {
             turnedCard = card;
-            numCardsTurned = 1;
-            trios = 1;
+        }
+        else if(turnedCard2 is null)
+        {
+            turnedCard2 = card;
         }
         else if (turnedCard.IsPair(card))
         {
-            numCardsTurned++;
-            trios++;
             if(trios == 3 && numCardsTurned == 3)
             {
                 parejaCorrecta.Play();
@@ -56,6 +56,7 @@ public class Trios : Partida
 
                 TriosWon();
                 numCardsTurned = 0;
+                trios = 0;
             }
             else
             {
@@ -83,6 +84,7 @@ public class Trios : Partida
             if(numCardsTurned == 3)
             {
                 await Task.Delay(200);
+                turnedCard.TurnCard(); card.TurnCard();
                 numCardsTurned = 0;
                 trios = 0;
                 puntos = contexto.RestarPuntos();

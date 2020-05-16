@@ -38,7 +38,7 @@ public class Card : MonoBehaviour
     }
 
     async private void OnMouseDown() {
-        if (!isTurned && partida.NumCardsTurned < 3) {  
+        if (!isTurned && partida.NumCardsTurned < 2) {  
             isTurned = true;
             partida.NumCardsTurned++;
 

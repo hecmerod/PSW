@@ -21,7 +21,7 @@ public abstract class Partida : MonoBehaviour
     protected string tematica;
     public Text textPuntuacion, puntuacion;
     protected Tiempo tiempo;
-    protected int turno = 0, pairsFound = 0, numCardsTurned = 0;
+    protected int turno = 0, pairsFound = 0, numCardsTurned = 0, trios = 0;
     protected GameObject categoria;
 
     Vector3 posicionContador = Vector3.zero;
@@ -135,7 +135,7 @@ public abstract class Partida : MonoBehaviour
 
     public void IsLost() {
         //startedTimer = false;
-        numCardsTurned = 2;
+        numCardsTurned = 3;
         tiempo.partidaTerminada = true;
         tiempo.comenzarTiempo = false;
         animacionDerrota.SetActive(true);
@@ -147,6 +147,24 @@ public abstract class Partida : MonoBehaviour
 
     protected void IsWon() {
         if (pairsFound == tablero.PositionCards.Length / 2) {
+            categoria.SetActive(false);
+            numCardsTurned = 2;
+            //startedTimer = false;
+            tiempo.partidaTerminada = true;
+            tiempo.comenzarTiempo = false;
+            animacionVictoria.SetActive(true);
+            contexto.ResetearPuntuacion();
+            fuenteAudio.Stop();
+            DBManager.partidasGanadas++;
+            UpdaterData();
+            if (nextLevel()) DBManager.nivel++;
+            CallSaveData();
+        }
+    }
+    protected void TriosWon()
+    {
+        if (pairsFound == tablero.PositionCards.Length / 3)
+        {
             categoria.SetActive(false);
             numCardsTurned = 2;
             //startedTimer = false;

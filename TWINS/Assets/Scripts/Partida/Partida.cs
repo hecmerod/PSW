@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public abstract class Partida : MonoBehaviour
 {
-    AudioSource fuenteAudio;
+    public AudioSource fuenteAudio;
 
 
     protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
@@ -23,7 +23,6 @@ public abstract class Partida : MonoBehaviour
     protected Tiempo tiempo;
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0, trios = 0;
     protected GameObject categoria;
-
     Vector3 posicionContador = Vector3.zero;
     Vector3 posicionPuntuacion = Vector3.zero;
     protected Vector3[] positionCards = new Vector3[0];
@@ -34,7 +33,8 @@ public abstract class Partida : MonoBehaviour
     public void Awake() {
         CargarRecursos();
         LoadSettings();
-        InstanciarAnimacion();   
+        InstanciarAnimacion();
+        music();
         
     }
 
@@ -83,12 +83,12 @@ public abstract class Partida : MonoBehaviour
     {
         if (MenuPausa.Pausado)
         {
-            fuenteAudio.volume = 0.1f;
-            if(MenuPausa.checkerReiniciar || MenuPausa.checkerSalir)
-            {
-                fuenteAudio.volume = 0.0f;
-            }
-        }else fuenteAudio.volume = 0.256f;
+            fuenteAudio.Pause();
+        }
+        else
+        {
+            if (!fuenteAudio.isPlaying) { fuenteAudio.Play(); }
+        }
     }
 
     /*public void Timer() {

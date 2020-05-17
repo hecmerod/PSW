@@ -3,24 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class MenuPausa : MonoBehaviour
 {
     public static bool Pausado = false;
     public static bool checkerSalir = false;
     public static bool checkerReiniciar = false;
+    public static bool checkerAjustes = false;
     public GameObject menuPausaUI;
     public GameObject salirPreguntaUI;
     public GameObject ajustes;
     public string sceneName;
     public Scene mi_escena;
     public AudioMixer audioMixer;
+    public Slider sli;
 
+
+    void Awake()
+    {
+        resetStatic();
+        float music = PlayerPrefs.GetFloat("Volumen", 0.236f);
+        CambiarVolumen(music);
+        sli.value = music;
+    }
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (checkerSalir == false && checkerReiniciar == false)
+            if (checkerSalir == false & checkerReiniciar == false & checkerAjustes == false)
             {
                 if (Pausado) {
                     Reanudar();
@@ -52,6 +64,7 @@ public class MenuPausa : MonoBehaviour
     {
         ajustes.SetActive(true);
         menuPausaUI.SetActive(false);
+        checkerAjustes = true;
     }
     public void quitarPartida()
     {
@@ -64,12 +77,14 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         if(checkerSalir == true) {
             GameProperties.Reset();
+            Pausado = false;
             SceneManager.LoadScene("PantallaInicio"); 
         }
         else
         {
             mi_escena = SceneManager.GetActiveScene();
             sceneName = mi_escena.name;
+            //Pausado = false;
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -77,8 +92,12 @@ public class MenuPausa : MonoBehaviour
     {
         menuPausaUI.SetActive(true);
         salirPreguntaUI.SetActive(false);
-        if(checkerSalir == true) { checkerSalir = false; }
-        else { checkerReiniciar = false; }
+        ajustes.SetActive(false);
+        if (checkerSalir == true) { checkerSalir = false; }
+        else { 
+            checkerReiniciar = false;
+            checkerAjustes = false;
+        }
     }
     public void reiniciar() {
         GameProperties.PresetSettings("pequeño");
@@ -89,6 +108,8 @@ public class MenuPausa : MonoBehaviour
     public void CambiarVolumen(float volumen)
     {
         audioMixer.SetFloat("Volumen", volumen);
+        PlayerPrefs.SetFloat("Volumen", volumen);
+        PlayerPrefs.Save();
     }
     public void SetQuality(int qualityIndex)
     {
@@ -98,6 +119,14 @@ public class MenuPausa : MonoBehaviour
     {
         menuPausaUI.SetActive(true);
         ajustes.SetActive(false);
+        checkerAjustes = false;
+    }
+    private void resetStatic()
+    {
+        Pausado = false;
+        checkerSalir = false;
+        checkerReiniciar = false;
+        checkerAjustes = false;
     }
 
 

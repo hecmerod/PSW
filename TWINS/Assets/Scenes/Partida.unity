@@ -1698,6 +1698,11 @@ PrefabInstance:
       propertyPath: ajustes
       value: 
       objectReference: {fileID: 745995925}
+    - target: {fileID: 2750652161591724436, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: sli
+      value: 
+      objectReference: {fileID: 506398988}
     - target: {fileID: 2750652161591724437, guid: 4653536944981124986608c4b4e9e68f,
         type: 3}
       propertyPath: m_IsActive

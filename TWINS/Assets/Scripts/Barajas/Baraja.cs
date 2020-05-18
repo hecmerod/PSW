@@ -14,7 +14,7 @@ public class Baraja : MonoBehaviour
 
     public Baraja(Tablero tablero)
     {
-        pairs = tablero.PositionCards.Length / 2;
+        pairs = tablero.PositionCards.Length / 3;
         pairsCounter = new int[pairs];
         for (int i = 0; i < pairs; i++) pairsCounter[i] = 0;
 
@@ -49,7 +49,7 @@ public class Baraja : MonoBehaviour
 
         int randomNumber;
         do randomNumber = Random.Range(0, pairs);
-        while (pairsCounter[randomNumber] == 2);
+        while (pairsCounter[randomNumber] == 3);
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;

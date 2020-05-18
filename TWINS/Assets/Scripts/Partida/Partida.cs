@@ -69,8 +69,6 @@ public abstract class Partida : MonoBehaviour
 
     }
 
-   
-
     public void Update() {
         music();
 
@@ -142,7 +140,7 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 3)
         {
             categoria.SetActive(false);
-            numCardsTurned = 2;
+            numCardsTurned = 3;
             //startedTimer = false;
             tiempo.partidaTerminada = true;
             tiempo.comenzarTiempo = false;

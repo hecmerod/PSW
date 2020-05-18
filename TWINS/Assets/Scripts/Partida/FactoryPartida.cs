@@ -33,6 +33,11 @@ public class FactoryPartida : MonoBehaviour
                 ((PartidaPorCategoria)Partida).Awake();
                 ((PartidaPorCategoria)Partida).Start();
                 break;
+            case "Trios":
+                Partida = new Trios();
+                ((Trios)Partida).Awake();
+                ((Trios)Partida).Start();
+                break;
         }
     }
 

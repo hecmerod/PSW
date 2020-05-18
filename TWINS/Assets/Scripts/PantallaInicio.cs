@@ -141,5 +141,11 @@ public class PantallaInicio : MonoBehaviour
         DBManager.LogOut();
         SceneManager.LoadScene("PantallaInicio");
     }
+    public void JugarTrios()
+    {
+        GameProperties.PresetSettings("pequeño");
+        GameProperties.tipoPartida = "Trios";
+        SceneManager.LoadScene("Partida");
+    }
 }
 

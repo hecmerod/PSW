@@ -3343,8 +3343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.8850098, y: -188}
-  m_SizeDelta: {x: -1082.39, y: -558.08}
+  m_AnchoredPosition: {x: -0.00012207031, y: -188}
+  m_SizeDelta: {x: -824.01, y: -558.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541025761
 MonoBehaviour:
@@ -3911,7 +3911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000014305, y: -0.000002861}
+  m_AnchoredPosition: {x: 11, y: -0.000002861}
   m_SizeDelta: {x: 109.79, y: 41.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581662443
@@ -4171,8 +4171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 65, y: 12}
-  m_SizeDelta: {x: -652.9, y: -553.9}
+  m_AnchoredPosition: {x: -0.00012207031, y: 12}
+  m_SizeDelta: {x: -824.01, y: -553.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605592501
 MonoBehaviour:
@@ -4216,7 +4216,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 605592502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 580954982}
+        m_MethodName: JugarTrios
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &605592502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4686,8 +4697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.2849731, y: -57}
-  m_SizeDelta: {x: -918.5, y: -553.94}
+  m_AnchoredPosition: {x: -0.00012207031, y: -57}
+  m_SizeDelta: {x: -824.01, y: -553.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746571030
 MonoBehaviour:
@@ -6582,7 +6593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.8, y: -0.0000029802}
+  m_AnchoredPosition: {x: -46.7, y: -0.0000029802}
   m_SizeDelta: {x: 166.76, y: 40.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086467090
@@ -9964,7 +9975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: -0.0000011921}
+  m_AnchoredPosition: {x: 10.4, y: -0.0000011921}
   m_SizeDelta: {x: 273.3, y: 38.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753064608
@@ -11123,8 +11134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2999878, y: -123}
-  m_SizeDelta: {x: -911.32996, y: -547.7}
+  m_AnchoredPosition: {x: -0.00012207031, y: -123}
+  m_SizeDelta: {x: -824.01, y: -547.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986494192
 MonoBehaviour:
@@ -12411,11 +12422,11 @@ RectTransform:
   m_Father: {fileID: 605592500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.7000122, y: 0}
-  m_SizeDelta: {x: 109.92, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 74.9, y: 0}
+  m_SizeDelta: {x: 120.00035, y: 46}
+  m_Pivot: {x: 0.612153, y: 0.5}
 --- !u!114 &2137065023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12480,7 +12491,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 11
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -12501,7 +12512,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.29320434, y: -0.000031352014, z: 0.37929899, w: -0.35742313}
+  m_margin: {x: -113.87569, y: 4.6355777, z: 2.6595395, w: 6.0165186}
   m_textInfo:
     textComponent: {fileID: 2137065023}
     characterCount: 12

@@ -9,12 +9,21 @@ public class Baraja : MonoBehaviour
     protected ArrayList cards = new ArrayList();
     protected Tablero tablero;
     protected Partida partida;
+    protected int cartasAEncontrar;
 
     protected int[] pairsCounter;
 
     public Baraja(Tablero tablero)
     {
-        pairs = tablero.PositionCards.Length / 3;
+        if (GameProperties.trios)
+        {
+            cartasAEncontrar = 3;
+        }
+        else
+        {
+            cartasAEncontrar = 2;
+        }
+        pairs = tablero.PositionCards.Length / cartasAEncontrar;
         pairsCounter = new int[pairs];
         for (int i = 0; i < pairs; i++) pairsCounter[i] = 0;
 
@@ -49,7 +58,7 @@ public class Baraja : MonoBehaviour
 
         int randomNumber;
         do randomNumber = Random.Range(0, pairs);
-        while (pairsCounter[randomNumber] == 3);
+        while (pairsCounter[randomNumber] == cartasAEncontrar);
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;

@@ -98,6 +98,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void comenzarPartida()
     {
+        GameProperties.trios = false;
         GameProperties.PresetSettings(GameProperties.tamaño);
 
         SceneManager.LoadScene("Partida");
@@ -105,7 +106,10 @@ public class PantallaInicio : MonoBehaviour
     public void niveles()
     {
         if (DBManager.LoggedIn)
+        {
+            GameProperties.trios = false;
             SceneManager.LoadScene("LevelsMap");
+        }
         else Debug.Log("no estás loggeado"); //HACERLO EN PANTALLA
     }
     public void perfilBoton()
@@ -122,6 +126,7 @@ public class PantallaInicio : MonoBehaviour
     {
         if (DBManager.LoggedIn)
         {
+            GameProperties.trios = false;
             SceneManager.LoadScene("Desafios");
         }
         else { Debug.Log("No estás logeado"); }
@@ -143,6 +148,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void JugarTrios()
     {
+        GameProperties.trios = true;
         GameProperties.PresetSettings("pequeño");
         GameProperties.tipoPartida = "Trios";
         SceneManager.LoadScene("Partida");

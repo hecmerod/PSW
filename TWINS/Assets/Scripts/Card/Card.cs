@@ -17,12 +17,21 @@ public class Card : MonoBehaviour
     private GameObject marco;
     private bool showMarco = true;
     private Vector3 initialPosition;
+    private int cartasAEncontrar;
 
     AudioSource audioSource;
 
 
 
     private void Awake() {
+        if (GameProperties.trios)
+        {
+            cartasAEncontrar = 3;
+        }
+        else
+        {
+            cartasAEncontrar = 2;
+        }
         rigidbody = this.GetComponent<Rigidbody>();
         dorso = this.GetComponentsInChildren<MeshRenderer>()[0];
         cara = this.GetComponentsInChildren<MeshRenderer>()[1];
@@ -38,7 +47,7 @@ public class Card : MonoBehaviour
     }
 
     async private void OnMouseDown() {
-        if (!isTurned && partida.NumCardsTurned < 3) {  
+        if (!isTurned && partida.NumCardsTurned < cartasAEncontrar) {  
             isTurned = true;
             partida.NumCardsTurned++;
 

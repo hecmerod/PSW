@@ -149,7 +149,7 @@ public class PantallaInicio : MonoBehaviour
     public void JugarTrios()
     {
         GameProperties.trios = true;
-        GameProperties.PresetSettings("pequeño");
+        GameProperties.PresetSettings("trios");
         GameProperties.tipoPartida = "Trios";
         SceneManager.LoadScene("Partida");
     }

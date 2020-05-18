@@ -101,6 +101,28 @@ public static class GameProperties
                 cronoPosition = new Vector3(-180f, 233.7f, 0);
                 posicionPuntuacion = new Vector3(7, 233.7f, 0);
                 break;
+            case "trios":
+                cardsPositions = new Vector3[18];
+                positionTablero = new Vector3(7.5f, 0, 5);
+
+                cardsPositions[0] = new Vector3(8.2145f, 0, 3.5f); cardsPositions[1] = new Vector3(9.643f, 0, 3.5f);
+                cardsPositions[2] = new Vector3(11.0715f, 0, 3.5f); cardsPositions[3] = new Vector3(12.5f, 0, 3.5f);
+
+                cardsPositions[4] = new Vector3(8.2145f, 0, 5.166667f); cardsPositions[5] = new Vector3(9.643f, 0, 5.166667f);
+                cardsPositions[6] = new Vector3(11.0715f, 0, 5.166667f); cardsPositions[7] = new Vector3(12.5f, 0, 5.166667f);
+
+                cardsPositions[8] = new Vector3(8.2145f, 0, 6.8333f); cardsPositions[9] = new Vector3(9.643f, 0, 6.8333f);
+                cardsPositions[10] = new Vector3(11.0715f, 0, 6.8333f); cardsPositions[11] = new Vector3(12.5f, 0, 6.8333f);
+
+                cardsPositions[12] = new Vector3(8.2145f, 0, 8.5f); cardsPositions[13] = new Vector3(9.643f, 0, 8.5f);
+                cardsPositions[14] = new Vector3(11.0715f, 0, 8.5f); cardsPositions[15] = new Vector3(12.5f, 0, 8.5f);
+
+                cardsPositions[16] = new Vector3(9.643f, 0, 1.9f); cardsPositions[17] = new Vector3(11.0715f, 0, 1.9f);
+                time = 60f;
+                cronoPosition = new Vector3(-118f, 140f, 0);
+                posicionPuntuacion = new Vector3(-106, 87, 0);
+                puntuacion = new PuntuacionNormal();
+                break;
         }
     }
 

@@ -153,5 +153,12 @@ public class PantallaInicio : MonoBehaviour
         GameProperties.tipoPartida = "Trios";
         SceneManager.LoadScene("Partida");
     }
+    public void tableroDinamico()
+    {
+        GameProperties.dinamico = true;
+        GameProperties.PresetSettings("dinamico");
+        GameProperties.tipoPartida = "Dinamica";
+        SceneManager.LoadScene("Partida");
+    }
 }
 

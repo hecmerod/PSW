@@ -38,6 +38,11 @@ public class FactoryPartida : MonoBehaviour
                 ((Trios)Partida).Awake();
                 ((Trios)Partida).Start();
                 break;
+            case "Dinamica":
+                Partida = new Dinamica();
+                ((Dinamica)Partida).Awake();
+                ((Dinamica)Partida).Start();
+                break;
         }
     }
 

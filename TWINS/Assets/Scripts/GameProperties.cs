@@ -17,7 +17,8 @@ public static class GameProperties
     public static string tipoPartida = "PartidaEstandar";
     public static int desafios = 0;
     public static bool trios = false;
-    
+    public static bool dinamico = false;
+
     public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
                                      IPuntuacion pnt , string brja) {
         cardsPositions = posCard; level = lv; puntuacion = pnt;
@@ -101,6 +102,7 @@ public static class GameProperties
                 cronoPosition = new Vector3(-180f, 233.7f, 0);
                 posicionPuntuacion = new Vector3(7, 233.7f, 0);
                 break;
+
             case "trios":
                 cardsPositions = new Vector3[18];
                 positionTablero = new Vector3(7.5f, 0, 5);
@@ -119,6 +121,29 @@ public static class GameProperties
 
                 cardsPositions[16] = new Vector3(9.643f, 0, 1.9f); cardsPositions[17] = new Vector3(11.0715f, 0, 1.9f);
                 time = 60f;
+                cronoPosition = new Vector3(-118f, 140f, 0);
+                posicionPuntuacion = new Vector3(-106, 87, 0);
+                puntuacion = new PuntuacionNormal();
+                break;
+
+            case "dinamico":
+                cardsPositions = new Vector3[20];
+                positionTablero = new Vector3(7.5f, 0, 5);
+
+                cardsPositions[0] = new Vector3(8.2145f, 0, 4.166667f); cardsPositions[1] = new Vector3(9.643f, 0, 4.166667f);
+                cardsPositions[2] = new Vector3(11.0715f, 0, 4.166667f); cardsPositions[3] = new Vector3(12.5f, 0, 4.166667f);
+
+                cardsPositions[4] = new Vector3(8.2145f, 0, 2.5f); cardsPositions[5] = new Vector3(9.643f, 0, 2.5f);
+                cardsPositions[6] = new Vector3(11.0715f, 0, 2.5f); cardsPositions[7] = new Vector3(12.5f, 0, 2.5f);
+                cardsPositions[8] = new Vector3(8.2145f, 0, 5.8333f); cardsPositions[9] = new Vector3(9.643f, 0, 5.8333f);
+                cardsPositions[10] = new Vector3(11.0715f, 0, 5.8333f); cardsPositions[11] = new Vector3(12.5f, 0, 5.8333f);
+
+                cardsPositions[12] = new Vector3(6.786f, 0, 2.5f); cardsPositions[13] = new Vector3(6.786f, 0, 4.166667f);
+                cardsPositions[14] = new Vector3(6.786f, 0, 5.8333f); cardsPositions[15] = new Vector3(6.786f, 0, 7.5f);
+                cardsPositions[16] = new Vector3(8.2145f, 0, 7.5f); cardsPositions[17] = new Vector3(9.643f, 0, 7.5f);
+                cardsPositions[18] = new Vector3(11.0715f, 0, 7.5f); cardsPositions[19] = new Vector3(12.5f, 0, 7.5f);
+
+                time = 90f;
                 cronoPosition = new Vector3(-118f, 140f, 0);
                 posicionPuntuacion = new Vector3(-106, 87, 0);
                 puntuacion = new PuntuacionNormal();

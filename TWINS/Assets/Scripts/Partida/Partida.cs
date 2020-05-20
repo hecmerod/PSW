@@ -49,7 +49,7 @@ public abstract class Partida : MonoBehaviour
         //gameObjectTurno = GameObject.Find("Canvas/Turno");
 
         //textTurno = gameObjectTurno.transform.GetComponent<Text>();
-        textTurno.text = "a ver si funciona esto";
+        //textTurno.text = "a ver si funciona esto";
         puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
         textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
         tiempo = GameObject.FindObjectOfType<Tiempo>();

@@ -60,6 +60,7 @@ public class Dinamica : Partida
         {
             await Task.Delay(200);
             turnedCard.TurnCard(); card.TurnCard();
+            moverCartas();
             numCardsTurned = 0;
             turnedCard = null;
             turno++;
@@ -68,28 +69,28 @@ public class Dinamica : Partida
             {
                 IsLost();
             }
-            //moverCartas();
             puntuacion.text = "Puntuación: " + puntos.ToString();
         }
     }
 
     //NO BORRAR
-    /*public void moverCartas()
+    public void moverCartas()
     {
-        foreach (int i in GameProperties.cardsPositions)
+        for (int i = 0; i < GameProperties.cardsPositions.Length; i++)
         {
-            if (GameProperties.cardsPositions[i].transform.position.x = 12.5f)
+            Vector3 vc = new Vector3(12.5f, 0, 0);
+            if (GameProperties.cardsPositions[i] == vc)
             {
-                GameProperties.cardsPositions[i] = new Vector(6.786f, GameProperties.cardsPositions[i].transform.position.y, GameProperties.cardsPositions[i].transform.position.z);
+                GameProperties.cardsPositions[i] = new Vector3(6.786f, GameProperties.cardsPositions[i].y, GameProperties.cardsPositions[i].z);
             }
             else
             {
-                GameProperties.cardsPositions[i] = new Vector(GameProperties.cardsPositions[i].transform.position.x + 1.4285f, GameProperties.cardsPositions[i].transform.position.y, GameProperties.cardsPositions[i].transform.position.z);
+                GameProperties.cardsPositions[i] = new Vector3(GameProperties.cardsPositions[i].x + 1.4285f, GameProperties.cardsPositions[i].y, GameProperties.cardsPositions[i].z);
             }
         }
         //GameProperties.cardsPositions[0] = new Vector3(); GameProperties.cardsPositions[1] = new Vector3(); GameProperties.cardsPositions[2] = new Vector3(); GameProperties.cardsPositions[3] = new Vector3(); GameProperties.cardsPositions[4] = new Vector3();
         //GameProperties.cardsPositions[5] = new Vector3(); GameProperties.cardsPositions[6] = new Vector3(); GameProperties.cardsPositions[7] = new Vector3(); GameProperties.cardsPositions[8] = new Vector3(); GameProperties.cardsPositions[9] = new Vector3();
         //GameProperties.cardsPositions[10] = new Vector3(); GameProperties.cardsPositions[11] = new Vector3(); GameProperties.cardsPositions[12] = new Vector3(); GameProperties.cardsPositions[13] = new Vector3(); GameProperties.cardsPositions[14] = new Vector3(); 
         //GameProperties.cardsPositions[15] = new Vector3(); GameProperties.cardsPositions[16] = new Vector3(); GameProperties.cardsPositions[17] = new Vector3(); GameProperties.cardsPositions[18] = new Vector3(); GameProperties.cardsPositions[19] = new Vector3();
-    }*/
+    }
 }

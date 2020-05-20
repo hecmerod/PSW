@@ -560,7 +560,7 @@ RectTransform:
   - {fileID: 506398987}
   - {fileID: 386858786}
   m_Father: {fileID: 5720611876446363471}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1687,6 +1687,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1206962231330108977, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265955409439363145, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770004540480952954, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896096599797620485, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2750652161591724436, guid: 4653536944981124986608c4b4e9e68f,
         type: 3}
       propertyPath: audioMixer
@@ -1723,6 +1743,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -29
       objectReference: {fileID: 0}
+    - target: {fileID: 3086306960683471801, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3474189615312553960, guid: 4653536944981124986608c4b4e9e68f,
         type: 3}
       propertyPath: m_Color.r
@@ -1736,6 +1761,11 @@ PrefabInstance:
     - target: {fileID: 3474189615312553960, guid: 4653536944981124986608c4b4e9e68f,
         type: 3}
       propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638127708590660420, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4916598839837110371, guid: 4653536944981124986608c4b4e9e68f,
@@ -1753,10 +1783,35 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6899467011981831835, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999714924225281851, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7607805408715527839, guid: 4653536944981124986608c4b4e9e68f,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652500298852206694, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387101924420339202, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952309825750005539, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4653536944981124986608c4b4e9e68f, type: 3}

@@ -19,10 +19,10 @@ public abstract class Partida : MonoBehaviour
     protected Card turnedCard, turnedCard2;
     public bool startedTimer = false;
     protected string tematica;
-    public Text textPuntuacion, puntuacion;
+    public Text textPuntuacion, puntuacion, textTurno;
     protected Tiempo tiempo;
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0, trios = 0;
-    protected GameObject categoria;
+    protected GameObject categoria, gameObjectTurno, puntuacion1, puntuacion2;
     Vector3 posicionContador = Vector3.zero;
     Vector3 posicionPuntuacion = Vector3.zero;
     protected Vector3[] positionCards = new Vector3[0];
@@ -46,7 +46,10 @@ public abstract class Partida : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         fuenteAudio = GameObject.Find("SonidoFondo").GetComponent<AudioSource>();
         categoria = GameObject.Find("Canvas/categoria");
+        //gameObjectTurno = GameObject.Find("Canvas/Turno");
 
+        //textTurno = gameObjectTurno.transform.GetComponent<Text>();
+        textTurno.text = "a ver si funciona esto";
         puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
         textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
         tiempo = GameObject.FindObjectOfType<Tiempo>();

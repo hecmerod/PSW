@@ -16,7 +16,7 @@ public class Carta : MonoBehaviour
     private Elegidas elegidas;
 
     private bool chosen = false;
-    private Vector3 posChosen;
+    GameObject pos;
 
     private GameObject baraja;
     void Awake()
@@ -51,19 +51,18 @@ public class Carta : MonoBehaviour
 
         if (!chosen)
         {
-            Vector3 aux = elegidas.ReturnPos();
+            pos = elegidas.ReturnPos();
 
-            if (aux != Vector3.zero)
+            if (pos != null)
             {
-                transform.parent = baraja.transform;
-                transform.position = aux;
+                transform.parent = pos.transform;
+                transform.position = pos.transform.position;
                 
-                posChosen = aux;                
                 chosen = true;
             }
         }
         else {
-            elegidas.LiberatePos(posChosen);
+            elegidas.LiberatePos(pos);
             transform.position = startPosition;
             transform.parent = null;
             chosen = false;
@@ -74,12 +73,12 @@ public class Carta : MonoBehaviour
         dragging = false;
         if (!chosen) {
             if (Input.mousePosition.x <= Screen.width * 0.27f) {
-                Vector3 aux = elegidas.ReturnPos();
+                pos = elegidas.ReturnPos();
 
-                if (aux != Vector3.zero) {
-                    transform.parent = baraja.transform;
-                    transform.position = aux;                    
-                    posChosen = aux;
+                if (pos != null) {
+                    transform.parent = pos.transform;
+                    transform.position = pos.transform.position;                    
+
                     chosen = true;
                 } else transform.position = startPosition;               
 
@@ -87,11 +86,11 @@ public class Carta : MonoBehaviour
         } 
         else {
              if (Input.mousePosition.x <= Screen.width * 0.27f) {
-                transform.position = posChosen;
+                transform.position = pos.transform.position;
              } 
              else {
                 chosen = false;
-                elegidas.LiberatePos(posChosen);
+                elegidas.LiberatePos(pos);
                 transform.position = startPosition;
                 transform.parent = null;
              }

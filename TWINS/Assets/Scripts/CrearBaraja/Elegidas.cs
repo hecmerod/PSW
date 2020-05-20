@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Elegidas : MonoBehaviour
 {
-    public Vector3[] posiciones = new Vector3[15];
+    public GameObject[] posiciones;
     private bool[] posOcupadas = new bool[15];
 
 
 
-    public Vector3 ReturnPos() {
+    public GameObject ReturnPos() {
         for (int i = 0; i < 15; i++) {
             if (!posOcupadas[i]) {
                 posOcupadas[i] = true;
                 return posiciones[i];
             }
         }
-        return Vector3.zero;
+        return null;
     }
 
-    public void LiberatePos(Vector3 pos) {
+    public void LiberatePos(GameObject pos) {
         int i = 0;
-        while (!(posiciones[i].x == pos.x && posiciones[i].z == pos.z)) i++;
+        while (pos != posiciones[i]) i++;
 
         posOcupadas[i] = false;
     }

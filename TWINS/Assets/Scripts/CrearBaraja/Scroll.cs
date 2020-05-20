@@ -21,7 +21,7 @@ public class Scroll : MonoBehaviour
         {
             transform.Translate(Vector3.back * Time.deltaTime * scrollSpeed, Space.World);
         }
-        if (Input.mousePosition.y <= Screen.height * botBarrier && transform.position.z < 10)
+        if (Input.mousePosition.y <= Screen.height * botBarrier && transform.position.z < 1)
         {            
             transform.Translate(Vector3.forward * Time.deltaTime * scrollSpeed, Space.World);
         }

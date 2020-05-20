@@ -984,6 +984,7 @@ GameObject:
   - component: {fileID: 2018466473}
   - component: {fileID: 2018466472}
   - component: {fileID: 2018466476}
+  - component: {fileID: 2018466477}
   m_Layer: 0
   m_Name: Baraja
   m_TagString: Untagged
@@ -1079,6 +1080,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &2018466477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018466471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8bf7af099bce045bc819d5b892be3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollAcceleration: 1
+  maxSpeed: 20
+  topBarrier: 0.95
+  botBarrier: 0.05
 --- !u!1 &2106809239
 GameObject:
   m_ObjectHideFlags: 0

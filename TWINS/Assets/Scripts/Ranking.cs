@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class Ranking : MonoBehaviour
 {
@@ -13,12 +14,14 @@ public class Ranking : MonoBehaviour
     public Text Jugador3Puntos;
     public Text Jugador3;
 
-    private int first, second, third;
+    public static int first, second, third;
     public void Start()
     {
         cargarMaximos();
+        StartCoroutine(DBManager.LoadTopNombres());
+        cargarNombres();
     }
-    public void cargarMaximos()
+    private void cargarMaximos()
     {
         first = second = third = -50;
         for(int i = 0; i < DBManager.scores.Length; i++)
@@ -42,8 +45,16 @@ public class Ranking : MonoBehaviour
         Jugador1Puntos.text = first.ToString();
         Jugador2Puntos.text = second.ToString();
         Jugador3Puntos.text = third.ToString();
-        Debug.Log(first);
-        Debug.Log(second);
-        Debug.Log(third);
+    }
+    async private void cargarNombres()
+    {
+        await Task.Delay(200);
+        Jugador1.text = DBManager.topNames[0];
+        Jugador2.text = DBManager.topNames[1];
+        Jugador3.text = DBManager.topNames[2];
+    }
+    public void volver()
+    {
+        SceneManager.LoadScene("PantallaInicio");
     }
 }

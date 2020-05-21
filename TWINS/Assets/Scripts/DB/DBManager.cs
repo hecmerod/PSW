@@ -14,6 +14,7 @@ public static class DBManager
     public static int partidasGanadas;
     public static int nivel;
     public static int[] scores = new int[1000];
+    public static string[] topNames = new string[3];
 
     public static PantallaInicio pantallaInicio;
 
@@ -98,6 +99,19 @@ public static class DBManager
             //Debug.Log(scores[i]);
         }
         //Debug.Log("Data succesfully loaded");
+    }
+    public static IEnumerator LoadTopNombres()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("primero", Ranking.first);
+        form.AddField("segundo", Ranking.second);
+        form.AddField("tercero", Ranking.third);
+        WWW www = new WWW("https://twinsproject2.000webhostapp.com/loadnombresranking.php", form);
+        yield return www;
+        string[] webResults = www.text.Split('\t');
+        topNames[0] = webResults[0];
+        topNames[1] = webResults[1];
+        topNames[2] = webResults[2];
     }
     public static void UpdaterData(int puntos)
     {

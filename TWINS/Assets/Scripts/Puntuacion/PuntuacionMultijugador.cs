@@ -35,6 +35,7 @@ public class PuntuacionMultijugador : IPuntuacion
             {
                 puntuacion1 = 0;
             }
+            turno = 2;
             return puntuacion1;
         }
         else
@@ -44,6 +45,7 @@ public class PuntuacionMultijugador : IPuntuacion
             {
                 puntuacion2 = 0;
             }
+            turno = 1;
             return puntuacion2;
         }
     }
@@ -59,6 +61,7 @@ public class PuntuacionMultijugador : IPuntuacion
     {
         puntuacion1 = 0;
         puntuacion2 = 0;
+        turno = 1;
         fallosIniciales = 1000;
         haAcertado = false;
     }

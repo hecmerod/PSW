@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Tiempo : MonoBehaviour
 {
-    private GameObject canvas;
+    private GameObject miTiempo;
     public bool comenzarTiempo = false, partidaTerminada = false;
-    public Text miTiempo, textContador, puntuacion, textPuntuacion;
+    public Text textContador, puntuacion, textPuntuacion, textTiempo;
     public float time = 60, timePlayed = 0, contador;
     Partida partida;
     public void Awake()
@@ -24,10 +24,9 @@ public class Tiempo : MonoBehaviour
     }
     public void LoadSetting()
     {
-        canvas = GameObject.Find("Canvas");
-        miTiempo = canvas.transform.GetComponentsInChildren<Text>()[3];
-        textContador = canvas.transform.GetComponentsInChildren<Text>()[0];
-        textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
+        miTiempo = GameObject.Find("Canvas/Tiempo");
+        textTiempo = miTiempo.GetComponent<Text>();
+        textContador = GameObject.Find("Canvas/TiempoRestante").GetComponent<Text>();
 
         textContador.transform.localPosition = GameProperties.cronoPosition;
 
@@ -43,12 +42,12 @@ public class Tiempo : MonoBehaviour
         if(timePlayed >= time)
         {
             comenzarTiempo = false;
-            miTiempo.text = "Tiempo: " + (int)time;
+            textTiempo.text = "Tiempo: " + (int)time;
             if(partida.puntos < 0) { partida.puntos = 0; }
         }
         if (partidaTerminada)
         {
-            miTiempo.text = "Tiempo: " + (int)timePlayed;
+            textTiempo.text = "Tiempo: " + (int)timePlayed;
             if(partida.puntos < 0) { partida.puntos = 0; }
         }
     }

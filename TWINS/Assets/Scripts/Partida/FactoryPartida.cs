@@ -43,6 +43,11 @@ public class FactoryPartida : MonoBehaviour
                 ((Dinamica)Partida).Awake();
                 ((Dinamica)Partida).Start();
                 break;
+            case "MultiLocal":
+                Partida = new MultijugadorLocal();
+                ((MultijugadorLocal)Partida).Awake();
+                ((MultijugadorLocal)Partida).Start();
+                break;
         }
     }
 

@@ -29,9 +29,14 @@ public class MultijugadorLocal : Partida
         gameObjectTurno.SetActive(true);
         puntuacion1.SetActive(true);
         puntuacion2.SetActive(true);
+        puntuacion.text = "";
 
         textPuntuacion1 = puntuacion1.GetComponent<Text>();
+        textPuntuacion1.text = "Jugador 1: 0";
         textPuntuacion2 = puntuacion2.GetComponent<Text>();
+        textPuntuacion2.text = "Jugador 2: 0";
+        textTurno = gameObjectTurno.GetComponent<Text>();
+        textTurno.text = "Turno: Jugador 1";
 
         tablero = gameObjectTablero.GetComponent<Tablero>();
 
@@ -57,17 +62,19 @@ public class MultijugadorLocal : Partida
 
             turnedCard = null;
             pairsFound++;
-            if (turno == 1)
+            if (turnoJugador == 1)
             {
                 puntos1 = contexto.SumarPuntos();
-                textPuntuacion1.text = "Puntuación: " + puntos1.ToString();
-                turno = 2;
+                textPuntuacion1.text = "Jugador 1: " + puntos1.ToString();
+                turnoJugador = 2;
+                textTurno.text = "Turno: Jugador 2";
             }
             else
             {
                 puntos2 = contexto.SumarPuntos();
-                textPuntuacion2.text = "Puntuación: " + puntos2.ToString();
+                textPuntuacion2.text = "Jugador 2: " + puntos2.ToString();
                 turno = 1;
+                textTurno.text = "Turno: Jugador 1";
             }
 
             MultijugadorWon();
@@ -80,17 +87,19 @@ public class MultijugadorLocal : Partida
             turnedCard.TurnCard(); card.TurnCard();
             numCardsTurned = 0;
             turnedCard = null;
-            if (turno == 1)
+            if (turnoJugador == 1)
             {
                 puntos1 = contexto.RestarPuntos();
-                textPuntuacion1.text = "Putuación: " + puntos1.ToString();
-                turno = 2;
+                textPuntuacion1.text = "Jugador 1: " + puntos1.ToString();
+                turnoJugador = 2;
+                textTurno.text = "Turno: Jugador 2";
             }
             else
             {
                 puntos2 = contexto.RestarPuntos();
-                textPuntuacion2.text = "Puntuación: " + puntos2.ToString();
-                turno = 1;
+                textPuntuacion2.text = "Jugador 2: " + puntos2.ToString();
+                turnoJugador = 1;
+                textTurno.text = "Turno: Jugador 1";
             }
             /*if (puntos < 0)
             {

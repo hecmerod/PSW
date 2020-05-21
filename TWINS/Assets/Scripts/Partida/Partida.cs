@@ -52,7 +52,7 @@ public abstract class Partida : MonoBehaviour
         puntuacion2 = GameObject.Find("Canvas/Puntuacion2");
 
         puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
-        textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
+        textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[5];
         tiempo = GameObject.FindObjectOfType<Tiempo>();
 
         tiempo.InicializarPartida(this);

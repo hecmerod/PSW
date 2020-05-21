@@ -15,7 +15,9 @@ public class PartidaEstandar : Partida
         camara = GameObject.Find("Main Camera");
         parejaCorrecta = camara.GetComponent<AudioSource>();
         categoria.SetActive(false);
-        //gameObjectTurno.SetActive(false);
+        gameObjectTurno.SetActive(false);
+        puntuacion1.SetActive(false);
+        puntuacion2.SetActive(false);
     }
 
     protected override void SetTableroValues() {       

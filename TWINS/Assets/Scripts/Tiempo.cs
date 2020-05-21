@@ -45,13 +45,11 @@ public class Tiempo : MonoBehaviour
             comenzarTiempo = false;
             miTiempo.text = "Tiempo: " + (int)time;
             if(partida.puntos < 0) { partida.puntos = 0; }
-            textPuntuacion.text = "Puntuación: " + partida.puntos;
         }
         if (partidaTerminada)
         {
             miTiempo.text = "Tiempo: " + (int)timePlayed;
             if(partida.puntos < 0) { partida.puntos = 0; }
-            textPuntuacion.text = "Puntuación: " + partida.puntos;
         }
     }
 

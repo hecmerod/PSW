@@ -19,9 +19,10 @@ public abstract class Partida : MonoBehaviour
     protected Card turnedCard, turnedCard2;
     public bool startedTimer = false;
     protected string tematica;
-    public Text textPuntuacion, puntuacion, textTurno;
+    public Text textPuntuacion, puntuacion;
     protected Tiempo tiempo;
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0, trios = 0;
+    protected int puntos1, puntos2;
     protected GameObject categoria, gameObjectTurno, puntuacion1, puntuacion2;
     Vector3 posicionContador = Vector3.zero;
     Vector3 posicionPuntuacion = Vector3.zero;
@@ -46,10 +47,10 @@ public abstract class Partida : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         fuenteAudio = GameObject.Find("SonidoFondo").GetComponent<AudioSource>();
         categoria = GameObject.Find("Canvas/categoria");
-        //gameObjectTurno = GameObject.Find("Canvas/Turno");
+        gameObjectTurno = GameObject.Find("Canvas/Turno");
+        puntuacion1 = GameObject.Find("Canvas/Puntuacion1");
+        puntuacion2 = GameObject.Find("Canvas/Puntuacion2");
 
-        //textTurno = gameObjectTurno.transform.GetComponent<Text>();
-        //textTurno.text = "a ver si funciona esto";
         puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
         textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[2];
         tiempo = GameObject.FindObjectOfType<Tiempo>();
@@ -113,6 +114,7 @@ public abstract class Partida : MonoBehaviour
         numCardsTurned = 3;
         tiempo.partidaTerminada = true;
         tiempo.comenzarTiempo = false;
+        textPuntuacion.text = "Puntuación: " + puntos;
         animacionDerrota.SetActive(true);
         contexto.ResetearPuntuacion();
         fuenteAudio.Stop();
@@ -127,6 +129,7 @@ public abstract class Partida : MonoBehaviour
             //startedTimer = false;
             tiempo.partidaTerminada = true;
             tiempo.comenzarTiempo = false;
+            textPuntuacion.text = "Puntuación: " + puntos;
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
             fuenteAudio.Stop();
@@ -142,11 +145,37 @@ public abstract class Partida : MonoBehaviour
     {
         if (pairsFound == tablero.PositionCards.Length / 3)
         {
-            categoria.SetActive(false);
             numCardsTurned = 3;
             //startedTimer = false;
             tiempo.partidaTerminada = true;
             tiempo.comenzarTiempo = false;
+            textPuntuacion.text = "Puntuación: " + puntos;
+            animacionVictoria.SetActive(true);
+            contexto.ResetearPuntuacion();
+            fuenteAudio.Stop();
+
+            DBManager.partidasGanadas++;
+            DBManager.UpdaterData(puntos);
+            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+
+            dBPartida.CallSaveData();
+        }
+    }
+    protected void MultijugadorWon()
+    {
+        if(pairsFound == tablero.PositionCards.Length / 2)
+        {
+            numCardsTurned = 3;
+            tiempo.partidaTerminada = true;
+            tiempo.comenzarTiempo = false;
+            if (puntos1 > puntos2)
+            {
+                textPuntuacion.text = "Jugador 1: " + puntos1;
+            }
+            else
+            {
+                textPuntuacion.text = "Jugador 2: " + puntos2;
+            }
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
             fuenteAudio.Stop();

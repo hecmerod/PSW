@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Threading.Tasks;
 
 public class PantallaInicio : MonoBehaviour
 {
@@ -160,9 +161,11 @@ public class PantallaInicio : MonoBehaviour
         GameProperties.tipoPartida = "Dinamica";
         SceneManager.LoadScene("Partida");
     }
-    public void cargarRanking()
+    async public void cargarRanking()
     {
         StartCoroutine(DBManager.LoadScoresData());
+        await Task.Delay(1000);
+        SceneManager.LoadScene("Ranking");
     }
 }
 

@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Partida.unity
     guid: 17094b9d1a0681342a6950622c019fd9
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: 0844a971c66b620438c6eb4c24039790
   m_configObjects: {}

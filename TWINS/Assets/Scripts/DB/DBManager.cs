@@ -95,9 +95,9 @@ public static class DBManager
         for(int i = 0; i < webResults.Length; i++)
         {
             scores[i] = int.Parse(webResults[i]);
-            Debug.Log(scores[i]);
+            //Debug.Log(scores[i]);
         }
-        Debug.Log("Data succesfully loaded");
+        //Debug.Log("Data succesfully loaded");
     }
     public static void UpdaterData(int puntos)
     {

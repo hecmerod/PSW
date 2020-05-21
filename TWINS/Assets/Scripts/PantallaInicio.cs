@@ -160,5 +160,9 @@ public class PantallaInicio : MonoBehaviour
         GameProperties.tipoPartida = "Dinamica";
         SceneManager.LoadScene("Partida");
     }
+    public void cargarRanking()
+    {
+        StartCoroutine(DBManager.LoadScoresData());
+    }
 }
 

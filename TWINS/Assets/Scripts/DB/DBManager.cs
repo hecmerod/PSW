@@ -13,6 +13,7 @@ public static class DBManager
     public static int partidasJugadas;
     public static int partidasGanadas;
     public static int nivel;
+    public static int[] scores = new int[1000];
 
     public static PantallaInicio pantallaInicio;
 
@@ -85,6 +86,19 @@ public static class DBManager
             }
         }
     }
+    public static IEnumerator LoadScoresData()
+    {
+        WWWForm form = new WWWForm();
+        WWW www = new WWW("https://twinsproject2.000webhostapp.com/loadranking.php", form);
+        yield return www;
+        string[] webResults = www.text.Split('\t');
+        for(int i = 0; i < webResults.Length; i++)
+        {
+            scores[i] = int.Parse(webResults[i]);
+            Debug.Log(scores[i]);
+        }
+        Debug.Log("Data succesfully loaded");
+    }
     public static void UpdaterData(int puntos)
     {
         if (DBManager.LoggedIn)
@@ -93,4 +107,5 @@ public static class DBManager
             DBManager.puntuacionTotal +=  puntos;
         }
     }
+    
 }

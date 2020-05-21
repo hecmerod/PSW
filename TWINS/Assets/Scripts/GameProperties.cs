@@ -103,6 +103,36 @@ public static class GameProperties
                 posicionPuntuacion = new Vector3(7, 233.7f, 0);
                 break;
 
+            case "multLocal":
+                cardsPositions = new Vector3[32];
+                positionTablero = new Vector3(7.5f, 0, 5);
+
+                cardsPositions[0] = new Vector3(2.5f, 0, 2.5f); cardsPositions[1] = new Vector3(3.929f, 0, 2.5f);
+                cardsPositions[2] = new Vector3(5.3575f, 0, 2.5f); cardsPositions[3] = new Vector3(6.786f, 0, 2.5f);
+                cardsPositions[4] = new Vector3(8.2145f, 0, 2.5f); cardsPositions[5] = new Vector3(9.643f, 0, 2.5f);
+                cardsPositions[6] = new Vector3(11.0715f, 0, 2.5f); cardsPositions[7] = new Vector3(12.5f, 0, 2.5f);
+
+                cardsPositions[8] = new Vector3(2.5f, 0, 4.166667f); cardsPositions[9] = new Vector3(3.929f, 0, 4.166667f);
+                cardsPositions[10] = new Vector3(5.3575f, 0, 4.166667f); cardsPositions[11] = new Vector3(6.786f, 0, 4.166667f);
+                cardsPositions[12] = new Vector3(8.2145f, 0, 4.166667f); cardsPositions[13] = new Vector3(9.643f, 0, 4.166667f);
+                cardsPositions[14] = new Vector3(11.0715f, 0, 4.166667f); cardsPositions[15] = new Vector3(12.5f, 0, 4.166667f);
+
+                cardsPositions[16] = new Vector3(2.5f, 0, 5.8333f); cardsPositions[17] = new Vector3(3.929f, 0, 5.8333f);
+                cardsPositions[18] = new Vector3(5.3575f, 0, 5.8333f); cardsPositions[19] = new Vector3(6.786f, 0, 5.8333f);
+                cardsPositions[20] = new Vector3(8.2145f, 0, 5.8333f); cardsPositions[21] = new Vector3(9.643f, 0, 5.8333f);
+                cardsPositions[22] = new Vector3(11.0715f, 0, 5.8333f); cardsPositions[23] = new Vector3(12.5f, 0, 5.8333f);
+
+                cardsPositions[24] = new Vector3(2.5f, 0, 7.5f); cardsPositions[25] = new Vector3(3.929f, 0, 7.5f);
+                cardsPositions[26] = new Vector3(5.3575f, 0, 7.5f); cardsPositions[27] = new Vector3(6.786f, 0, 7.5f);
+                cardsPositions[28] = new Vector3(8.2145f, 0, 7.5f); cardsPositions[29] = new Vector3(9.643f, 0, 7.5f);
+                cardsPositions[30] = new Vector3(11.0715f, 0, 7.5f); cardsPositions[31] = new Vector3(12.5f, 0, 7.5f);
+
+                time = 9000f;
+                cronoPosition = new Vector3(0f, 0f, 0);
+                posicionPuntuacion = new Vector3(-106, 87, 0);
+                puntuacion = new PuntuacionMultijugador();
+                break;
+
             case "trios":
                 cardsPositions = new Vector3[18];
                 positionTablero = new Vector3(7.5f, 0, 5);

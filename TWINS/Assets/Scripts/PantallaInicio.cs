@@ -154,6 +154,14 @@ public class PantallaInicio : MonoBehaviour
         GameProperties.tipoPartida = "Trios";
         SceneManager.LoadScene("Partida");
     }
+
+    public void MultiLocal()
+    {
+        GameProperties.trios = false;
+        GameProperties.PresetSettings("multLocal");
+        GameProperties.tipoPartida = "MultiLocal";
+        SceneManager.LoadScene("Partida");
+    }
     public void tableroDinamico()
     {
         GameProperties.dinamico = true;

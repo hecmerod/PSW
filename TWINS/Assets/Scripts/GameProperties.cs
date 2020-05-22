@@ -128,7 +128,7 @@ public static class GameProperties
                 cardsPositions[30] = new Vector3(11.0715f, 0, 7.5f); cardsPositions[31] = new Vector3(12.5f, 0, 7.5f);
 
                 time = 9000f;
-                cronoPosition = new Vector3(0f, 0f, 0);
+                cronoPosition = new Vector3(900, 900, 0);
                 posicionPuntuacion = new Vector3(-106, 87, 0);
                 puntuacion = new PuntuacionMultijugador();
                 break;

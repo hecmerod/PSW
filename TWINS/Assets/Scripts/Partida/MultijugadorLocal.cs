@@ -73,7 +73,7 @@ public class MultijugadorLocal : Partida
             {
                 puntos2 = contexto.SumarPuntos();
                 textPuntuacion2.text = "Jugador 2: " + puntos2.ToString();
-                turno = 1;
+                turnoJugador = 1;
                 textTurno.text = "Turno: Jugador 1";
             }
 

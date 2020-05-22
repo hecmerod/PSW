@@ -59,9 +59,9 @@ public class Card : MonoBehaviour
             audioSource.Play();
             while (rigidbody.velocity != Vector3.zero) {
                 await Task.Delay(40);
-                gameObject.transform.position = new Vector3(initialPosition.x,
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x,
                                                             gameObject.transform.position.y,
-                                                            initialPosition.z);
+                                                            gameObject.transform.position.z);
             }            
             partida.CheckPair(number);
         }

@@ -9,13 +9,15 @@ public class Dinamica : Partida
 {
     AudioSource parejaCorrecta;
     GameObject camara;
+    GameObject[] cartasDinamicas;
 
     public void Start()
     {
         SetTableroValues();
         camara = GameObject.Find("Main Camera");
         parejaCorrecta = camara.GetComponent<AudioSource>();
-        categoria.SetActive(false);
+        categoria.SetActive(false); 
+        
     }
 
     protected override void SetTableroValues()
@@ -31,7 +33,11 @@ public class Dinamica : Partida
 
     async public override void CheckPair(int n)
     {
-        if (!startedTimer) { startedTimer = true; tiempo.comenzarTiempo = true; }
+        if (!startedTimer) { 
+            startedTimer = true; 
+            tiempo.comenzarTiempo = true;
+            cartasDinamicas = this.tablero.Baraja.cartas;
+        }
 
         Card card = tablero.Baraja.GetCard(n);
 
@@ -78,19 +84,15 @@ public class Dinamica : Partida
     {
         for (int i = 0; i < GameProperties.cardsPositions.Length; i++)
         {
-            Vector3 vc = new Vector3(12.5f, 0, 0);
-            if (GameProperties.cardsPositions[i] == vc)
+            if (cartasDinamicas[i].transform.position.x >= 12.4f)
             {
-                GameProperties.cardsPositions[i] = new Vector3(6.786f, GameProperties.cardsPositions[i].y, GameProperties.cardsPositions[i].z);
+                Debug.Log("aqui");
+                cartasDinamicas[i].transform.position = new Vector3(6.786f, cartasDinamicas[i].transform.position.y, cartasDinamicas[i].transform.position.z);
             }
             else
             {
-                GameProperties.cardsPositions[i] = new Vector3(GameProperties.cardsPositions[i].x + 1.4285f, GameProperties.cardsPositions[i].y, GameProperties.cardsPositions[i].z);
+                cartasDinamicas[i].transform.position = new Vector3(cartasDinamicas[i].transform.position.x + 1.4285f, cartasDinamicas[i].transform.position.y, cartasDinamicas[i].transform.position.z);
             }
         }
-        //GameProperties.cardsPositions[0] = new Vector3(); GameProperties.cardsPositions[1] = new Vector3(); GameProperties.cardsPositions[2] = new Vector3(); GameProperties.cardsPositions[3] = new Vector3(); GameProperties.cardsPositions[4] = new Vector3();
-        //GameProperties.cardsPositions[5] = new Vector3(); GameProperties.cardsPositions[6] = new Vector3(); GameProperties.cardsPositions[7] = new Vector3(); GameProperties.cardsPositions[8] = new Vector3(); GameProperties.cardsPositions[9] = new Vector3();
-        //GameProperties.cardsPositions[10] = new Vector3(); GameProperties.cardsPositions[11] = new Vector3(); GameProperties.cardsPositions[12] = new Vector3(); GameProperties.cardsPositions[13] = new Vector3(); GameProperties.cardsPositions[14] = new Vector3(); 
-        //GameProperties.cardsPositions[15] = new Vector3(); GameProperties.cardsPositions[16] = new Vector3(); GameProperties.cardsPositions[17] = new Vector3(); GameProperties.cardsPositions[18] = new Vector3(); GameProperties.cardsPositions[19] = new Vector3();
     }
 }

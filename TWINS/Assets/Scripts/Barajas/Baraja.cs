@@ -10,8 +10,9 @@ public class Baraja : MonoBehaviour
     protected Tablero tablero;
     protected Partida partida;
     protected int cartasAEncontrar;
-
+    public GameObject[] cartas;
     protected int[] pairsCounter;
+
 
     public Baraja(Tablero tablero)
     {
@@ -35,6 +36,7 @@ public class Baraja : MonoBehaviour
     protected void CreateCards()
     {
         GameObject auxCard;
+        cartas = new GameObject[tablero.PositionCards.Length];
 
         int i = 1;
         foreach (Vector3 positionCard in tablero.PositionCards)
@@ -42,6 +44,7 @@ public class Baraja : MonoBehaviour
             Vector3 fixedPosition = new Vector3(positionCard.x, 0.005f, positionCard.z);
 
             auxCard = GameObject.Instantiate(partida.Card, fixedPosition, Quaternion.identity);
+            cartas[i - 1] = auxCard;
             auxCard.name = "Carta" + i++;
             auxCard.transform.SetParent(partida.Tablero.transform, true);
 
@@ -80,4 +83,8 @@ public class Baraja : MonoBehaviour
     {
         return (Card)cards[n];
     }
+
+
+    protected GameObject[] Cartas { get => cartas; set => cartas = value; }
+
 }

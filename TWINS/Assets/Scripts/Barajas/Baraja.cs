@@ -62,7 +62,7 @@ public class Baraja : MonoBehaviour
         pairsCounter[randomNumber]++;
 
         card.PairNumber = randomNumber;
-        if (partida.Tematica  == "animal")
+        if (partida.Tematica == "animal")
         {
             card.Cara.material = Resources.Load<Material>("Barajas/Animales_Baraja/Materials/" + randomNumber);
         }
@@ -73,6 +73,9 @@ public class Baraja : MonoBehaviour
         else if (partida.Tematica == "bandera")
         {
             card.Cara.material = Resources.Load<Material>("Barajas/Banderas_Baraja/Materials/" + randomNumber);
+        }
+        else if (partida.Tematica == "personalizada") {
+            card.Cara.material = Resources.Load<Material>("Barajas/Personalizada_Baraja/Materials/" + Personalizada.sprites[randomNumber]);
         }
         card.Dorso.material = Resources.Load<Material>("Barajas/Dorsos/Materials/DORSO_ROJO");
     }

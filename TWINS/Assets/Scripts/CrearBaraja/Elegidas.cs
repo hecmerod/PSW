@@ -7,8 +7,6 @@ public class Elegidas : MonoBehaviour
     public GameObject[] posiciones;
     private bool[] posOcupadas = new bool[15];
 
-
-
     public GameObject ReturnPos() {
         for (int i = 0; i < 15; i++) {
             if (!posOcupadas[i]) {

@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PartidaPorCategoria.unity
     guid: ac8dfe4d3fe73e9429300c86aa718f05
   - enabled: 1
+    path: Assets/Scenes/CrearBaraja.unity
+    guid: 4326cb8d59244c6428c43ea35c690beb
+  - enabled: 1
     path: Assets/Scenes/Partida.unity
     guid: 17094b9d1a0681342a6950622c019fd9
   - enabled: 1

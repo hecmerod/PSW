@@ -20,5 +20,8 @@ public class DDBaraja : MonoBehaviour
         {
             GameProperties.baraja = "bandera";
         }
+        if (value == 3) {
+            GameProperties.baraja = "personalizada";
+        }
     }
 }

@@ -175,5 +175,7 @@ public class PantallaInicio : MonoBehaviour
         await Task.Delay(1000);
         SceneManager.LoadScene("Ranking");
     }
+    public void CrearBaraja() { SceneManager.LoadScene("CrearBaraja"); }
+
 }
 

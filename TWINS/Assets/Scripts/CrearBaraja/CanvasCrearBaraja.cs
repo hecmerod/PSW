@@ -14,7 +14,7 @@ public class CanvasCrearBaraja : MonoBehaviour
     public void volver()
     {
         for(int i = 0; i < 15; i++){
-            if (elegidas.posiciones[i].transform.GetChildCount() == 0)
+            if (elegidas.posiciones[i].transform.childCount == 0)
             {
                 Debug.Log("La baraja no está completa");
                 return;

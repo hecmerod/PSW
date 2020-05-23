@@ -18,6 +18,8 @@ public class MenuPausa : MonoBehaviour
     public Scene mi_escena;
     public AudioMixer audioMixer;
     public Slider sli;
+    public AudioMixer audioMixer2;
+    public Slider sli2;
 
 
     void Awake()
@@ -26,6 +28,9 @@ public class MenuPausa : MonoBehaviour
         float music = PlayerPrefs.GetFloat("Volumen", 0.236f);
         CambiarVolumen(music);
         sli.value = music;
+        float sonidos = PlayerPrefs.GetFloat("sonido", 1f);
+        CambiarSonido(sonidos);
+        sli2.value = sonidos;
     }
     void Update()
     {
@@ -111,10 +116,17 @@ public class MenuPausa : MonoBehaviour
         PlayerPrefs.SetFloat("Volumen", volumen);
         PlayerPrefs.Save();
     }
-    public void SetQuality(int qualityIndex)
+    public void CambiarSonido(float volumen)
     {
-        QualitySettings.SetQualityLevel(qualityIndex);
+        audioMixer2.SetFloat("sonido", volumen);
+        PlayerPrefs.SetFloat("sonido", volumen);
+        PlayerPrefs.Save();
     }
+
+    //public void SetQuality(int qualityIndex)
+    //{
+    //    QualitySettings.SetQualityLevel(qualityIndex);
+    //}
     public void vuelvoAjustes()
     {
         menuPausaUI.SetActive(true);

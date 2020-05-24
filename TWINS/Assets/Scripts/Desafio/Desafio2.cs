@@ -27,7 +27,7 @@ public class Desafio2 : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionDesafio2(), baraja);
+        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionDesafio2(), baraja, false);
         GameProperties.tamaño = "pequeño";
         GameProperties.time = 60;
         GameProperties.tipoPartida = "PartidaEstandar";

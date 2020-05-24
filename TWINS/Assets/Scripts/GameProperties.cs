@@ -12,6 +12,7 @@ public static class GameProperties
     public static IPuntuacion puntuacion;
     public static int level;
     public static bool isLevel = false;
+    public static bool vNiño = false;
     public static string baraja = "animal";
     public static string tamaño = "pequeño";
     public static string tipoPartida = "PartidaEstandar";
@@ -20,11 +21,11 @@ public static class GameProperties
     public static bool dinamico = false;
 
     public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
-                                     IPuntuacion pnt , string brja) {
+                                     IPuntuacion pnt , string brja, bool vNiño) {
         cardsPositions = posCard; level = lv; puntuacion = pnt;
         cronoPosition = posCrono; posicionPuntuacion = posPuntuacion; 
         positionTablero = posTablero; baraja = brja; time = 60f;
-        isLevel = true;
+        isLevel = true; GameProperties.vNiño = vNiño;
     }   
 
     public static void PresetSettings(string tamaño) {
@@ -186,6 +187,7 @@ public static class GameProperties
         tamaño = "pequeño";
         tipoPartida = "PartidaEstandar";
         isLevel = false;
+        vNiño = false;
     }
 
     public static int DesafioPasado()

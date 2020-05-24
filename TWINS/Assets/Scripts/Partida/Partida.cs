@@ -136,7 +136,8 @@ public abstract class Partida : MonoBehaviour
 
             DBManager.partidasGanadas++;
             DBManager.UpdaterData(puntos);
-            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+            if (DBManager.nivel == GameProperties.level && !GameProperties.vNiño) DBManager.nivel++;
+            if (DBManager.nivelniños == GameProperties.level && GameProperties.vNiño) DBManager.nivelniños++;
 
             dBPartida.CallSaveData();
         }

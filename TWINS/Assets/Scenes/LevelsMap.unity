@@ -1235,6 +1235,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
   baraja: profesion
+  "vNi\xF1o": 0
 --- !u!135 &257814854
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1488,6 +1489,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 1
 --- !u!135 &338131308
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1743,6 +1745,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &605220335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,6 +2101,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &751438601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2296,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &788118417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,6 +2410,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 87, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 0
 --- !u!135 &788118422
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2752,6 +2758,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &908432679
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2865,6 +2872,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &910023964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3021,6 +3029,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 0
 --- !u!135 &957046462
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3115,6 +3124,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
   baraja: profesion
+  "vNi\xF1o": 1
 --- !u!23 &973241666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3322,6 +3332,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 1
 --- !u!23 &1000256256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3435,6 +3446,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &1012491764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3595,6 +3607,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1069594420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4762,6 +4775,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 1
 --- !u!23 &1296520159
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4875,6 +4889,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &1306106597
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5194,6 +5209,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1362653532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,6 +5319,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 87, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 0
 --- !u!135 &1362653537
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5382,6 +5399,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &1363010492
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5810,6 +5828,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1432537869
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,6 +6164,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 0
 --- !u!135 &1516514518
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6529,6 +6549,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1590586436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7225,6 +7246,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1735995452
 GameObject:
   m_ObjectHideFlags: 0
@@ -7291,6 +7313,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &1735995456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7404,6 +7427,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &1740963784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7598,6 +7622,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 1
 --- !u!135 &1742717986
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7794,6 +7819,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 1
 --- !u!135 &1784361233
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7921,6 +7947,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 1
 --- !u!23 &1784703304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8136,6 +8163,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 87, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 1
 --- !u!23 &1793791861
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8437,6 +8465,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1854515003
 GameObject:
   m_ObjectHideFlags: 0
@@ -8551,6 +8580,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1909066917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8699,6 +8729,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!23 &1911727969
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9035,6 +9066,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &1990858415
 GameObject:
   m_ObjectHideFlags: 0
@@ -9230,6 +9262,7 @@ MonoBehaviour:
   puntuacionPosition: {x: 0, y: 0, z: 0}
   puntuacion: {fileID: 0}
   baraja: 
+  "vNi\xF1o": 0
 --- !u!1 &2020311624
 GameObject:
   m_ObjectHideFlags: 0
@@ -9449,6 +9482,7 @@ MonoBehaviour:
   puntuacionPosition: {x: -106, y: 87, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
+  "vNi\xF1o": 1
 --- !u!23 &2071131793
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class Level : MonoBehaviour
     private Renderer renderer;
     public string baraja;
 
+    public bool vNiño;
+
     private void Awake() {
         renderer = GetComponent<Renderer>();
 
@@ -23,14 +25,28 @@ public class Level : MonoBehaviour
     }
 
     private void isUnlocked() {
-        if (DBManager.nivel < level)
+        if (!vNiño)
         {
-            renderer.material.color = Color.gray;
-            locked = true;
+            if (DBManager.nivel < level)
+            {
+                renderer.material.color = Color.gray;
+                locked = true;
+            }
+            else if (DBManager.nivel == level)
+            {
+                renderer.material.color = Color.blue;
+            }
         }
-        else if (DBManager.nivel == level)
-        {
-            renderer.material.color = Color.blue;
+        else {
+            if (DBManager.nivelniños < level)
+            {
+                renderer.material.color = Color.gray;
+                locked = true;
+            }
+            else if (DBManager.nivelniños == level)
+            {
+                renderer.material.color = Color.red;
+            }
         }
     }
 
@@ -38,7 +54,7 @@ public class Level : MonoBehaviour
     private void OnMouseDown() {
         if (locked) return;
 
-        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja);
+        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja, vNiño);
         Debug.Log(baraja);
         SceneManager.LoadScene("Partida");        
     }

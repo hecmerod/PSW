@@ -59,12 +59,14 @@ public class SlideCamera : MonoBehaviour
             this.transform.position = new Vector3(15, 5, 0);
             this.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(60, 180, 0));
             botonNiñoAdulto.image.color = Color.blue;
+            botonNiñoAdulto.transform.GetChild(0).GetComponent<Text>().text = "Versión Adulto";
             vNiño = true;
         }
         else {
             this.transform.position = new Vector3(15, 5, 0);
             this.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(60, 0, 0));
             botonNiñoAdulto.image.color = Color.yellow;
+            botonNiñoAdulto.transform.GetChild(0).GetComponent<Text>().text = "Versión Niño";
             vNiño = false;
         }
     }

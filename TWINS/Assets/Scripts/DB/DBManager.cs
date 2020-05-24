@@ -9,10 +9,10 @@ public static class DBManager
 {
     public static string username;
     public static int puntuacionTotal;
-    public static int puntuacionMax;
     public static int partidasJugadas;
     public static int partidasGanadas;
     public static int nivel;
+    public static int nivelniños;
     public static int[] scores = new int[1000];
     public static string[] topNames = new string[3];
 
@@ -36,12 +36,14 @@ public static class DBManager
             DBManager.partidasJugadas = int.Parse(webResults[2]);
             DBManager.partidasGanadas = int.Parse(webResults[3]);
             DBManager.nivel = int.Parse(webResults[4]);
+            DBManager.nivelniños = int.Parse(webResults[5]);
             SceneManager.LoadScene("PantallaInicio");
 
             /*Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
             Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
             Debug.Log("score: " + DBManager.puntuacionTotal);
             Debug.Log("nivel: " + DBManager.nivel);*/
+            Debug.Log("nivelniños" + nivelniños);
         }
         else
         {
@@ -71,7 +73,7 @@ public static class DBManager
             WWWForm form = new WWWForm();
             form.AddField("name", DBManager.username);
             form.AddField("score", DBManager.puntuacionTotal);
-            //form.AddField("maxscore", DBManager.puntuacionMax);
+            form.AddField("nivelniños", DBManager.nivelniños);
             form.AddField("gamesplayed", DBManager.partidasJugadas);
             form.AddField("gameswon", DBManager.partidasGanadas);
             form.AddField("nivel", DBManager.nivel);

@@ -80,18 +80,37 @@ public class Dinamica : Partida
     }
 
     //NO BORRAR
-    public void moverCartas()
+    async public void moverCartas()
     {
+        Vector3[] posicionesCartas = new Vector3[GameProperties.cardsPositions.Length];
         for (int i = 0; i < GameProperties.cardsPositions.Length; i++)
         {
+            posicionesCartas[i] = cartasDinamicas[i].transform.position;
             if (cartasDinamicas[i].transform.position.x >= 12.4f)
             {
-                cartasDinamicas[i].transform.position = new Vector3(6.786f, cartasDinamicas[i].transform.position.y, cartasDinamicas[i].transform.position.z);
+                cartasDinamicas[i].GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0) * 176);
+                cartasDinamicas[i].GetComponent<Rigidbody>().AddForce(new Vector3(-1, 0, 0) * 385);
             }
             else
             {
-                cartasDinamicas[i].transform.position = new Vector3(cartasDinamicas[i].transform.position.x + 1.4285f, cartasDinamicas[i].transform.position.y, cartasDinamicas[i].transform.position.z);
+                cartasDinamicas[i].GetComponent<Rigidbody>().AddForce(new Vector3(1, 0, 0) * 295);
+            }
+        }
+        await Task.Delay(875);
+
+        for (int i = 0; i < GameProperties.cardsPositions.Length; i++)
+        {
+
+            if (posicionesCartas[i].x >= 12.4f)
+            {
+                cartasDinamicas[i].transform.position = new Vector3(6.786f, posicionesCartas[i].y, posicionesCartas[i].z);
+            }
+            else
+            {
+                cartasDinamicas[i].transform.position = new Vector3(posicionesCartas[i].x + 1.4285f, posicionesCartas[i].y, posicionesCartas[i].z);
             }
         }
     }
+
+    
 }

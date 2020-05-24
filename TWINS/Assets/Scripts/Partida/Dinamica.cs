@@ -86,7 +86,6 @@ public class Dinamica : Partida
         {
             if (cartasDinamicas[i].transform.position.x >= 12.4f)
             {
-                Debug.Log("aqui");
                 cartasDinamicas[i].transform.position = new Vector3(6.786f, cartasDinamicas[i].transform.position.y, cartasDinamicas[i].transform.position.z);
             }
             else

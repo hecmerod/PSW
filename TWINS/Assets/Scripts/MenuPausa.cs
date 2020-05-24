@@ -18,18 +18,17 @@ public class MenuPausa : MonoBehaviour
     public Scene mi_escena;
     public AudioMixer audioMixer;
     public Slider sli;
-
+    public AudioMixer audioMixer2;
+    public Slider sli2;
+    public float rbgValue = 0.1f;
+    public Slider sli3;
 
     void Awake()
     {
-        resetStatic();
-        float music = PlayerPrefs.GetFloat("Volumen", 0.236f);
-        CambiarVolumen(music);
-        sli.value = music;
+        LoadSettings();
     }
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (checkerSalir == false & checkerReiniciar == false & checkerAjustes == false)
@@ -47,6 +46,19 @@ public class MenuPausa : MonoBehaviour
                 vuelvoDeQuitar();
             }
         }
+    }
+    void LoadSettings()
+    {
+        resetStatic();
+        float music = PlayerPrefs.GetFloat("Volumen", 0.236f);
+        CambiarVolumen(music);
+        sli.value = music;
+        float sonidos = PlayerPrefs.GetFloat("sonido", 1f);
+        CambiarSonido(sonidos);
+        sli2.value = sonidos;
+        float cbrillo = PlayerPrefs.GetFloat("Brillo", 0.1f);
+        cambiarBrillo(cbrillo);
+        sli3.value = cbrillo;
     }
     public void Reanudar()
     {
@@ -111,9 +123,17 @@ public class MenuPausa : MonoBehaviour
         PlayerPrefs.SetFloat("Volumen", volumen);
         PlayerPrefs.Save();
     }
-    public void SetQuality(int qualityIndex)
+    public void CambiarSonido(float volumen)
     {
-        QualitySettings.SetQualityLevel(qualityIndex);
+        audioMixer2.SetFloat("sonido", volumen);
+        PlayerPrefs.SetFloat("sonido", volumen);
+        PlayerPrefs.Save();
+    }
+    public void cambiarBrillo(float brillo)
+    {
+        RenderSettings.ambientLight = new Color(brillo, brillo, brillo, 1);
+        PlayerPrefs.SetFloat("Brillo", brillo);
+        PlayerPrefs.Save();
     }
     public void vuelvoAjustes()
     {

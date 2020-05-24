@@ -173,10 +173,10 @@ public static class GameProperties
                 cardsPositions[16] = new Vector3(8.2145f, 0, 7.5f); cardsPositions[17] = new Vector3(9.643f, 0, 7.5f);
                 cardsPositions[18] = new Vector3(11.0715f, 0, 7.5f); cardsPositions[19] = new Vector3(12.5f, 0, 7.5f);
 
-                time = 90f;
+                time = 135f;
                 cronoPosition = new Vector3(-118f, 140f, 0);
                 posicionPuntuacion = new Vector3(-106, 87, 0);
-                puntuacion = new PuntuacionNormal();
+                puntuacion = new PuntuacionDinamica();
                 break;
         }
     }

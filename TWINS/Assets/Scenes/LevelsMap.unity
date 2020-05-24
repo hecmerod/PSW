@@ -320,7 +320,7 @@ RectTransform:
   - {fileID: 1665571083}
   - {fileID: 1555661615}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1982,7 +1982,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721524646
 GameObject:
@@ -5913,7 +5913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1469625434}
   m_Layer: 0
-  m_Name: Mapa (1)
+  m_Name: "Mapa Ni\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5947,8 +5947,9 @@ Transform:
   - {fileID: 987972797}
   - {fileID: 1069594421}
   - {fileID: 1840372921}
+  - {fileID: 2062803530}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1488246903
 GameObject:
@@ -6282,8 +6283,9 @@ Transform:
   - {fileID: 1703305013}
   - {fileID: 1229511449}
   - {fileID: 204653983}
+  - {fileID: 1849413504}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1555661614
 GameObject:
@@ -8319,8 +8321,8 @@ Transform:
   - {fileID: 1566946525}
   - {fileID: 761360706}
   - {fileID: 1067793613}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1542708507}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1854002487
 GameObject:
@@ -9331,7 +9333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062803530}
   m_Layer: 0
-  m_Name: Levels (1)
+  m_Name: "Levels Ni\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9344,8 +9346,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062803529}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 17.39, y: 0, z: -13.28}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.52, y: 0, z: 13.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1296520156}
@@ -9365,8 +9367,8 @@ Transform:
   - {fileID: 1911727966}
   - {fileID: 908432676}
   - {fileID: 1012491761}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1469625434}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2071131789
 GameObject:

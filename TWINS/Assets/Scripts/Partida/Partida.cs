@@ -52,7 +52,7 @@ public abstract class Partida : MonoBehaviour
         puntuacion2 = GameObject.Find("Canvas/Puntuacion2");
 
         puntuacion = canvas.transform.GetComponentsInChildren<Text>()[1];
-        textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[5];
+        textPuntuacion = canvas.transform.GetComponentsInChildren<Text>()[4];
         tiempo = GameObject.FindObjectOfType<Tiempo>();
 
         tiempo.InicializarPartida(this);
@@ -199,8 +199,8 @@ public abstract class Partida : MonoBehaviour
         animacionDerrota.transform.parent = canvas.transform;
         animacionVictoria.transform.parent = canvas.transform;
 
-        animacionDerrota.transform.SetSiblingIndex(2);
-        animacionVictoria.transform.SetSiblingIndex(3);
+        animacionDerrota.transform.SetSiblingIndex(4);
+        animacionVictoria.transform.SetSiblingIndex(5);
 
         animacionDerrota.transform.localPosition = positionAnimacion;
         animacionVictoria.transform.localPosition = positionAnimacion;

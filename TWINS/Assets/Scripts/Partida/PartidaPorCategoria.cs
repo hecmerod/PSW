@@ -25,6 +25,11 @@ public class PartidaPorCategoria : Partida
         iniciarCategoria();
         categoria = base.categoria.GetComponent<Text>();
         categoria.text = elegirCategoria();
+        if (puntuacion1.activeSelf && puntuacion2.activeSelf)
+        {
+            puntuacion1.SetActive(false);
+            puntuacion2.SetActive(false);
+        }
         pairsCategoria2 = 0;
         pairsCategoria4 = 0;
         camara = GameObject.Find("Main Camera");

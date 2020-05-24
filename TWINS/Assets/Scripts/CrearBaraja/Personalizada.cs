@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class Personalizada
 {
-    public static string[] sprites = new string[15];
+    public static string[] sprites = new string[16];
 }

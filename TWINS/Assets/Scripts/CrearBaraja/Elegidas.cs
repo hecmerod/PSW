@@ -5,10 +5,10 @@ using UnityEngine;
 public class Elegidas : MonoBehaviour
 {
     public GameObject[] posiciones;
-    private bool[] posOcupadas = new bool[15];
+    private bool[] posOcupadas = new bool[16];
 
     public GameObject ReturnPos() {
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 16; i++) {
             if (!posOcupadas[i]) {
                 posOcupadas[i] = true;
                 return posiciones[i];

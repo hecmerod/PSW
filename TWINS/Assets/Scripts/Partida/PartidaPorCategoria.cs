@@ -40,6 +40,7 @@ public class PartidaPorCategoria : Partida
     {
         //Por banderas pequeño -> Español(andorra,argentina (2,8)) Arabes(Argelia,arabiasaudita(4,3)) Frios(alemania,canada(1,0))
         //Por banderas mediano -> Arabes(Argelia,arabiasaudita(4,3)) EuropaCentro(Belgica,alemania(7,1)) Nieve(canada,andorra(2,0)) Selva(Bolivia,Brasil((8,9)) Planos(Argentina,australia(5,6))
+        //Banderas grandes  -> Arabes(argelia, arabiasaudita, y 2 mas) Europeos(losdeuropa) EuropaLatina Española y paises grandes(Brasil, australia, china, Canada)
         List<String> c1 = new List<String> { "domesticos", "sabana", "bosque" };
         List<String> c2 = new List<String> { "domesticos", "sabana", "salvaje", "bosque", "arbol" }; 
         List<String> c3 = new List<String> { "domesticos", "sabana", "pradera", "bosque" };

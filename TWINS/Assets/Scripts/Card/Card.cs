@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -57,12 +58,18 @@ public class Card : MonoBehaviour
 
             rigidbody.AddTorque(new Vector3(0, 0, 1) * 40);
             audioSource.Play();
-            while (rigidbody.velocity != Vector3.zero) {
-                await Task.Delay(40);
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x,
-                                                            gameObject.transform.position.y,
-                                                            gameObject.transform.position.z);
-            }            
+            try
+            {
+                while (rigidbody.velocity != Vector3.zero) {
+                await Task.Delay(10);
+               
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x,
+                                                           gameObject.transform.position.y,
+                                                           gameObject.transform.position.z);
+                }
+                
+            }
+            catch (Exception e) { }
             partida.CheckPair(number);
         }
     }

@@ -114,6 +114,7 @@ public abstract class Partida : MonoBehaviour
         numCardsTurned = 3;
         tiempo.partidaTerminada = true;
         tiempo.comenzarTiempo = false;
+        if (puntos < 0) puntos = 0;
         textPuntuacion.text = "Puntuación: " + puntos;
         animacionDerrota.SetActive(true);
         contexto.ResetearPuntuacion();

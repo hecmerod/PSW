@@ -11,6 +11,7 @@ public class PantallaInicio : MonoBehaviour
     public GameObject Login;
     public GameObject Register;
     public GameObject caracteristicas;
+    public GameObject otrosModos;
     public Dropdown partidaSel;
     public Dropdown tableroSel;
     public Dropdown barajaSel;
@@ -177,5 +178,14 @@ public class PantallaInicio : MonoBehaviour
     }
     public void CrearBaraja() { SceneManager.LoadScene("CrearBaraja"); }
 
+    public void gamemodes()
+    {
+        otrosModos.SetActive(true);
+    }
+
+    public void salirOtrosModos()
+    {
+        otrosModos.SetActive(false);
+    }
 }
 

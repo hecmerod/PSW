@@ -44,9 +44,12 @@ public class PartidaPorCategoria : Partida
         List<String> c1 = new List<String> { "domesticos", "sabana", "bosque" };
         List<String> c2 = new List<String> { "domesticos", "sabana", "salvaje", "bosque", "arbol" };
         List<String> c3 = new List<String> { "domesticos", "sabana", "pradera", "bosque" };
-        List<String> c4 = new List<String> { "hispanohablante", "arabes", "frios" };
+        List<String> c4 = new List<String> { "hispanohablantes", "arabes", "frios" };
         List<String> c5 = new List<String> { "arabes", "europa centro", "nieve", "selva", "planos" };
         List<String> c6 = new List<String> { "arabes", "europeos", "latino español", "grandes" };
+        List<String> c7 = new List<String> { "seguridad pública", "alimentación", "profesores"};
+        List<String> c8 = new List<String> { "seguridad pública", "alimentación", "profesores", "ingenieros", "noticias" };
+        List<String> c9 = new List<String> { "seguridad pública", "alimentación", "profesores", "ingenieros" };
         switch (GameProperties.baraja) {
             case "animal":
                 switch (GameProperties.tamaño)
@@ -59,7 +62,7 @@ public class PartidaPorCategoria : Partida
                         break;
                     case "grande":
                         categorias.AddRange(c3);
-                        categoria.gameObject.transform.position = new Vector3(350, 244, 0);
+                        categoria.gameObject.transform.localPosition = new Vector3(250, 237.3f, 0);
                         break;
                 }
                 break;
@@ -74,7 +77,22 @@ public class PartidaPorCategoria : Partida
                         break;
                     case "grande":
                         categorias.AddRange(c6);
-                        categoria.gameObject.transform.position = new Vector3(350, 244, 0);
+                        categoria.gameObject.transform.localPosition = new Vector3(250, 237.3f, 0);
+                        break;
+                }
+                break;
+            case "profesion":
+                switch (GameProperties.tamaño)
+                {
+                    case "pequeño":
+                        categorias.AddRange(c7);
+                        break;
+                    case "mediano":
+                        categorias.AddRange(c8);
+                        break;
+                    case "grande":
+                        categorias.AddRange(c9);
+                        categoria.gameObject.transform.localPosition = new Vector3(250, 237.3f, 0);
                         break;
                 }
                 break;
@@ -204,7 +222,7 @@ public class PartidaPorCategoria : Partida
                         switch (aux)
                         {
                             case string aux when aux == "hispanohablantes":
-                                return carta.PairNumber == 2 || carta.PairNumber == 8;
+                                return carta.PairNumber == 2 || carta.PairNumber == 5;
                                 break;
                             case string aux when aux == "arabes":
                                 return carta.PairNumber == 4 || carta.PairNumber == 3;
@@ -264,10 +282,77 @@ public class PartidaPorCategoria : Partida
                         return false;
                         break;
                 }
+            case "profesion":
+                switch (GameProperties.tamaño)
+                {
+                    case "pequeño":
+                        switch (aux)
+                        {
+                            case string aux when aux == "seguridad pública":
+                                return carta.PairNumber == 0 || carta.PairNumber == 1;
+                                break;
+                            case string aux when aux == "alimentación":
+                                return carta.PairNumber == 2 || carta.PairNumber == 3;
+                                break;
+                            case string aux when aux == "profesores":
+                                return carta.PairNumber == 4 || carta.PairNumber == 5;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
+                        break;
+                    case "mediano":
+                        switch (aux)
+                        {
+                            case string aux when aux == "seguridad pública":
+                                return carta.PairNumber == 0 || carta.PairNumber == 1;
+                                break;
+                            case string aux when aux == "alimentación":
+                                return carta.PairNumber == 2 || carta.PairNumber == 3;
+                                break;
+                            case string aux when aux == "profesores":
+                                return carta.PairNumber == 4 || carta.PairNumber == 5;
+                                break;
+                            case string aux when aux == "ingenieros":
+                                return carta.PairNumber == 6 || carta.PairNumber == 8;
+                                break;
+                            case string aux when aux == "noticias":
+                                return carta.PairNumber == 7 || carta.PairNumber == 9;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
+                        break;
+                    case "grande":
+                        switch (aux)
+                        {
+                            case string aux when aux == "seguridad pública":
+                                return carta.PairNumber == 0 || carta.PairNumber == 1 || carta.PairNumber == 7 || carta.PairNumber == 13;
+                                break;
+                            case string aux when aux == "alimentación":
+                                return carta.PairNumber == 2 || carta.PairNumber == 3 || carta.PairNumber == 11 || carta.PairNumber == 15;
+                                break;
+                            case string aux when aux == "profesores":
+                                return carta.PairNumber == 4 || carta.PairNumber == 5 || carta.PairNumber == 14 || carta.PairNumber == 9;
+                                break;
+                            case string aux when aux == "ingenieros":
+                                return carta.PairNumber == 6 || carta.PairNumber == 8 || carta.PairNumber == 10 || carta.PairNumber == 12;
+                            default:
+                                return false;
+                                break;
+                        }
+                        break;
+                    default:
+                        return false;
+                        break;
+                }
                 break;
                 default:
                    return false;
                    break;
+
         }
 
     }

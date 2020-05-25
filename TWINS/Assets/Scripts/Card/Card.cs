@@ -83,8 +83,11 @@ public class Card : MonoBehaviour
         return this.pairNumber == card.PairNumber;
     }
 
-    public void TurnCard() {               
-        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+    public void TurnCard() {
+        try {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        catch (Exception e) { }
         isTurned = false;
         showMarco = true;
         //FALTA HACER 

@@ -10,8 +10,9 @@ public class MultijugadorLocal : Partida
     AudioSource parejaCorrecta;
     GameObject camara;
     //public int puntos1, puntos2;
-    Text textTurno, textPuntuacion1, textPuntuacion2;
+    Text textPuntuacion1, textPuntuacion2;
     int turnoJugador = 1;
+    Color32 color;
 
     public void Start()
     {
@@ -26,17 +27,19 @@ public class MultijugadorLocal : Partida
 
         gameObjectTablero = GameObject.Instantiate(gameObjectTablero, positionTablero, Quaternion.identity);
         gameObjectTablero.name = "Tablero";
-        gameObjectTurno.SetActive(true);
-        puntuacion1.SetActive(true);
-        puntuacion2.SetActive(true);
+        if (!puntuacion1.activeSelf && !puntuacion2.activeSelf)
+        {
+            puntuacion1.SetActive(true);
+            puntuacion2.SetActive(true);
+        }
         puntuacion.text = "";
+        color = new Color32(189,48,66,255);
 
         textPuntuacion1 = puntuacion1.GetComponent<Text>();
         textPuntuacion1.text = "Jugador 1: 0";
         textPuntuacion2 = puntuacion2.GetComponent<Text>();
         textPuntuacion2.text = "Jugador 2: 0";
-        textTurno = gameObjectTurno.GetComponent<Text>();
-        textTurno.text = "Turno: Jugador 1";
+        textPuntuacion1.color = Color.blue;
 
         tablero = gameObjectTablero.GetComponent<Tablero>();
 
@@ -66,15 +69,17 @@ public class MultijugadorLocal : Partida
             {
                 puntos1 = contexto.SumarPuntos();
                 textPuntuacion1.text = "Jugador 1: " + puntos1.ToString();
+                textPuntuacion1.color = color;
                 turnoJugador = 2;
-                textTurno.text = "Turno: Jugador 2";
+                textPuntuacion2.color = Color.blue;
             }
             else
             {
                 puntos2 = contexto.SumarPuntos();
                 textPuntuacion2.text = "Jugador 2: " + puntos2.ToString();
+                textPuntuacion2.color = color;
                 turnoJugador = 1;
-                textTurno.text = "Turno: Jugador 1";
+                textPuntuacion1.color = Color.blue;
             }
 
             MultijugadorWon();
@@ -91,15 +96,17 @@ public class MultijugadorLocal : Partida
             {
                 puntos1 = contexto.RestarPuntos();
                 textPuntuacion1.text = "Jugador 1: " + puntos1.ToString();
+                textPuntuacion1.color = color;
                 turnoJugador = 2;
-                textTurno.text = "Turno: Jugador 2";
+                textPuntuacion2.color = Color.blue;
             }
             else
             {
                 puntos2 = contexto.RestarPuntos();
                 textPuntuacion2.text = "Jugador 2: " + puntos2.ToString();
+                textPuntuacion2.color = color;
                 turnoJugador = 1;
-                textTurno.text = "Turno: Jugador 1";
+                textPuntuacion1.color = Color.blue;
             }
             /*if (puntos < 0)
             {

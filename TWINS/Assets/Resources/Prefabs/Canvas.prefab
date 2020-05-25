@@ -31,7 +31,7 @@ RectTransform:
   m_LocalScale: {x: 0.75000006, y: 0.75000006, z: 0.75000006}
   m_Children: []
   m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -92,10 +92,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comenzarTiempo: 0
   partidaTerminada: 0
-  miTiempo: {fileID: 0}
   textContador: {fileID: 0}
   puntuacion: {fileID: 0}
   textPuntuacion: {fileID: 0}
+  textTiempo: {fileID: 0}
   time: 60
   timePlayed: 0
   contador: 0
@@ -931,7 +931,7 @@ RectTransform:
   - {fileID: 859499942243825175}
   - {fileID: 859499942488273721}
   m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1439,7 +1439,6 @@ RectTransform:
   - {fileID: 7310667719902353329}
   - {fileID: 2699318110018542862}
   - {fileID: 5076125921032983199}
-  - {fileID: 5722637024520378923}
   - {fileID: 268867546500448148}
   - {fileID: 2066382031904862156}
   - {fileID: 5426899607963076982}
@@ -1534,6 +1533,10 @@ MonoBehaviour:
     m_Handle: 0
   audioMixer: {fileID: 24100000, guid: 98b5a41f2aad9824885fd03ec49bc37a, type: 2}
   sli: {fileID: 859499942945664331}
+  audioMixer2: {fileID: 0}
+  sli2: {fileID: 0}
+  rbgValue: 0.1
+  sli3: {fileID: 0}
 --- !u!1 &1978911068341039474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,7 +2036,7 @@ RectTransform:
   m_LocalScale: {x: 0.75000006, y: 0.75000006, z: 0.75000006}
   m_Children: []
   m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2094,10 +2097,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comenzarTiempo: 0
   partidaTerminada: 0
-  miTiempo: {fileID: 0}
   textContador: {fileID: 0}
   puntuacion: {fileID: 0}
   textPuntuacion: {fileID: 0}
+  textTiempo: {fileID: 0}
   time: 60
   timePlayed: 0
   contador: 0
@@ -2947,7 +2950,7 @@ RectTransform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2994,83 +2997,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Categoria: '
---- !u!1 &5494956218847300582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5722637024520378923}
-  - component: {fileID: 944567429018125804}
-  - component: {fileID: 7049624687337589278}
-  m_Layer: 5
-  m_Name: Turno
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5722637024520378923
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5494956218847300582}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -126, y: 88.000015}
-  m_SizeDelta: {x: 250, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &944567429018125804
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5494956218847300582}
-  m_CullTransparentMesh: 0
---- !u!114 &7049624687337589278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5494956218847300582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Turno: Jugador 1'
 --- !u!1 &5687852188112928272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,7 +3671,7 @@ RectTransform:
   - {fileID: 2363854721200991897}
   - {fileID: 5999134401372766377}
   m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4261,7 +4187,7 @@ RectTransform:
   - {fileID: 185116730136085677}
   - {fileID: 3482579546615353278}
   m_Father: {fileID: 4939952455021951752}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

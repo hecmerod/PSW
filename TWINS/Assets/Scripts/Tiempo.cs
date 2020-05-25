@@ -10,13 +10,21 @@ public class Tiempo : MonoBehaviour
     public bool comenzarTiempo = false, partidaTerminada = false;
     public Text textContador, puntuacion, textPuntuacion, textTiempo;
     public float time = 60, timePlayed = 0, contador;
+    Font fuenteTexto;
     Partida partida;
     public void Awake()
     {
         LoadSetting();
         time = GameProperties.time;
         contador = time;
-        textContador.text = "Tiempo: " + time;
+        if (GameProperties.tipoPartida == "MultiLocal")
+        {
+            textContador.text = time.ToString();
+        }
+        else
+        {
+            textContador.text = "Tiempo: " + time;
+        }
     }
     public void Update()
     {
@@ -37,7 +45,14 @@ public class Tiempo : MonoBehaviour
         {
             timePlayed += Time.deltaTime;
             contador -= Time.deltaTime;
-            textContador.text = "Tiempo: " + (int)contador;
+            if (GameProperties.tipoPartida == "MultiLocal")
+            {
+                textContador.text = ((int)contador).ToString();
+            }
+            else
+            {
+                textContador.text = "Tiempo: " + (int)contador;
+            }
         }
         if(timePlayed >= time)
         {

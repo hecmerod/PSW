@@ -25,6 +25,11 @@ public class PartidaPorCarta : Partida
         camara = GameObject.Find("Main Camera");
         parejaCorrecta = camara.GetComponent<AudioSource>();
         categoria.SetActive(false);
+        if (puntuacion1.activeSelf && puntuacion2.activeSelf)
+        {
+            puntuacion1.SetActive(false);
+            puntuacion2.SetActive(false);
+        }
     }
 
     private void InitializeMainCard() {

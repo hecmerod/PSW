@@ -21,9 +21,9 @@ public class PartidaPorCategoria : Partida
 
     public void Start()
     {
-        SetTableroValues();
-        iniciarCategoria();
         categoria = base.categoria.GetComponent<Text>();
+        SetTableroValues();
+        iniciarCategoria();        
         categoria.text = elegirCategoria();
         if (puntuacion1.activeSelf && puntuacion2.activeSelf)
         {
@@ -54,6 +54,7 @@ public class PartidaPorCategoria : Partida
                 break;
             case "grande":
                 categorias.AddRange(c3);
+                categoria.gameObject.transform.position = new Vector3(350, 244, 0);
                 break;
         }
     }

@@ -42,19 +42,41 @@ public class PartidaPorCategoria : Partida
         //Por banderas mediano -> Arabes(Argelia,arabiasaudita(4,3)) EuropaCentro(Belgica,alemania(7,1)) Nieve(canada,andorra(2,0)) Selva(Bolivia,Brasil((8,9)) Planos(Argentina,australia(5,6))
         //Banderas grandes  -> Arabes(argelia, arabiasaudita, y 2 mas) Europeos(losdeuropa) EuropaLatina Española y paises grandes(Brasil, australia, china, Canada)
         List<String> c1 = new List<String> { "domesticos", "sabana", "bosque" };
-        List<String> c2 = new List<String> { "domesticos", "sabana", "salvaje", "bosque", "arbol" }; 
+        List<String> c2 = new List<String> { "domesticos", "sabana", "salvaje", "bosque", "arbol" };
         List<String> c3 = new List<String> { "domesticos", "sabana", "pradera", "bosque" };
-        switch (GameProperties.tamaño)
-        {
-            case "pequeño":
-                categorias.AddRange(c1);
+        List<String> c4 = new List<String> { "hispanohablante", "arabes", "frios" };
+        List<String> c5 = new List<String> { "arabes", "europa centro", "nieve", "selva", "planos" };
+        List<String> c6 = new List<String> { "arabes", "europeos", "latino español", "grandes" };
+        switch (GameProperties.baraja) {
+            case "animal":
+                switch (GameProperties.tamaño)
+                {
+                    case "pequeño":
+                        categorias.AddRange(c1);
+                        break;
+                    case "mediano":
+                        categorias.AddRange(c2);
+                        break;
+                    case "grande":
+                        categorias.AddRange(c3);
+                        categoria.gameObject.transform.position = new Vector3(350, 244, 0);
+                        break;
+                }
                 break;
-            case "mediano":
-                categorias.AddRange(c2);
-                break;
-            case "grande":
-                categorias.AddRange(c3);
-                categoria.gameObject.transform.position = new Vector3(350, 244, 0);
+            case "bandera":
+                switch (GameProperties.tamaño)
+                {
+                    case "pequeño":
+                        categorias.AddRange(c4);
+                        break;
+                    case "mediano":
+                        categorias.AddRange(c5);
+                        break;
+                    case "grande":
+                        categorias.AddRange(c6);
+                        categoria.gameObject.transform.position = new Vector3(350, 244, 0);
+                        break;
+                }
                 break;
         }
     }
@@ -105,72 +127,149 @@ public class PartidaPorCategoria : Partida
     public Boolean esCategoria(Card carta)
     {
         aux = categoria.text;
-        switch (GameProperties.tamaño)
+        switch (GameProperties.baraja)
         {
-            case "pequeño":
-                switch (aux)
+            case "animal":
+                switch (GameProperties.tamaño)
                 {
-                    case string aux when aux == "bosque":
-                        return carta.PairNumber == 3 || carta.PairNumber == 0;
+                    case "pequeño":
+                        switch (aux)
+                        {
+                            case string aux when aux == "bosque":
+                                return carta.PairNumber == 3 || carta.PairNumber == 0;
+                                break;
+                            case string aux when aux == "domesticos":
+                                return carta.PairNumber == 1 || carta.PairNumber == 4;
+                                break;
+                            case string aux when aux == "sabana":
+                                return carta.PairNumber == 5 || carta.PairNumber == 2;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
                         break;
-                    case string aux when aux == "domesticos":
-                        return carta.PairNumber == 1 || carta.PairNumber == 4;
+                    case "mediano":
+                        switch (aux)
+                        {
+                            case string aux when aux == "bosque":
+                                return carta.PairNumber == 3 || carta.PairNumber == 0;
+                                break;
+                            case string aux when aux == "domesticos":
+                                return carta.PairNumber == 1 || carta.PairNumber == 4;
+                                break;
+                            case string aux when aux == "sabana":
+                                return carta.PairNumber == 5 || carta.PairNumber == 2;
+                                break;
+                            case string aux when aux == "salvaje":
+                                return carta.PairNumber == 6 || carta.PairNumber == 8;
+                                break;
+                            case string aux when aux == "arbol":
+                                return carta.PairNumber == 7 || carta.PairNumber == 9;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
                         break;
-                    case string aux when aux == "sabana":
-                        return carta.PairNumber == 5 || carta.PairNumber == 2;
+                    case "grande":
+                        switch (aux)
+                        {
+                            case string aux when aux == "domesticos":
+                                return carta.PairNumber == 1 || carta.PairNumber == 4 || carta.PairNumber == 10 || carta.PairNumber == 15;
+                                break;
+                            case string aux when aux == "pradera":
+                                return carta.PairNumber == 12 || carta.PairNumber == 13 || carta.PairNumber == 0 || carta.PairNumber == 11;
+                                break;
+                            case string aux when aux == "sabana":
+                                return carta.PairNumber == 6 || carta.PairNumber == 2 || carta.PairNumber == 5 || carta.PairNumber == 8;
+                                break;
+                            case string aux when aux == "grandes":
+                                return carta.PairNumber == 3 || carta.PairNumber == 7 || carta.PairNumber == 9 || carta.PairNumber == 14;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
+                        break;
+                    default:
+                        return false;
+                        break;
+                }
+            break;
+            case "bandera":
+                switch (GameProperties.tamaño)
+                {
+                    case "pequeño":
+                        switch (aux)
+                        {
+                            case string aux when aux == "hispanohablantes":
+                                return carta.PairNumber == 2 || carta.PairNumber == 8;
+                                break;
+                            case string aux when aux == "arabes":
+                                return carta.PairNumber == 4 || carta.PairNumber == 3;
+                                break;
+                            case string aux when aux == "frios":
+                                return carta.PairNumber == 1 || carta.PairNumber == 0;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
+                        break;
+                    case "mediano":
+                        switch (aux)
+                        {
+                            case string aux when aux == "arabes":
+                                return carta.PairNumber == 4 || carta.PairNumber == 3;
+                                break;
+                            case string aux when aux == "europa centro":
+                                return carta.PairNumber == 7 || carta.PairNumber == 1;
+                                break;
+                            case string aux when aux == "nieve":
+                                return carta.PairNumber == 2 || carta.PairNumber == 0;
+                                break;
+                            case string aux when aux == "selva":
+                                return carta.PairNumber == 8 || carta.PairNumber == 9;
+                                break;
+                            case string aux when aux == "planos":
+                                return carta.PairNumber == 5 || carta.PairNumber == 6;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
+                        break;
+                    case "grande":
+                        switch (aux)
+                        {
+                            case string aux when aux == "arabes":
+                                return carta.PairNumber == 4 || carta.PairNumber == 3 || carta.PairNumber == 14 || carta.PairNumber == 15;
+                                break;
+                            case string aux when aux == "europeos":
+                                return carta.PairNumber == 1 || carta.PairNumber == 2 || carta.PairNumber == 7 || carta.PairNumber == 13;
+                                break;
+                            case string aux when aux == "latino español":
+                                return carta.PairNumber == 5 || carta.PairNumber == 8 || carta.PairNumber == 10 || carta.PairNumber == 12;
+                                break;
+                            case string aux when aux == "grandes":
+                                return carta.PairNumber == 9 || carta.PairNumber == 11 || carta.PairNumber == 6 || carta.PairNumber == 0;
+                                break;
+                            default:
+                                return false;
+                                break;
+                        }
                         break;
                     default:
                         return false;
                         break;
                 }
                 break;
-            case "mediano":
-                switch (aux)
-                {
-                    case string aux when aux == "bosque":
-                        return carta.PairNumber == 3 || carta.PairNumber == 0;
-                        break;
-                    case string aux when aux == "domesticos":
-                        return carta.PairNumber == 1 || carta.PairNumber == 4;
-                        break;
-                    case string aux when aux == "sabana":
-                        return carta.PairNumber == 5 || carta.PairNumber == 2;
-                        break;
-                    case string aux when aux == "salvaje":
-                        return carta.PairNumber == 6 || carta.PairNumber == 8;
-                        break;
-                    case string aux when aux == "arbol":
-                        return carta.PairNumber == 7 || carta.PairNumber == 9;
-                        break;
-                    default:
-                        return false;
-                        break;
-                }
-                break;
-            case "grande":
-                switch (aux)
-                {
-                    case string aux when aux == "domesticos":
-                        return carta.PairNumber == 1 || carta.PairNumber == 4 || carta.PairNumber == 10 || carta.PairNumber == 15;
-                        break;
-                    case string aux when aux == "pradera":
-                        return carta.PairNumber == 12 || carta.PairNumber == 13 || carta.PairNumber == 0 || carta.PairNumber == 11;
-                        break;
-                    case string aux when aux == "sabana":
-                        return carta.PairNumber == 6 || carta.PairNumber == 2 || carta.PairNumber == 5 || carta.PairNumber == 8;
-                        break;
-                    case string aux when aux == "bosque":
-                        return carta.PairNumber == 3 || carta.PairNumber == 7 || carta.PairNumber == 9 || carta.PairNumber == 14;
-                        break;
-                    default:
-                        return false;
-                        break;
-                }
-                break;
-            default:
-                return false;
-                break;
+                default:
+                   return false;
+                   break;
         }
+
     }
 
 

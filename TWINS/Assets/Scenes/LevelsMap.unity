@@ -5310,19 +5310,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 3
   cardsPosition:
-  - {x: 6.75, y: 0, z: 3}
-  - {x: 8.25, y: 0, z: 3}
-  - {x: 9.75, y: 0, z: 3}
-  - {x: 11.25, y: 0, z: 3}
+  - {x: 7.75, y: 0, z: 3}
+  - {x: 9, y: 0, z: 3}
+  - {x: 10.25, y: 0, z: 3}
+  - {x: 11.5, y: 0, z: 3}
   - {x: 7, y: 0, z: 4.5}
   - {x: 8.25, y: 0, z: 4.5}
   - {x: 9.5, y: 0, z: 4.5}
   - {x: 10.75, y: 0, z: 4.5}
   - {x: 12, y: 0, z: 4.5}
-  - {x: 6.75, y: 0, z: 6}
-  - {x: 8.25, y: 0, z: 6}
-  - {x: 9.75, y: 0, z: 6}
-  - {x: 11.25, y: 0, z: 6}
+  - {x: 7.75, y: 0, z: 6}
+  - {x: 9, y: 0, z: 6}
+  - {x: 10.25, y: 0, z: 6}
+  - {x: 11.5, y: 0, z: 6}
   - {x: 7, y: 0, z: 7.5}
   - {x: 8.25, y: 0, z: 7.5}
   - {x: 9.5, y: 0, z: 7.5}
@@ -7987,10 +7987,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 5
-  cardsPosition: []
-  positionTablero: {x: 0, y: 0, z: 5}
-  cronoPosition: {x: 0, y: 0, z: 0}
-  puntuacionPosition: {x: 0, y: 0, z: 0}
+  cardsPosition:
+  - {x: 7, y: 0, z: 2}
+  - {x: 9, y: 0, z: 2}
+  - {x: 11, y: 0, z: 2}
+  - {x: 13, y: 0, z: 2}
+  - {x: 7, y: 0, z: 4}
+  - {x: 9, y: 0, z: 4}
+  - {x: 11, y: 0, z: 4}
+  - {x: 13, y: 0, z: 4}
+  - {x: 7, y: 0, z: 6}
+  - {x: 9, y: 0, z: 6}
+  - {x: 11, y: 0, z: 6}
+  - {x: 13, y: 0, z: 6}
+  - {x: 7, y: 0, z: 8}
+  - {x: 9, y: 0, z: 8}
+  - {x: 11, y: 0, z: 8}
+  - {x: 13, y: 0, z: 8}
+  positionTablero: {x: 7.5, y: 0, z: 5}
+  cronoPosition: {x: -118, y: 120, z: 0}
+  puntuacionPosition: {x: -106, y: 67, z: 0}
   puntuacion: {fileID: 0}
   baraja: animal
   "vNi\xF1o": 1
@@ -9524,11 +9540,11 @@ MonoBehaviour:
   - {x: 9.5, y: 0, z: 4}
   - {x: 9.5, y: 0, z: 6}
   - {x: 9.5, y: 0, z: 8}
-  - {x: 9.5, y: 0, z: 2}
+  - {x: 12.5, y: 0, z: 2}
   - {x: 12.5, y: 0, z: 3.5}
   - {x: 12.5, y: 0, z: 5}
   - {x: 12.5, y: 0, z: 6.5}
-  - {x: 12.5, y: 0, z: 8.5}
+  - {x: 12.5, y: 0, z: 8}
   positionTablero: {x: 7.5, y: 0, z: 5}
   cronoPosition: {x: -118, y: 120, z: 0}
   puntuacionPosition: {x: -106, y: 67, z: 0}

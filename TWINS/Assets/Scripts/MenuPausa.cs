@@ -23,6 +23,7 @@ public class MenuPausa : MonoBehaviour
     public float rbgValue = 0.1f;
     public Slider sli3;
 
+    public GameObject bloqueo;
     void Awake()
     {
         LoadSettings();
@@ -65,12 +66,14 @@ public class MenuPausa : MonoBehaviour
         menuPausaUI.SetActive(false);
         Time.timeScale = 1f;
         Pausado = false;
+        bloqueo.SetActive(false);
     }
     public void Pausar()
     {
         menuPausaUI.SetActive(true);
         Time.timeScale = 0f;
         Pausado = true;
+        bloqueo.SetActive(true);
     }
     public void cargarOpciones()
     {

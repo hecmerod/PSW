@@ -31,6 +31,8 @@ public abstract class Partida : MonoBehaviour
 
     private DBPartida dBPartida;
 
+    private bool stopMusic = false;
+
     public void Awake() {
         CargarRecursos();
         LoadSettings();
@@ -83,6 +85,7 @@ public abstract class Partida : MonoBehaviour
     }
     protected void music()
     {
+        if (stopMusic) return;
         if (MenuPausa.Pausado)
         {
             fuenteAudio.Pause();
@@ -114,9 +117,11 @@ public abstract class Partida : MonoBehaviour
         numCardsTurned = 3;
         tiempo.partidaTerminada = true;
         tiempo.comenzarTiempo = false;
+        if (puntos < 0) puntos = 0;
         textPuntuacion.text = "Puntuación: " + puntos;
         animacionDerrota.SetActive(true);
         contexto.ResetearPuntuacion();
+        stopMusic = true;
         fuenteAudio.Stop();
         DBManager.UpdaterData(puntos);
         dBPartida.CallSaveData();
@@ -132,6 +137,7 @@ public abstract class Partida : MonoBehaviour
             textPuntuacion.text = "Puntuación: " + puntos;
             animacionVictoria.SetActive(true);
             contexto.ResetearPuntuacion();
+            stopMusic = true;
             fuenteAudio.Stop();
 
             DBManager.partidasGanadas++;

@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 1118
+  controlID: 1498
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 1119
+  controlID: 1499
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 1120
+  controlID: 1478
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,7 +221,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3ef7ffff8af8ffff96faffff6afbffff584b0000
+      m_ExpandedIDs: 70fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 1043
+  controlID: 1500
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -622,20 +622,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Barajas/Animales_Baraja/Materials
+    - Assets/Resources/Barajas
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Barajas/Animales_Baraja/Materials
+  - Assets/Resources/Barajas
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Usuario\Documents\GitHub\PSWsprint2\PSW\PSW\TWINS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 134}
-    m_SelectedIDs: 7c390000
-    m_LastClickedID: 14716
-    m_ExpandedIDs: 0000000020390000223900002439000026390000283900002a3900002c3900002e3900003039000032390000343900003639000038390000783900007a39000000ca9a3b
+    scrollPos: {x: 0, y: 14}
+    m_SelectedIDs: 683e0000
+    m_LastClickedID: 15976
+    m_ExpandedIDs: 00000000163e0000183e00001a3e00001c3e00001e3e0000203e0000223e0000243e0000263e0000283e00002a3e00002c3e0000683e00006e3e0000b03e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -663,7 +663,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000020390000223900002439000026390000283900002a3900002c3900002e3900003039000032390000343900003639000000ca9a3b
+    m_ExpandedIDs: 00000000163e0000183e00001a3e00001c3e00001e3e0000203e0000223e0000243e0000263e0000283e00002a3e00002c3e0000683e00006e3e0000b03e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -688,8 +688,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 40400000
-    m_LastClickedInstanceID: 16448
+    m_SelectedInstanceIDs: 6a3e0000
+    m_LastClickedInstanceID: 15978
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a43c000000000000a0d7ffff
     m_RenameOverlay:
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 192}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 1114
+  controlID: 1390
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -858,7 +858,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 16448
+  m_LastInspectedObjectInstanceID: 15978
   m_LastVerticalScrollValue: 0
 --- !u!114 &19
 MonoBehaviour:

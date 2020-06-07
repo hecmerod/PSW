@@ -6,6 +6,8 @@ public class PuntuacionFacil : IPuntuacion
 {
     int puntuacion = 0;
     int fallosIniciales = 4;
+    int fallosTotales;
+    int aciertosTotales;
     bool haAcertado = false;
     public override int SumarPuntos()
     {
@@ -44,5 +46,10 @@ public class PuntuacionFacil : IPuntuacion
         puntuacion = 0;
         fallosIniciales = 4;
         haAcertado = false;
+    }
+    public int PuntosFinales(int a, int ft)
+    {
+        if((a * 10 - (ft - fallosIniciales) * 2) < 0) { return 0; }
+        return a * 10 - (ft - fallosIniciales) * 2;
     }
 }

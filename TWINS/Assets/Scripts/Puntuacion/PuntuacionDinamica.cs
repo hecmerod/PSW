@@ -7,6 +7,8 @@ public class PuntuacionDinamica : IPuntuacion
 
     int puntuacion = 0;
     int fallosIniciales = 5;
+    int fallosTotales;
+    int aciertosTotales;
     bool haAcertado = false;
     public override int SumarPuntos()
     {
@@ -44,5 +46,9 @@ public class PuntuacionDinamica : IPuntuacion
         puntuacion = 0;
         fallosIniciales = 5;
         haAcertado = false;
+    }
+    public int PuntosFinales(int a, int ft, int fi)
+    {
+        return a * 10 - (ft - fi) * 2;
     }
 }

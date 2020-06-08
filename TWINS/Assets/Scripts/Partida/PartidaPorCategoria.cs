@@ -9,11 +9,12 @@ using Random = UnityEngine.Random;
 public class PartidaPorCategoria : Partida
 {
     List<String> categorias = new List<String>(); //{ "domesticos", "sabana", "bosque" };
+    IIteratorCategoria iterador;
     private Text categoria;
     private String aux = null;
     private int pairsCategoria2;
     private int pairsCategoria4;
-    IIteratorCategoria iterator;
+    IRegistroCategoria registro = new RegistroCategoria();
     //IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     //private ContextoPuntuacion contexto = new ContextoPuntuacion();
 
@@ -56,7 +57,9 @@ public class PartidaPorCategoria : Partida
                 switch (GameProperties.tamaño)
                 {
                     case "pequeño":
-                        categorias.AddRange(c1);
+                        registro.InsertarCategoria("domesticos");
+                        registro.InsertarCategoria("sabana");
+                        registro.InsertarCategoria("bosque");
                         break;
                     case "mediano":
                         categorias.AddRange(c2);
@@ -98,7 +101,7 @@ public class PartidaPorCategoria : Partida
                 }
                 break;
         }
-        iterator = ObtenerIterator();
+        iterador = registro.ObtenerIterator();
     }
     protected override void SetTableroValues() {
         //RectTransform categoriapos = categoria.GetComponent<RectTransform>();
@@ -112,7 +115,7 @@ public class PartidaPorCategoria : Partida
     }
     public String elegirCategoria()
     {
-        return iterator.Aleatorio();
+        return iterador.Aleatorio();
     }
     public void enCategoria()
     {
@@ -404,10 +407,5 @@ public class PartidaPorCategoria : Partida
             }
             puntuacion.text = "Puntuación: " + puntos.ToString();
         }
-    }
-
-    public IIteratorCategoria ObtenerIterator()
-    {
-        return new IteratorCategoria(categorias);
     }
 }

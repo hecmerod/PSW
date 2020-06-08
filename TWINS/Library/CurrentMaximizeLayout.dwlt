@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 4152
+  controlID: 169
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -46,9 +46,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1373
+    x: 1249
     y: 704
-    width: 546
+    width: 670
     height: 295
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 546, y: 274}
+  m_TargetSize: {x: 670, y: 274}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -71,8 +71,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -273
-    m_HBaseRangeMax: 273
+    m_HBaseRangeMin: -335
+    m_HBaseRangeMax: 335
     m_VBaseRangeMin: -137
     m_VBaseRangeMax: 137
     m_HAllowExceedBaseRangeMin: 1
@@ -92,23 +92,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 546
+      width: 670
       height: 274
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 273, y: 137}
+    m_Translation: {x: 335, y: 137}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -273
+      x: -335
       y: -137
-      width: 546
+      width: 670
       height: 274
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 546, y: 295}
+  m_LastWindowPixelSize: {x: 670, y: 295}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 4153
+  controlID: 126
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 4134
+  controlID: 58
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -181,7 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 339
+    width: 403
     height: 632
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
@@ -213,7 +213,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 338
+    width: 402
     height: 611
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
@@ -221,7 +221,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fac1ffffa0c2ffff22ccffff44ccfffff6ccffff82ceffffa4ceffff56cfffff82cfffffa4cfffff56d0ffffded1ffff0cd5ffff16f8ffff56370000
+      m_ExpandedIDs: 20fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -260,9 +260,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 339
+    x: 403
     y: 0
-    width: 910
+    width: 846
     height: 632
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -294,9 +294,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 339
+    x: 403
     y: 73
-    width: 908
+    width: 844
     height: 611
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -361,9 +361,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 355.51068
+    m_Target: 371.50867
     speed: 2
-    m_Value: 355.51068
+    m_Value: 371.50867
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 4154
+  controlID: 127
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -574,7 +574,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 726
+    width: 837
     height: 315
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -606,7 +606,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 705
-    width: 725
+    width: 836
     height: 294
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -622,20 +622,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Test/EditMode
+    - Assets/Scripts/CategoriaIterator
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Test/EditMode
+  - Assets/Scripts/CategoriaIterator
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Usuario\Documents\GitHub\PSWsprint2\PSW\PSW\TWINS
+  m_LastProjectPath: D:\PSW\PSW\TWINS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca690000
-    m_LastClickedID: 27082
-    m_ExpandedIDs: 00000000f83e0000fa3e0000fc3e0000fe3e0000003f0000023f0000043f0000063f0000083f00000a3f00000c3f00000e3f000040470000ac690000b069000000ca9a3b
+    m_SelectedIDs: d6450000
+    m_LastClickedID: 17878
+    m_ExpandedIDs: 000000006c4300006e43000070430000724300007443000076430000784300007a4300007c4300007e43000080430000824300008443000008440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -663,7 +663,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f83e0000fa3e0000fc3e0000fe3e0000003f0000023f0000043f0000063f0000083f00000a3f00000c3f00000e3f00004047000000ca9a3b
+    m_ExpandedIDs: 000000006c4300006e43000070430000724300007443000076430000784300007a4300007c4300007e430000804300008243000084430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -688,8 +688,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: f4690000
-    m_LastClickedInstanceID: 27124
+    m_SelectedInstanceIDs: fc450000
+    m_LastClickedInstanceID: 17916
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a43c000000000000a0d7ffff
     m_RenameOverlay:
@@ -707,7 +707,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 17}
+      m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -734,12 +734,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 726
+    x: 837
     y: 0
-    width: 523
+    width: 412
     height: 315
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -766,9 +766,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 726
+    x: 837
     y: 705
-    width: 521
+    width: 410
     height: 294
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &16
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 192}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 4090
+  controlID: 170
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -815,8 +815,8 @@ MonoBehaviour:
     y: 0
     width: 671
     height: 631
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -858,7 +858,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 27124
+  m_LastInspectedObjectInstanceID: 17916
   m_LastVerticalScrollValue: 0
 --- !u!114 &19
 MonoBehaviour:
@@ -913,7 +913,7 @@ MonoBehaviour:
     height: 295
   m_ViewDataDictionary: {fileID: 0}
   m_Spl:
-    ID: 4260
+    ID: 255
     splitterInitialOffset: 183
     currentActiveSplitter: -1
     realSizes: 7000000071000000
@@ -1067,7 +1067,7 @@ MonoBehaviour:
       name: TWINS
       fullName: TWINS
       resultStatus: 1
-      duration: 0.1633592
+      duration: 0.2561685
       messages: 
       output: 
       stacktrace: 
@@ -1078,12 +1078,12 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1004
-      uniqueId: '[C:/Users/Usuario/Documents/GitHub/PSWsprint2/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: 1006
+      uniqueId: '[D:/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll][suite]'
       name: EditMode.dll
-      fullName: C:/Users/Usuario/Documents/GitHub/PSWsprint2/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll
-      resultStatus: 1
-      duration: 0.0899607
+      fullName: D:/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
@@ -1099,7 +1099,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
-      duration: 0.0865382
+      duration: 0.1666685
       messages: 
       output: 
       stacktrace: 
@@ -1115,7 +1115,7 @@ MonoBehaviour:
       name: PuntuacionTests
       fullName: Tests.PuntuacionTests
       resultStatus: 1
-      duration: 0.0755998
+      duration: 0.1493669
       messages: 
       output: 
       stacktrace: 
@@ -1130,10 +1130,15 @@ MonoBehaviour:
       uniqueId: EditMode.dll/Tests/PuntuacionTests/[EditMode][Tests.PuntuacionTests.PuntuacionDificil_test]
       name: PuntuacionDificil_test
       fullName: Tests.PuntuacionTests.PuntuacionDificil_test
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0314705
       messages: 
-      output: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -1147,10 +1152,47 @@ MonoBehaviour:
       uniqueId: EditMode.dll/Tests/PuntuacionTests/[EditMode][Tests.PuntuacionTests.PuntuacionFacil_test]
       name: PuntuacionFacil_test
       fullName: Tests.PuntuacionTests.PuntuacionFacil_test
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0025404
       messages: 
-      output: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/Tests/[EditMode][Tests.PuntuacionTests][suite]
+    - id: 1005
+      uniqueId: EditMode.dll/Tests/PuntuacionTests/[EditMode][Tests.PuntuacionTests.PuntuacionNoNegativa_test]
+      name: PuntuacionNoNegativa_test
+      fullName: Tests.PuntuacionTests.PuntuacionNoNegativa_test
+      resultStatus: 1
+      duration: 0.0054531
+      messages: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        You are trying to create a MonoBehaviour using the ''new''
+        keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -1164,10 +1206,15 @@ MonoBehaviour:
       uniqueId: EditMode.dll/Tests/PuntuacionTests/[EditMode][Tests.PuntuacionTests.PuntuacionNormal_test]
       name: PuntuacionNormal_test
       fullName: Tests.PuntuacionTests.PuntuacionNormal_test
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0020703
       messages: 
-      output: 
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+'
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -1177,36 +1224,12 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditMode.dll/Tests/[EditMode][Tests.PuntuacionTests][suite]
-    - id: 1003
-      uniqueId: EditMode.dll/Tests/PuntuacionTests/[EditMode][Tests.PuntuacionTests.PuntuacionTestsWithEnumeratorPasses]
-      name: PuntuacionTestsWithEnumeratorPasses
-      fullName: Tests.PuntuacionTests.PuntuacionTestsWithEnumeratorPasses
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: EditMode.dll/Tests/[EditMode][Tests.PuntuacionTests][suite]
-    m_ResultText: 'PuntuacionTestsSimplePasses (0,039s)
-
-      ---
-
-      You are
-      trying to create a MonoBehaviour using the ''new'' keyword.  This is not allowed. 
-      MonoBehaviours can only be added using AddComponent(). Alternatively, your
-      script can inherit from ScriptableObject or no base class at all'
+    m_ResultText: PuntuacionTests (0,149s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b5d33c3d
-      m_LastClickedID: 1027396533
+      m_SelectedIDs: a518db46
+      m_LastClickedID: 1188763813
       m_ExpandedIDs: d4144c94bd37fa9584ec67c2fdbecad35ac4dfd981a7b116b7a0641dfc4d602701369d3345d21e3fa518db4633b07f4f993e8864e406267bffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0

@@ -13,6 +13,7 @@ public class PartidaPorCategoria : Partida
     private String aux = null;
     private int pairsCategoria2;
     private int pairsCategoria4;
+    IIteratorCategoria iterator;
     //IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     //private ContextoPuntuacion contexto = new ContextoPuntuacion();
 
@@ -97,6 +98,7 @@ public class PartidaPorCategoria : Partida
                 }
                 break;
         }
+        iterator = ObtenerIterator();
     }
     protected override void SetTableroValues() {
         //RectTransform categoriapos = categoria.GetComponent<RectTransform>();
@@ -110,10 +112,7 @@ public class PartidaPorCategoria : Partida
     }
     public String elegirCategoria()
     {
-        int indice = Random.Range(0, categorias.Count);
-        String cat = categorias[indice];
-        if(categorias.Count > 1) { categorias.RemoveAt(indice); }
-        return cat;
+        return iterator.Aleatorio();
     }
     public void enCategoria()
     {
@@ -405,5 +404,10 @@ public class PartidaPorCategoria : Partida
             }
             puntuacion.text = "Puntuación: " + puntos.ToString();
         }
+    }
+
+    public IIteratorCategoria ObtenerIterator()
+    {
+        return new IteratorCategoria(categorias);
     }
 }

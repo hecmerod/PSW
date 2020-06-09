@@ -104,7 +104,7 @@ public abstract class Partida : MonoBehaviour
         contexto.ResetearPuntuacion();
         stopMusic = true;
         fuenteAudio.Stop();
-        DBManager.UpdaterData(puntos);
+        DBManager.getInstance().UpdaterData(puntos);
         dBPartida.CallSaveData();
     }
 
@@ -120,10 +120,10 @@ public abstract class Partida : MonoBehaviour
             stopMusic = true;
             fuenteAudio.Stop();
 
-            DBManager.partidasGanadas++;
-            DBManager.UpdaterData(puntos);
-            if (DBManager.nivel == GameProperties.level && !GameProperties.vNiño) DBManager.nivel++;
-            if (DBManager.nivelniños == GameProperties.level && GameProperties.vNiño) DBManager.nivelniños++;
+            DBManager.getInstance().partidasGanadas++;
+            DBManager.getInstance().UpdaterData(puntos);
+            if (DBManager.getInstance().nivel == GameProperties.level && !GameProperties.vNiño) DBManager.getInstance().nivel++;
+            if (DBManager.getInstance().nivelniños == GameProperties.level && GameProperties.vNiño) DBManager.getInstance().nivelniños++;
 
             dBPartida.CallSaveData();
         }

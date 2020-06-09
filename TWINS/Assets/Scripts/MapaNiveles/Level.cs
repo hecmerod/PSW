@@ -27,23 +27,23 @@ public class Level : MonoBehaviour
     private void isUnlocked() {
         if (!vNiño)
         {
-            if (DBManager.nivel < level)
+            if (DBManager.getInstance().nivel < level)
             {
                 renderer.material.color = Color.gray;
                 locked = true;
             }
-            else if (DBManager.nivel == level)
+            else if (DBManager.getInstance().nivel == level)
             {
                 renderer.material.color = Color.blue;
             }
         }
         else {
-            if (DBManager.nivelniños < level)
+            if (DBManager.getInstance().nivelniños < level)
             {
                 renderer.material.color = Color.gray;
                 locked = true;
             }
-            else if (DBManager.nivelniños == level)
+            else if (DBManager.getInstance().nivelniños == level)
             {
                 renderer.material.color = Color.red;
             }

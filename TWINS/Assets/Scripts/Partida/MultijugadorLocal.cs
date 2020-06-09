@@ -130,9 +130,9 @@ public class MultijugadorLocal : Partida
             contexto.ResetearPuntuacion();
             fuenteAudio.Stop();
 
-            DBManager.partidasGanadas++;
-            DBManager.UpdaterData(puntos);
-            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+            DBManager.getInstance().partidasGanadas++;
+            DBManager.getInstance().UpdaterData(puntos);
+            if (DBManager.getInstance().nivel == GameProperties.level) DBManager.getInstance().nivel++;
 
             dBPartida.CallSaveData();
         }

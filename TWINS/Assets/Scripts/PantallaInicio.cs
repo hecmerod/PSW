@@ -29,11 +29,11 @@ public class PantallaInicio : MonoBehaviour
 
     private void Awake()
     {
-        DBManager.pantallaInicio = this;
+        DBManager.getInstance().pantallaInicio = this;
         UserLogged();
     }
     private void UserLogged() {
-        if (!DBManager.LoggedIn)
+        if (!DBManager.getInstance().LoggedIn)
         {
             jugadorLogeado.text = "Usuario no logeado";
             perfilButon.interactable = false;
@@ -41,18 +41,18 @@ public class PantallaInicio : MonoBehaviour
         }
         else
         {
-            jugadorLogeado.text = "Player: " + DBManager.username;
+            jugadorLogeado.text = "Player: " + DBManager.getInstance().username;
             perfilButon.interactable = true;
             cerrarsesionBoton.interactable = true;
         }
     }
     public void CallRegister()
     {
-        StartCoroutine(DBManager.Registerment());
+        StartCoroutine(DBManager.getInstance().Registerment());
     }
     public void CallLogin()
     {
-        StartCoroutine(DBManager.LoginIn());
+        StartCoroutine(DBManager.getInstance().LoginIn());
     }
 
     public void VerifyInputs()
@@ -107,7 +107,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void niveles()
     {
-        if (DBManager.LoggedIn)
+        if (DBManager.getInstance().LoggedIn)
         {
             GameProperties.trios = false;
             SceneManager.LoadScene("LevelsMap");
@@ -126,7 +126,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void Desafio()
     {
-        if (DBManager.LoggedIn)
+        if (DBManager.getInstance().LoggedIn)
         {
             GameProperties.trios = false;
             SceneManager.LoadScene("Desafios");
@@ -145,7 +145,7 @@ public class PantallaInicio : MonoBehaviour
     }
     public void cerrarSesion()
     {
-        DBManager.LogOut();
+        DBManager.getInstance().LogOut();
         SceneManager.LoadScene("PantallaInicio");
     }
     public void JugarTrios()
@@ -172,7 +172,7 @@ public class PantallaInicio : MonoBehaviour
     }
     async public void cargarRanking()
     {
-        StartCoroutine(DBManager.LoadScoresData());
+        StartCoroutine(DBManager.getInstance().LoadScoresData());
         await Task.Delay(1000);
         SceneManager.LoadScene("Ranking");
     }

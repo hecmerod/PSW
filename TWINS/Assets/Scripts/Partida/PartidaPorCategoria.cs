@@ -43,15 +43,6 @@ public class PartidaPorCategoria : Partida
         //Por banderas pequeño -> Español(andorra,argentina (2,8)) Arabes(Argelia,arabiasaudita(4,3)) Frios(alemania,canada(1,0))
         //Por banderas mediano -> Arabes(Argelia,arabiasaudita(4,3)) EuropaCentro(Belgica,alemania(7,1)) Nieve(canada,andorra(2,0)) Selva(Bolivia,Brasil((8,9)) Planos(Argentina,australia(5,6))
         //Banderas grandes  -> Arabes(argelia, arabiasaudita, y 2 mas) Europeos(losdeuropa) EuropaLatina Española y paises grandes(Brasil, australia, china, Canada)
-        List<String> c1 = new List<String> { "domesticos", "sabana", "bosque" };
-        List<String> c2 = new List<String> { "domesticos", "sabana", "salvaje", "bosque", "arbol" };
-        List<String> c3 = new List<String> { "domesticos", "sabana", "pradera", "bosque" };
-        List<String> c4 = new List<String> { "hispanohablantes", "arabes", "frios" };
-        List<String> c5 = new List<String> { "arabes", "europa centro", "nieve", "selva", "planos" };
-        List<String> c6 = new List<String> { "arabes", "europeos", "latino español", "grandes" };
-        List<String> c7 = new List<String> { "seguridad pública", "alimentación", "profesores"};
-        List<String> c8 = new List<String> { "seguridad pública", "alimentación", "profesores", "ingenieros", "noticias" };
-        List<String> c9 = new List<String> { "seguridad pública", "alimentación", "profesores", "ingenieros" };
         switch (GameProperties.baraja) {
             case "animal":
                 switch (GameProperties.tamaño)
@@ -62,10 +53,17 @@ public class PartidaPorCategoria : Partida
                         registro.InsertarCategoria("bosque");
                         break;
                     case "mediano":
-                        categorias.AddRange(c2);
+                        registro.InsertarCategoria("domesticos");
+                        registro.InsertarCategoria("sabana");
+                        registro.InsertarCategoria("bosque");
+                        registro.InsertarCategoria("salvaje");
+                        registro.InsertarCategoria("arbol");
                         break;
                     case "grande":
-                        categorias.AddRange(c3);
+                        registro.InsertarCategoria("domesticos");
+                        registro.InsertarCategoria("sabana");
+                        registro.InsertarCategoria("bosque");
+                        registro.InsertarCategoria("pradera");
                         categoria.gameObject.transform.localPosition = new Vector3(250, 237.3f, 0);
                         break;
                 }
@@ -74,13 +72,22 @@ public class PartidaPorCategoria : Partida
                 switch (GameProperties.tamaño)
                 {
                     case "pequeño":
-                        categorias.AddRange(c4);
+                        registro.InsertarCategoria("hispanohablantes");
+                        registro.InsertarCategoria("arabes");
+                        registro.InsertarCategoria("frios");
                         break;
                     case "mediano":
-                        categorias.AddRange(c5);
+                        registro.InsertarCategoria("europa centro");
+                        registro.InsertarCategoria("arabes");
+                        registro.InsertarCategoria("nieve");
+                        registro.InsertarCategoria("selva");
+                        registro.InsertarCategoria("planos");
                         break;
                     case "grande":
-                        categorias.AddRange(c6);
+                        registro.InsertarCategoria("europeos");
+                        registro.InsertarCategoria("arabes");
+                        registro.InsertarCategoria("latino español");
+                        registro.InsertarCategoria("grandes");
                         categoria.gameObject.transform.localPosition = new Vector3(250, 237.3f, 0);
                         break;
                 }
@@ -89,13 +96,24 @@ public class PartidaPorCategoria : Partida
                 switch (GameProperties.tamaño)
                 {
                     case "pequeño":
-                        categorias.AddRange(c7);
+                        registro.InsertarCategoria("seguridad pública");
+                        registro.InsertarCategoria("alimentación");
+                        registro.InsertarCategoria("profesores");
                         break;
                     case "mediano":
-                        categorias.AddRange(c8);
+                        registro.InsertarCategoria("seguridad pública");
+                        registro.InsertarCategoria("alimentación");
+                        registro.InsertarCategoria("profesores");
+                        registro.InsertarCategoria("seguridad pública");
+                        registro.InsertarCategoria("ingenieros");
+                        registro.InsertarCategoria("noticias");
                         break;
                     case "grande":
-                        categorias.AddRange(c9);
+                        registro.InsertarCategoria("seguridad pública");
+                        registro.InsertarCategoria("alimentación");
+                        registro.InsertarCategoria("profesores");
+                        registro.InsertarCategoria("seguridad pública");
+                        registro.InsertarCategoria("ingenieros");
                         categoria.gameObject.transform.localPosition = new Vector3(250, 237.3f, 0);
                         break;
                 }

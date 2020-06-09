@@ -15,11 +15,11 @@ public class Perfil : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nombre.text = DBManager.username;
-        partidas.text = DBManager.partidasJugadas.ToString();
-        wins.text = DBManager.partidasGanadas.ToString();
-        niveles.text = (DBManager.nivel - 1).ToString();
-        score.text = DBManager.puntuacionTotal.ToString();
+        nombre.text = DBManager.getInstance().username;
+        partidas.text = DBManager.getInstance().partidasJugadas.ToString();
+        wins.text = DBManager.getInstance().partidasGanadas.ToString();
+        niveles.text = (DBManager.getInstance().nivel - 1).ToString();
+        score.text = DBManager.getInstance().puntuacionTotal.ToString();
     }
 
     // Update is called once per frame

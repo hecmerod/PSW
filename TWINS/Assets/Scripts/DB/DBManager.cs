@@ -5,23 +5,29 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public static class DBManager
+public class DBManager
 {
-    public static string username;
-    public static int puntuacionTotal;
-    public static int partidasJugadas;
-    public static int partidasGanadas;
-    public static int nivel;
-    public static int nivelniños;
-    public static int[] scores = new int[1000];
-    public static string[] topNames = new string[3];
+    public string username;
+    public int puntuacionTotal;
+    public int partidasJugadas;
+    public int partidasGanadas;
+    public int nivel;
+    public int nivelniños;
+    public int[] scores = new int[1000];
+    public string[] topNames = new string[3];
 
-    public static PantallaInicio pantallaInicio;
+    public PantallaInicio pantallaInicio;
 
-    public static bool LoggedIn { get { return username != null; } }
-    public static void LogOut() { username = null; }
+    public  bool LoggedIn { get { return username != null; } }
+    public  void LogOut() { username = null; }
 
-    public static IEnumerator LoginIn()
+    private static DBManager instance = new DBManager();
+    public static DBManager getInstance()
+    {
+        return instance;
+    }
+
+    public IEnumerator LoginIn()
     {
         WWWForm form = new WWWForm();
         form.AddField("name", pantallaInicio.LoginNombre.text);
@@ -30,27 +36,27 @@ public static class DBManager
         yield return www;
         if (www.text[0] == '0')
         {
-            DBManager.username = pantallaInicio.LoginNombre.text;
+            DBManager.getInstance().username = pantallaInicio.LoginNombre.text;
             string[] webResults = www.text.Split('\t');
-            DBManager.puntuacionTotal = int.Parse(webResults[1]);
-            DBManager.partidasJugadas = int.Parse(webResults[2]);
-            DBManager.partidasGanadas = int.Parse(webResults[3]);
-            DBManager.nivel = int.Parse(webResults[4]);
-            DBManager.nivelniños = int.Parse(webResults[5]);
+            DBManager.getInstance().puntuacionTotal = int.Parse(webResults[1]);
+            DBManager.getInstance().partidasJugadas = int.Parse(webResults[2]);
+            DBManager.getInstance().partidasGanadas = int.Parse(webResults[3]);
+            DBManager.getInstance().nivel = int.Parse(webResults[4]);
+            DBManager.getInstance().nivelniños = int.Parse(webResults[5]);
             SceneManager.LoadScene("PantallaInicio");
 
             /*Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
             Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
             Debug.Log("score: " + DBManager.puntuacionTotal);
             Debug.Log("nivel: " + DBManager.nivel);*/
-            Debug.Log("nivelniños" + nivelniños);
+            //Debug.Log("nivelniños" + nivelniños);
         }
         else
         {
             Debug.Log("User login failed. Error #" + www.text);
         }
     }
-    public static IEnumerator Registerment()
+    public IEnumerator Registerment()
     {
         WWWForm form = new WWWForm();
         form.AddField("name", pantallaInicio.RegisterNombre.text);
@@ -68,15 +74,15 @@ public static class DBManager
         }
 
     }
-    public static IEnumerator SavePlayerData() {
+    public IEnumerator SavePlayerData() {
         if (LoggedIn) {
             WWWForm form = new WWWForm();
-            form.AddField("name", DBManager.username);
-            form.AddField("score", DBManager.puntuacionTotal);
-            form.AddField("nivelniños", DBManager.nivelniños);
-            form.AddField("gamesplayed", DBManager.partidasJugadas);
-            form.AddField("gameswon", DBManager.partidasGanadas);
-            form.AddField("nivel", DBManager.nivel);
+            form.AddField("name", DBManager.getInstance().username);
+            form.AddField("score", DBManager.getInstance().puntuacionTotal);
+            form.AddField("nivelniños", DBManager.getInstance().nivelniños);
+            form.AddField("gamesplayed", DBManager.getInstance().partidasJugadas);
+            form.AddField("gameswon", DBManager.getInstance().partidasGanadas);
+            form.AddField("nivel", DBManager.getInstance().nivel);
             WWW www = new WWW("https://twinsproject2.000webhostapp.com/savedata.php", form);
             yield return www;
             if (www.text == "0")
@@ -89,7 +95,7 @@ public static class DBManager
             }
         }
     }
-    public static IEnumerator LoadScoresData()
+    public IEnumerator LoadScoresData()
     {
         WWWForm form = new WWWForm();
         WWW www = new WWW("https://twinsproject2.000webhostapp.com/loadranking.php", form);
@@ -102,7 +108,7 @@ public static class DBManager
         }
         //Debug.Log("Data succesfully loaded");
     }
-    public static IEnumerator LoadTopNombres()
+    public IEnumerator LoadTopNombres()
     {
         WWWForm form = new WWWForm();
         form.AddField("primero", Ranking.first);
@@ -115,12 +121,12 @@ public static class DBManager
         topNames[1] = webResults[1];
         topNames[2] = webResults[2];
     }
-    public static void UpdaterData(int puntos)
+    public void UpdaterData(int puntos)
     {
-        if (DBManager.LoggedIn)
+        if (DBManager.getInstance().LoggedIn)
         {
-            DBManager.partidasJugadas++;
-            DBManager.puntuacionTotal +=  puntos;
+            DBManager.getInstance().partidasJugadas++;
+            DBManager.getInstance().puntuacionTotal +=  puntos;
         }
     }
     

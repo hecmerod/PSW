@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DBPartida : MonoBehaviour
 {    
-    public void CallSaveData() { StartCoroutine(DBManager.SavePlayerData()); }
+    public void CallSaveData() { StartCoroutine(DBManager.getInstance().SavePlayerData()); }
 }

@@ -18,28 +18,28 @@ public class Ranking : MonoBehaviour
     public void Start()
     {
         cargarMaximos();
-        StartCoroutine(DBManager.LoadTopNombres());
+        StartCoroutine(DBManager.getInstance().LoadTopNombres());
         cargarNombres();
     }
     private void cargarMaximos()
     {
         first = second = third = -50;
-        for(int i = 0; i < DBManager.scores.Length; i++)
+        for(int i = 0; i < DBManager.getInstance().scores.Length; i++)
         {
-            if (DBManager.scores[i] > first)
+            if (DBManager.getInstance().scores[i] > first)
             {
                 third = second;
                 second = first;
-                first = DBManager.scores[i];
+                first = DBManager.getInstance().scores[i];
             }
-            else if (DBManager.scores[i] > 0)
+            else if (DBManager.getInstance().scores[i] > 0)
             {
                 third = second;
-                second = DBManager.scores[i];
+                second = DBManager.getInstance().scores[i];
             }
-            else if(DBManager.scores[i] > third)
+            else if(DBManager.getInstance().scores[i] > third)
             {
-                third = DBManager.scores[i];
+                third = DBManager.getInstance().scores[i];
             }
         }
         Jugador1Puntos.text = first.ToString();
@@ -49,9 +49,9 @@ public class Ranking : MonoBehaviour
     async private void cargarNombres()
     {
         await Task.Delay(200);
-        Jugador1.text = DBManager.topNames[0];
-        Jugador2.text = DBManager.topNames[1];
-        Jugador3.text = DBManager.topNames[2];
+        Jugador1.text = DBManager.getInstance().topNames[0];
+        Jugador2.text = DBManager.getInstance().topNames[1];
+        Jugador3.text = DBManager.getInstance().topNames[2];
     }
     public void volver()
     {

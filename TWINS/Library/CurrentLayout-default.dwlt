@@ -21,7 +21,11 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
+<<<<<<< HEAD
   m_MinSize: {x: 875, y: 300}
+=======
+  m_MinSize: {x: 875, y: 542}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +50,11 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
+<<<<<<< HEAD
   m_MinSize: {x: 875, y: 300}
+=======
+  m_MinSize: {x: 875, y: 542}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -113,9 +121,15 @@ MonoBehaviour:
     width: 1920
     height: 947
   m_MinSize: {x: 679, y: 492}
+<<<<<<< HEAD
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
   controlID: 174
+=======
+  m_MaxSize: {x: 18002, y: 14042}
+  vertical: 0
+  controlID: 1309
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,12 +149,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1339
     height: 947
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
   controlID: 84
+=======
+    width: 1250
+    height: 947
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
+  vertical: 1
+  controlID: 1202
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,12 +183,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1339
+=======
+    width: 1250
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 632
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 58
+=======
+  controlID: 1316
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +214,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 433
+=======
+    width: 339
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 632
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -207,9 +242,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 433
     y: 0
     width: 906
+=======
+    x: 339
+    y: 0
+    width: 911
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 632
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -239,12 +280,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 632
+<<<<<<< HEAD
     width: 1339
     height: 315
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
   controlID: 85
+=======
+    width: 1250
+    height: 315
+  m_MinSize: {x: 331, y: 271}
+  m_MaxSize: {x: 14001, y: 10021}
+  vertical: 0
+  controlID: 1203
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -262,7 +312,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 780
+=======
+    width: 727
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 315
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -286,9 +340,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 780
     y: 0
     width: 559
+=======
+    x: 727
+    y: 0
+    width: 523
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 315
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -314,14 +374,24 @@ MonoBehaviour:
   - {fileID: 15}
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1339
     y: 0
     width: 581
+=======
+    x: 1250
+    y: 0
+    width: 670
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 947
   m_MinSize: {x: 276, y: 192}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 175
+=======
+  controlID: 1310
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -339,7 +409,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 581
+=======
+    width: 670
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 631
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -358,13 +432,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: TestRunnerWindow
+=======
+  m_Name: GameView
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 631
+<<<<<<< HEAD
     width: 581
     height: 316
   m_MinSize: {x: 100, y: 100}
@@ -375,6 +454,18 @@ MonoBehaviour:
   - {fileID: 24}
   m_Selected: 1
   m_LastSelected: 0
+=======
+    width: 670
+    height: 316
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  - {fileID: 24}
+  m_Selected: 0
+  m_LastSelected: 1
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -396,9 +487,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1367
     y: 704
     width: 552
+=======
+    x: 1250
+    y: 704
+    width: 669
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 295
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
@@ -407,7 +504,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 552, y: 274}
+=======
+  m_TargetSize: {x: 669, y: 274}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -421,8 +522,13 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -276
     m_HBaseRangeMax: 276
+=======
+    m_HBaseRangeMin: -334.5
+    m_HBaseRangeMax: 334.5
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     m_VBaseRangeMin: -137
     m_VBaseRangeMax: 137
     m_HAllowExceedBaseRangeMin: 1
@@ -442,16 +548,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 552
       height: 274
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 276, y: 137}
+=======
+      width: 669
+      height: 274
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 334.5, y: 137}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -276
       y: -137
       width: 552
@@ -459,6 +573,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 552, y: 295}
+=======
+      x: -334.5
+      y: -137
+      width: 669
+      height: 274
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 669, y: 295}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -487,15 +610,25 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
+<<<<<<< HEAD
     width: 432
+=======
+    width: 338
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 611
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 48310000
       m_LastClickedID: 0
       m_ExpandedIDs: 12ecffffb4ecffffb0edffffaceeffff4cefffffeaf0ffff88f1ffff3af2ffff40f3ffff18f4ffffb2f4ffff6cf5ffff62fbffff
+=======
+      m_SelectedIDs: e8310000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 34fbffff
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -540,9 +673,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 433
     y: 73
     width: 904
+=======
+    x: 339
+    y: 73
+    width: 909
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 611
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -550,14 +689,24 @@ MonoBehaviour:
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
+<<<<<<< HEAD
   m_2DMode: 1
+=======
+  m_2DMode: 0
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 288.3361, y: 175.54756, z: -34.89663}
     speed: 2
     m_Value: {x: 288.3361, y: 175.54756, z: -34.89663}
+=======
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -585,7 +734,11 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
+<<<<<<< HEAD
         m_Target: 0
+=======
+        m_Target: 1
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -593,7 +746,11 @@ MonoBehaviour:
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
+<<<<<<< HEAD
         m_Target: 1
+=======
+        m_Target: 0
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -603,6 +760,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
@@ -614,6 +772,19 @@ MonoBehaviour:
     m_Target: 1
     speed: 2
     m_Value: 1
+=======
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    speed: 2
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_Size:
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+  m_Ortho:
+    m_Target: 0
+    speed: 2
+    m_Value: 0
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_CameraSettings:
     m_Speed: 1.1
     m_SpeedNormalized: 0.55999994
@@ -627,7 +798,11 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
+<<<<<<< HEAD
   m_LastSceneViewRotation: {x: -0.013859161, y: 0.9819023, z: 0.0794025, w: 0.17138293}
+=======
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -801,7 +976,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 705
+<<<<<<< HEAD
     width: 779
+=======
+    width: 726
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 294
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -817,6 +996,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Test/EditMode
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -831,6 +1011,22 @@ MonoBehaviour:
     m_SelectedIDs: 1a440000
     m_LastClickedID: 17434
     m_ExpandedIDs: 000000006443000066430000684300006a4300006c4300006e43000070430000724300007443000076430000784300007a4300007c430000004400001844000000ca9a3b
+=======
+    - Assets/Scripts/MapaNiveles
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scripts/MapaNiveles
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: E:\Repos\PSW\TWINS
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 98}
+    m_SelectedIDs: 14440000
+    m_LastClickedID: 17428
+    m_ExpandedIDs: 00000000684300006a4300006c4300006e43000070430000724300007443000076430000784300007a4300007c4300007e430000804300000444000000ca9a3b
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -858,7 +1054,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000006443000066430000684300006a4300006c4300006e43000070430000724300007443000076430000784300007a4300007c430000
+=======
+    m_ExpandedIDs: 00000000684300006a4300006c4300006e43000070430000724300007443000076430000784300007a4300007c4300007e4300008043000000ca9a3b
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -902,7 +1102,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
+=======
+      m_ClientGUIView: {fileID: 14}
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -935,9 +1139,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 780
     y: 705
     width: 557
+=======
+    x: 727
+    y: 705
+    width: 521
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 294
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &23
@@ -961,9 +1171,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1339
     y: 73
     width: 580
+=======
+    x: 1250
+    y: 73
+    width: 669
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     height: 610
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -977,7 +1193,11 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
+<<<<<<< HEAD
   m_LastVerticalScrollValue: 6
+=======
+  m_LastVerticalScrollValue: 0
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -998,6 +1218,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1339
     y: 704
     width: 580
@@ -1005,6 +1226,15 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_Spl:
     ID: 1064
+=======
+    x: 1249
+    y: 704
+    width: 670
+    height: 295
+  m_ViewDataDictionary: {fileID: 0}
+  m_Spl:
+    ID: 208
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     splitterInitialOffset: 183
     currentActiveSplitter: -1
     realSizes: 7000000071000000
@@ -1158,7 +1388,11 @@ MonoBehaviour:
       name: TWINS
       fullName: TWINS
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.1633244
+=======
+      duration: 0.2561685
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 
       stacktrace: 
@@ -1169,12 +1403,21 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
+<<<<<<< HEAD
     - id: 1008
       uniqueId: '[C:/Users/Usuario/Documents/GitHub/PSWsprint2/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll][suite]'
       name: EditMode.dll
       fullName: C:/Users/Usuario/Documents/GitHub/PSWsprint2/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll
       resultStatus: 1
       duration: 0.0747726
+=======
+    - id: 1006
+      uniqueId: '[E:/Repos/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll][suite]'
+      name: EditMode.dll
+      fullName: E:/Repos/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll
+      resultStatus: 0
+      duration: 0
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 
       stacktrace: 
@@ -1190,7 +1433,11 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.071931
+=======
+      duration: 0.1666685
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 
       stacktrace: 
@@ -1202,6 +1449,7 @@ MonoBehaviour:
       parentId: 1004
       parentUniqueId: '[C:/Users/Usuario/Documents/GitHub/PSWsprint2/PSW/PSW/TWINS/Library/ScriptAssemblies/EditMode.dll][suite]'
     - id: 1001
+<<<<<<< HEAD
       uniqueId: EditMode.dll/Tests/[EditMode][Tests.PartidaTest][suite]
       name: PartidaTest
       fullName: Tests.PartidaTest
@@ -1269,11 +1517,17 @@ MonoBehaviour:
       parentId: 1001
       parentUniqueId: EditMode.dll/Tests/[EditMode][Tests.PartidaTest][suite]
     - id: 1001
+=======
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       uniqueId: EditMode.dll/Tests/[EditMode][Tests.PuntuacionTests][suite]
       name: PuntuacionTests
       fullName: Tests.PuntuacionTests
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.0622269
+=======
+      duration: 0.1493669
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 
       stacktrace: 
@@ -1289,7 +1543,11 @@ MonoBehaviour:
       name: PuntuacionDificil_test
       fullName: Tests.PuntuacionTests.PuntuacionDificil_test
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.0085612
+=======
+      duration: 0.0314705
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
         This is not allowed.  MonoBehaviours can only be added using AddComponent().
@@ -1311,7 +1569,11 @@ MonoBehaviour:
       name: PuntuacionFacil_test
       fullName: Tests.PuntuacionTests.PuntuacionFacil_test
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.0024469
+=======
+      duration: 0.0025404
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
         This is not allowed.  MonoBehaviours can only be added using AddComponent().
@@ -1333,7 +1595,11 @@ MonoBehaviour:
       name: PuntuacionNoNegativa_test
       fullName: Tests.PuntuacionTests.PuntuacionNoNegativa_test
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.005397
+=======
+      duration: 0.0054531
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
         This is not allowed.  MonoBehaviours can only be added using AddComponent().
@@ -1365,7 +1631,11 @@ MonoBehaviour:
       name: PuntuacionNormal_test
       fullName: Tests.PuntuacionTests.PuntuacionNormal_test
       resultStatus: 1
+<<<<<<< HEAD
       duration: 0.0020141
+=======
+      duration: 0.0020703
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       messages: 
       output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
         This is not allowed.  MonoBehaviours can only be added using AddComponent().
@@ -1382,13 +1652,21 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditMode.dll/Tests/[EditMode][Tests.PuntuacionTests][suite]
+<<<<<<< HEAD
     m_ResultText: PuntuacionTests (0,062s)
+=======
+    m_ResultText: PuntuacionTests (0,149s)
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: a518db46
       m_LastClickedID: 1188763813
+<<<<<<< HEAD
       m_ExpandedIDs: d4144c94bd37fa9584ec67c2fdbecad35ac4dfd981a7b116b7a0641dfc4d602701369d3345d21e3f33b07f4f993e8864e406267bffffff7f
+=======
+      m_ExpandedIDs: d4144c94bd37fa9584ec67c2fdbecad35ac4dfd981a7b116b7a0641dfc4d602701369d3345d21e3fa518db4633b07f4f993e8864e406267bffffff7f
+>>>>>>> 05b32eb315b4234749fc183f1be3e0312b10634f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

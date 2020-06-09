@@ -26,7 +26,7 @@ public class IteratorCategoria : IIteratorCategoria
             (posicionActual > this.categorias.Count - 1) ||
             (this.posicionActual < 0))
         {
-            return null;
+            throw new ArgumentOutOfRangeException();
         }
         else
         {
@@ -41,7 +41,7 @@ public class IteratorCategoria : IIteratorCategoria
             (this.categorias.Count == 0) ||
             (posicionActual + 1 > this.categorias.Count - 1))
         {
-            return null;
+            throw new ArgumentOutOfRangeException();
         }
 
         else

@@ -99,7 +99,6 @@ public class MenuPausa : MonoBehaviour
         {
             mi_escena = SceneManager.GetActiveScene();
             sceneName = mi_escena.name;
-            //Pausado = false;
             SceneManager.LoadScene(sceneName);
         }
     }

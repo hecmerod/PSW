@@ -39,7 +39,7 @@ namespace Tests
             var registro = new RegistroCategoria();
             IIteratorCategoria iterator = registro.ObtenerIterator();
             string a;
-            Assert.That(() => a = iterator.Aleatorio(), Throws.TypeOf<ArgumentOutOfRangeException>());
+            Assert.That(() => a = iterator.Siguiente(), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
     }
 }

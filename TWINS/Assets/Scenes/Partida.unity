@@ -2122,6 +2122,33 @@ PrefabInstance:
       propertyPath: bloqueo
       value: 
       objectReference: {fileID: 662355756}
+    - target: {fileID: 4939952455021951753, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: sliderMusica
+      value: 
+      objectReference: {fileID: 859499942976267338}
+    - target: {fileID: 4939952455021951753, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: sliderSonido
+      value: 
+      objectReference: {fileID: 811389589}
+    - target: {fileID: 4939952455021951753, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: sliderBrillo
+      value: 
+      objectReference: {fileID: 1934389274}
+    - target: {fileID: 4939952455021951753, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: audioMixerMusica
+      value: 
+      objectReference: {fileID: 24100000, guid: 98b5a41f2aad9824885fd03ec49bc37a,
+        type: 2}
+    - target: {fileID: 4939952455021951753, guid: 4653536944981124986608c4b4e9e68f,
+        type: 3}
+      propertyPath: audioMixerSonidos
+      value: 
+      objectReference: {fileID: 24100000, guid: 39adedc05d3565f4ab6eb7f1549cfa33,
+        type: 2}
     - target: {fileID: 5076125921032983199, guid: 4653536944981124986608c4b4e9e68f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2326,5 +2353,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 800198a0f80d2744c8877e00fab47a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &859499942976267338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 859499942945664331, guid: 4653536944981124986608c4b4e9e68f,
+    type: 3}
+  m_PrefabInstance: {fileID: 859499942976267335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

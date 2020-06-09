@@ -16,12 +16,12 @@ public class MenuPausa : MonoBehaviour
     public GameObject ajustes;
     public string sceneName;
     public Scene mi_escena;
-    public AudioMixer audioMixer;
-    public Slider sli;
-    public AudioMixer audioMixer2;
-    public Slider sli2;
+    public AudioMixer audioMixerMusica;
+    public Slider sliderMusica;
+    public AudioMixer audioMixerSonidos;
+    public Slider sliderSonido;
+    public Slider sliderBrillo;
     public float rbgValue = 0.1f;
-    public Slider sli3;
 
     public GameObject bloqueo;
     void Awake()
@@ -53,13 +53,13 @@ public class MenuPausa : MonoBehaviour
         resetStatic();
         float music = PlayerPrefs.GetFloat("Volumen", 0.236f);
         CambiarVolumen(music);
-        sli.value = music;
+        sliderMusica.value = music;
         float sonidos = PlayerPrefs.GetFloat("sonido", 1f);
         CambiarSonido(sonidos);
-        sli2.value = sonidos;
+        sliderSonido.value = sonidos;
         float cbrillo = PlayerPrefs.GetFloat("Brillo", 0.1f);
         cambiarBrillo(cbrillo);
-        sli3.value = cbrillo;
+        sliderBrillo.value = cbrillo;
     }
     public void Reanudar()
     {
@@ -122,13 +122,13 @@ public class MenuPausa : MonoBehaviour
     }
     public void CambiarVolumen(float volumen)
     {
-        audioMixer.SetFloat("Volumen", volumen);
+        audioMixerMusica.SetFloat("Volumen", volumen);
         PlayerPrefs.SetFloat("Volumen", volumen);
         PlayerPrefs.Save();
     }
     public void CambiarSonido(float volumen)
     {
-        audioMixer2.SetFloat("sonido", volumen);
+        audioMixerSonidos.SetFloat("sonido", volumen);
         PlayerPrefs.SetFloat("sonido", volumen);
         PlayerPrefs.Save();
     }

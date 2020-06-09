@@ -36,8 +36,7 @@ public abstract class Partida : MonoBehaviour
     public void Awake() {
         LoadSettings();
         InstanciarAnimacion();
-        music();
-        
+        music();  
     }
 
     public void LoadSettings() {

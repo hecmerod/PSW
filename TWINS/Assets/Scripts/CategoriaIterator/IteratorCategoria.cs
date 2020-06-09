@@ -8,7 +8,7 @@ public class IteratorCategoria : IIteratorCategoria
 {
     private List<String> categorias;
     string categoria;
-    private int posicionActual = -1;
+    private int posicionActual = 0;
 
     public IteratorCategoria(List<String> listado)
     {
@@ -17,7 +17,7 @@ public class IteratorCategoria : IIteratorCategoria
 
     public void Primero()
     {
-        this.posicionActual = -1;
+        this.posicionActual = 0;
     }
     public String Actual()
     {

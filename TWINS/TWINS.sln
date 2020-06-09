@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6D5C7CFF-D730-8968-BFAC-BBB1946A9420}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainCategoria", "MainCategoria.csproj", "{B59EF488-D13E-6C8F-B9D3-53E1543BE7BB}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainPuntuacion", "MainPuntuacion.csproj", "{9809615C-1426-00A4-B7FE-041FD62CE333}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayMode", "PlayMode.csproj", "{E3D87725-F5AC-93BB-9701-B432FCB702E0}"
@@ -19,6 +21,10 @@ Global
 		{6D5C7CFF-D730-8968-BFAC-BBB1946A9420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D5C7CFF-D730-8968-BFAC-BBB1946A9420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D5C7CFF-D730-8968-BFAC-BBB1946A9420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B59EF488-D13E-6C8F-B9D3-53E1543BE7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59EF488-D13E-6C8F-B9D3-53E1543BE7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59EF488-D13E-6C8F-B9D3-53E1543BE7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59EF488-D13E-6C8F-B9D3-53E1543BE7BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9809615C-1426-00A4-B7FE-041FD62CE333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9809615C-1426-00A4-B7FE-041FD62CE333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9809615C-1426-00A4-B7FE-041FD62CE333}.Release|Any CPU.ActiveCfg = Release|Any CPU

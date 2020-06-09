@@ -10,15 +10,15 @@ public class DDPartida : MonoBehaviour
     {
         if (value == 0)
         {
-            GameProperties.tipoPartida = "PartidaEstandar";
+            GameProperties.getInstance().tipoPartida = "PartidaEstandar";
         }
         if (value == 1)
         {
-            GameProperties.tipoPartida = "PartidaPorCategoria";
+            GameProperties.getInstance().tipoPartida = "PartidaPorCategoria";
         }
         if (value == 2)
         {
-            GameProperties.tipoPartida = "PartidaPorCarta";
+            GameProperties.getInstance().tipoPartida = "PartidaPorCarta";
         }
     }
 }

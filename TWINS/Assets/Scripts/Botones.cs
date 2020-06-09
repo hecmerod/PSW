@@ -17,7 +17,7 @@ public class Botones : MonoBehaviour
 
     public void Salir()
     {
-        GameProperties.Reset();
+        GameProperties.getInstance().Reset();
         SceneManager.LoadScene("PantallaInicio");
     }
 

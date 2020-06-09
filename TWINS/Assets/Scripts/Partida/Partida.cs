@@ -47,7 +47,7 @@ public abstract class Partida : MonoBehaviour
 
         dBPartida = GameObject.FindObjectOfType<DBPartida>();
 
-        GameProperties.PresetSettings(GameProperties.tamaño);
+        GameProperties.getInstance().PresetSettings(GameProperties.getInstance().tamaño);
 
         canvas = GameObject.Find("Canvas");
         fuenteAudio = GameObject.Find("SonidoFondo").GetComponent<AudioSource>();
@@ -62,12 +62,12 @@ public abstract class Partida : MonoBehaviour
 
         tiempo.InicializarPartida(this);
 
-        positionCards =           GameProperties.cardsPositions;
-        contexto.TipoPuntuacion = GameProperties.puntuacion;
-        positionTablero =         GameProperties.positionTablero;
-        tematica =                GameProperties.baraja;
-        posicionContador =        GameProperties.cronoPosition;
-        posicionPuntuacion =      GameProperties.posicionPuntuacion;
+        positionCards =           GameProperties.getInstance().cardsPositions;
+        contexto.TipoPuntuacion = GameProperties.getInstance().puntuacion;
+        positionTablero =         GameProperties.getInstance().positionTablero;
+        tematica =                GameProperties.getInstance().baraja;
+        posicionContador =        GameProperties.getInstance().cronoPosition;
+        posicionPuntuacion =      GameProperties.getInstance().posicionPuntuacion;
 
         puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
@@ -122,8 +122,8 @@ public abstract class Partida : MonoBehaviour
 
             DBManager.getInstance().partidasGanadas++;
             DBManager.getInstance().UpdaterData(puntos);
-            if (DBManager.getInstance().nivel == GameProperties.level && !GameProperties.vNiño) DBManager.getInstance().nivel++;
-            if (DBManager.getInstance().nivelniños == GameProperties.level && GameProperties.vNiño) DBManager.getInstance().nivelniños++;
+            if (DBManager.getInstance().nivel == GameProperties.getInstance().level && !GameProperties.getInstance().vNiño) DBManager.getInstance().nivel++;
+            if (DBManager.getInstance().nivelniños == GameProperties.getInstance().level && GameProperties.getInstance().vNiño) DBManager.getInstance().nivelniños++;
 
             dBPartida.CallSaveData();
         }

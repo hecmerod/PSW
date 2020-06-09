@@ -28,10 +28,10 @@ public class Desafio1 : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja, false);
-        GameProperties.tamaño = "pequeño";
-        GameProperties.time = 30;
-        GameProperties.tipoPartida = "PartidaPorCarta";
+        GameProperties.getInstance().SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja, false);
+        GameProperties.getInstance().tamaño = "pequeño";
+        GameProperties.getInstance().time = 30;
+        GameProperties.getInstance().tipoPartida = "PartidaPorCarta";
         panel.SetActive(true);
         desafio1.SetActive(false);
         desafio2.SetActive(false);
@@ -40,7 +40,7 @@ public class Desafio1 : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        if (desafio <= GameProperties.desafios)
+        if (desafio <= GameProperties.getInstance().desafios)
         {
             copa.SetActive(true);
         }

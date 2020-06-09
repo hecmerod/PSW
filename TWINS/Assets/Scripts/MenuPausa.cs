@@ -91,7 +91,7 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         if(checkerSalir == true) {
-            GameProperties.Reset();
+            GameProperties.getInstance().Reset();
             Pausado = false;
             SceneManager.LoadScene("PantallaInicio"); 
         }
@@ -115,7 +115,7 @@ public class MenuPausa : MonoBehaviour
         }
     }
     public void reiniciar() {
-        GameProperties.PresetSettings("pequeño");
+        GameProperties.getInstance().PresetSettings("pequeño");
         menuPausaUI.SetActive(false); 
         salirPreguntaUI.SetActive(true);
         checkerReiniciar = true;

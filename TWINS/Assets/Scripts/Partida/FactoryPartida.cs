@@ -16,7 +16,7 @@ public class FactoryPartida : MonoBehaviour
     }
 
     private void CreatePartida() {
-        switch (GameProperties.tipoPartida)
+        switch (GameProperties.getInstance().tipoPartida)
         {
             case "PartidaEstandar":
                 Partida = new PartidaEstandar();

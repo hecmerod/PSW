@@ -2,36 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameProperties
+public class GameProperties
 {
-    public static Vector3 positionTablero;
-    public static Vector3 cronoPosition;
-    public static Vector3 posicionPuntuacion;
-    public static float time;
-    public static Vector3[] cardsPositions;
-    public static IPuntuacion puntuacion;
-    public static int level;
-    public static bool isLevel = false;
-    public static bool vNiño = false;
-    public static string baraja = "animal";
-    public static string tamaño = "pequeño";
-    public static string tipoPartida = "PartidaEstandar";
-    public static int desafios = 0;
-    public static bool trios = false;
-    public static bool dinamico = false;
+    public Vector3 positionTablero;
+    public Vector3 cronoPosition;
+    public Vector3 posicionPuntuacion;
+    public float time;
+    public Vector3[] cardsPositions;
+    public IPuntuacion puntuacion;
+    public int level;
+    public bool isLevel = false;
+    public bool vNiño = false;
+    public string baraja = "animal";
+    public string tamaño = "pequeño";
+    public string tipoPartida = "PartidaEstandar";
+    public int desafios = 0;
+    public bool trios = false;
+    public bool dinamico = false;
 
-    public static void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
+    private static GameProperties instance = new GameProperties();
+    public static GameProperties getInstance()
+    {
+        return instance;
+    }
+
+    public void SetProperties(int lv, Vector3[] posCard, Vector3 posTablero, Vector3 posCrono, Vector3 posPuntuacion,
                                      IPuntuacion pnt , string brja, bool vNiño) {
         cardsPositions = posCard; level = lv; puntuacion = pnt;
         cronoPosition = posCrono; posicionPuntuacion = posPuntuacion; 
         positionTablero = posTablero; baraja = brja; time = 60f;
-        isLevel = true; GameProperties.vNiño = vNiño;
+        isLevel = true; GameProperties.getInstance().vNiño = vNiño;
     }   
 
-    public static void PresetSettings(string tamaño) {
+    public void PresetSettings(string tamaño) {
         if (isLevel) return;
-        GameProperties.tamaño = tamaño;
-        GameProperties.level = -1;
+        GameProperties.getInstance().tamaño = tamaño;
+        GameProperties.getInstance().level = -1;
 
         switch (tamaño)
         {
@@ -182,7 +188,7 @@ public static class GameProperties
         }
     }
 
-    public static void Reset() {
+    public void Reset() {
         baraja = "animal";
         tamaño = "pequeño";
         tipoPartida = "PartidaEstandar";
@@ -190,7 +196,7 @@ public static class GameProperties
         vNiño = false;
     }
 
-    public static int DesafioPasado()
+    public int DesafioPasado()
     {
         return desafios++;
     }

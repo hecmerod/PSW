@@ -27,10 +27,10 @@ public class Desafio3 : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        GameProperties.SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionDificil(), baraja, false);
-        GameProperties.tamaño = "grande";
-        GameProperties.time = 90;
-        GameProperties.tipoPartida = "PartidaEstandar";
+        GameProperties.getInstance().SetProperties(desafio, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionDificil(), baraja, false);
+        GameProperties.getInstance().tamaño = "grande";
+        GameProperties.getInstance().time = 90;
+        GameProperties.getInstance().tipoPartida = "PartidaEstandar";
         panel.SetActive(true);
         desafio1.SetActive(false);
         desafio2.SetActive(false);

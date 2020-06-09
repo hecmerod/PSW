@@ -86,7 +86,7 @@ public class Trios : Partida
 
             DBManager.getInstance().partidasGanadas++;
             DBManager.getInstance().UpdaterData(puntos);
-            if (DBManager.getInstance().nivel == GameProperties.level) DBManager.getInstance().nivel++;
+            if (DBManager.getInstance().nivel == GameProperties.getInstance().level) DBManager.getInstance().nivel++;
 
             base.dBPartida.CallSaveData();
         }

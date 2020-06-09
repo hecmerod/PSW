@@ -82,8 +82,8 @@ public class Dinamica : Partida
     //NO BORRAR
     async public void moverCartas()
     {
-        Vector3[] posicionesCartas = new Vector3[GameProperties.cardsPositions.Length];
-        for (int i = 0; i < GameProperties.cardsPositions.Length; i++)
+        Vector3[] posicionesCartas = new Vector3[GameProperties.getInstance().cardsPositions.Length];
+        for (int i = 0; i < GameProperties.getInstance().cardsPositions.Length; i++)
         {
             posicionesCartas[i] = cartasDinamicas[i].transform.position;
             if (cartasDinamicas[i].transform.position.x >= 12.4f)
@@ -98,7 +98,7 @@ public class Dinamica : Partida
         }
         await Task.Delay(875);
 
-        for (int i = 0; i < GameProperties.cardsPositions.Length; i++)
+        for (int i = 0; i < GameProperties.getInstance().cardsPositions.Length; i++)
         {
 
             if (posicionesCartas[i].x >= 12.4f)

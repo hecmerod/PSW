@@ -33,7 +33,7 @@ public class PartidaPorCarta : Partida
     }
 
     private void InitializeMainCard() {
-        if (GameProperties.tamaño == "grande")
+        if (GameProperties.getInstance().tamaño == "grande")
         {
             auxCard = GameObject.Instantiate(gameObjectCard, new Vector3(1.75f, 1, 3), Quaternion.Euler(180, 180, 0));
         }
@@ -50,7 +50,7 @@ public class PartidaPorCarta : Partida
     private string ElegirCartaObjetivo()
     {
         string res = "";
-        switch (GameProperties.baraja)
+        switch (GameProperties.getInstance().baraja)
         {
             case "animal":
                 res = "Animales_Baraja";

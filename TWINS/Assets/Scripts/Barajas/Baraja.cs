@@ -16,7 +16,7 @@ public class Baraja : MonoBehaviour
 
     public Baraja(Tablero tablero)
     {
-        if (GameProperties.trios)
+        if (GameProperties.getInstance().trios)
         {
             cartasAEncontrar = 3;
         }

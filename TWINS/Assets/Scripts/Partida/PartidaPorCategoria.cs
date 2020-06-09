@@ -43,9 +43,9 @@ public class PartidaPorCategoria : Partida
         //Por banderas pequeño -> Español(andorra,argentina (2,8)) Arabes(Argelia,arabiasaudita(4,3)) Frios(alemania,canada(1,0))
         //Por banderas mediano -> Arabes(Argelia,arabiasaudita(4,3)) EuropaCentro(Belgica,alemania(7,1)) Nieve(canada,andorra(2,0)) Selva(Bolivia,Brasil((8,9)) Planos(Argentina,australia(5,6))
         //Banderas grandes  -> Arabes(argelia, arabiasaudita, y 2 mas) Europeos(losdeuropa) EuropaLatina Española y paises grandes(Brasil, australia, china, Canada)
-        switch (GameProperties.baraja) {
+        switch (GameProperties.getInstance().baraja) {
             case "animal":
-                switch (GameProperties.tamaño)
+                switch (GameProperties.getInstance().tamaño)
                 {
                     case "pequeño":
                         registro.InsertarCategoria("domesticos");
@@ -69,7 +69,7 @@ public class PartidaPorCategoria : Partida
                 }
                 break;
             case "bandera":
-                switch (GameProperties.tamaño)
+                switch (GameProperties.getInstance().tamaño)
                 {
                     case "pequeño":
                         registro.InsertarCategoria("hispanohablantes");
@@ -93,7 +93,7 @@ public class PartidaPorCategoria : Partida
                 }
                 break;
             case "profesion":
-                switch (GameProperties.tamaño)
+                switch (GameProperties.getInstance().tamaño)
                 {
                     case "pequeño":
                         registro.InsertarCategoria("seguridad pública");
@@ -137,7 +137,7 @@ public class PartidaPorCategoria : Partida
     }
     public void enCategoria()
     {
-        switch (GameProperties.tamaño) 
+        switch (GameProperties.getInstance().tamaño) 
         {
             case "pequeño":
                 if (pairsCategoria2 == 2)
@@ -165,10 +165,10 @@ public class PartidaPorCategoria : Partida
     public Boolean esCategoria(Card carta)
     {
         aux = categoria.text;
-        switch (GameProperties.baraja)
+        switch (GameProperties.getInstance().baraja)
         {
             case "animal":
-                switch (GameProperties.tamaño)
+                switch (GameProperties.getInstance().tamaño)
                 {
                     case "pequeño":
                         switch (aux)
@@ -236,7 +236,7 @@ public class PartidaPorCategoria : Partida
                 }
             break;
             case "bandera":
-                switch (GameProperties.tamaño)
+                switch (GameProperties.getInstance().tamaño)
                 {
                     case "pequeño":
                         switch (aux)
@@ -303,7 +303,7 @@ public class PartidaPorCategoria : Partida
                         break;
                 }
             case "profesion":
-                switch (GameProperties.tamaño)
+                switch (GameProperties.getInstance().tamaño)
                 {
                     case "pequeño":
                         switch (aux)

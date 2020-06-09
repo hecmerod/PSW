@@ -25,7 +25,7 @@ public class Card : MonoBehaviour
 
 
     private void Awake() {
-        if (GameProperties.trios)
+        if (GameProperties.getInstance().trios)
         {
             cartasAEncontrar = 3;
         }

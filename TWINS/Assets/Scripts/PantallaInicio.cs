@@ -100,8 +100,8 @@ public class PantallaInicio : MonoBehaviour
     }
     public void comenzarPartida()
     {
-        GameProperties.trios = false;
-        GameProperties.PresetSettings(GameProperties.tamaño);
+        GameProperties.getInstance().trios = false;
+        GameProperties.getInstance().PresetSettings(GameProperties.getInstance().tamaño);
 
         SceneManager.LoadScene("Partida");
     }
@@ -109,7 +109,7 @@ public class PantallaInicio : MonoBehaviour
     {
         if (DBManager.getInstance().LoggedIn)
         {
-            GameProperties.trios = false;
+            GameProperties.getInstance().trios = false;
             SceneManager.LoadScene("LevelsMap");
         }
         else Debug.Log("no estás loggeado"); //HACERLO EN PANTALLA
@@ -128,7 +128,7 @@ public class PantallaInicio : MonoBehaviour
     {
         if (DBManager.getInstance().LoggedIn)
         {
-            GameProperties.trios = false;
+            GameProperties.getInstance().trios = false;
             SceneManager.LoadScene("Desafios");
         }
         else { Debug.Log("No estás logeado"); }
@@ -150,24 +150,24 @@ public class PantallaInicio : MonoBehaviour
     }
     public void JugarTrios()
     {
-        GameProperties.trios = true;
-        GameProperties.PresetSettings("trios");
-        GameProperties.tipoPartida = "Trios";
+        GameProperties.getInstance().trios = true;
+        GameProperties.getInstance().PresetSettings("trios");
+        GameProperties.getInstance().tipoPartida = "Trios";
         SceneManager.LoadScene("Partida");
     }
 
     public void MultiLocal()
     {
-        GameProperties.trios = false;
-        GameProperties.PresetSettings("multLocal");
-        GameProperties.tipoPartida = "MultiLocal";
+        GameProperties.getInstance().trios = false;
+        GameProperties.getInstance().PresetSettings("multLocal");
+        GameProperties.getInstance().tipoPartida = "MultiLocal";
         SceneManager.LoadScene("Partida");
     }
     public void tableroDinamico()
     {
-        GameProperties.dinamico = true;
-        GameProperties.PresetSettings("dinamico");
-        GameProperties.tipoPartida = "Dinamica";
+        GameProperties.getInstance().dinamico = true;
+        GameProperties.getInstance().PresetSettings("dinamico");
+        GameProperties.getInstance().tipoPartida = "Dinamica";
         SceneManager.LoadScene("Partida");
     }
     async public void cargarRanking()

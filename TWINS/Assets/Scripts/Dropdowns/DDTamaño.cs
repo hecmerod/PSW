@@ -10,15 +10,15 @@ public class DDTamaño : MonoBehaviour
     {
         if (value == 0)
         {
-            GameProperties.tamaño = "pequeño";
+            GameProperties.getInstance().tamaño = "pequeño";
         }
         if (value == 1)
         {
-            GameProperties.tamaño = "mediano";
+            GameProperties.getInstance().tamaño = "mediano";
         }
         if (value == 2)
         {
-            GameProperties.tamaño = "grande";
+            GameProperties.getInstance().tamaño = "grande";
         }
     }
 }

@@ -31,23 +31,23 @@ public class CanvasCrearBaraja : MonoBehaviour
             }
         }
 
-        GameProperties.baraja = "personalizada";
+        GameProperties.getInstance().baraja = "personalizada";
 
         elegirTamaño.SetActive(true);
     }
     public void Pequeño()
     {
-        GameProperties.PresetSettings("pequeño");
+        GameProperties.getInstance().PresetSettings("pequeño");
         SceneManager.LoadScene("Partida");
     }
     public void Mediano()
     {
-        GameProperties.PresetSettings("mediano");
+        GameProperties.getInstance().PresetSettings("mediano");
         SceneManager.LoadScene("Partida");
     }
     public void Garnde()
     {
-        GameProperties.PresetSettings("grande");
+        GameProperties.getInstance().PresetSettings("grande");
         SceneManager.LoadScene("Partida");
     }
 }

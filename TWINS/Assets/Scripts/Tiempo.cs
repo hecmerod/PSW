@@ -15,9 +15,9 @@ public class Tiempo : MonoBehaviour
     public void Awake()
     {
         LoadSetting();
-        time = GameProperties.time;
+        time = GameProperties.getInstance().time;
         contador = time;
-        if (GameProperties.tipoPartida == "MultiLocal")
+        if (GameProperties.getInstance().tipoPartida == "MultiLocal")
         {
             textContador.text = time.ToString();
         }
@@ -36,7 +36,7 @@ public class Tiempo : MonoBehaviour
         textTiempo = miTiempo.GetComponent<Text>();
         textContador = GameObject.Find("Canvas/TiempoRestante").GetComponent<Text>();
 
-        textContador.transform.localPosition = GameProperties.cronoPosition;
+        textContador.transform.localPosition = GameProperties.getInstance().cronoPosition;
 
     }
     public void Timer()
@@ -45,7 +45,7 @@ public class Tiempo : MonoBehaviour
         {
             timePlayed += Time.deltaTime;
             contador -= Time.deltaTime;
-            if (GameProperties.tipoPartida == "MultiLocal")
+            if (GameProperties.getInstance().tipoPartida == "MultiLocal")
             {
                 textContador.text = ((int)contador).ToString();
             }

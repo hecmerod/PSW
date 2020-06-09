@@ -10,18 +10,18 @@ public class DDBaraja : MonoBehaviour
     {
         if (value == 0)
         {
-            GameProperties.baraja = "animal";
+            GameProperties.getInstance().baraja = "animal";
         }
         if (value == 1)
         {
-            GameProperties.baraja = "profesion";
+            GameProperties.getInstance().baraja = "profesion";
         }
         if (value == 2)
         {
-            GameProperties.baraja = "bandera";
+            GameProperties.getInstance().baraja = "bandera";
         }
         if (value == 3) {
-            GameProperties.baraja = "personalizada";
+            GameProperties.getInstance().baraja = "personalizada";
         }
     }
 }

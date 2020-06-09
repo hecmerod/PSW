@@ -54,7 +54,7 @@ public class Level : MonoBehaviour
     private void OnMouseDown() {
         if (locked) return;
 
-        GameProperties.SetProperties(level, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja, vNiño);
+        GameProperties.getInstance().SetProperties(level, cardsPosition, positionTablero, cronoPosition, puntuacionPosition, new PuntuacionFacil(), baraja, vNiño);
         Debug.Log(baraja);
         SceneManager.LoadScene("Partida");        
     }

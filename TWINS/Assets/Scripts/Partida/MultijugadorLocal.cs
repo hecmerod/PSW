@@ -82,7 +82,7 @@ public class MultijugadorLocal : Partida
                 textPuntuacion1.color = Color.blue;
             }
 
-            MultijugadorWon();
+            IsWon();
 
             numCardsTurned = 0;
         }
@@ -108,10 +108,33 @@ public class MultijugadorLocal : Partida
                 turnoJugador = 1;
                 textPuntuacion1.color = Color.blue;
             }
-            /*if (puntos < 0)
+        }
+    }
+
+    new private void IsWon()
+    {
+        if (pairsFound == tablero.PositionCards.Length / 2)
+        {
+            numCardsTurned = 3;
+            tiempo.partidaTerminada = true;
+            tiempo.comenzarTiempo = false;
+            if (puntos1 > puntos2)
             {
-                IsLost();
-            }*/
+                textPuntuacion.text = "Jugador 1: " + puntos1;
+            }
+            else
+            {
+                textPuntuacion.text = "Jugador 2: " + puntos2;
+            }
+            animacionVictoria.SetActive(true);
+            contexto.ResetearPuntuacion();
+            fuenteAudio.Stop();
+
+            DBManager.partidasGanadas++;
+            DBManager.UpdaterData(puntos);
+            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+
+            dBPartida.CallSaveData();
         }
     }
 }

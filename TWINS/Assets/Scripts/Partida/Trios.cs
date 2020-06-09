@@ -52,23 +52,9 @@ public class Trios : Partida
             puntos = contexto.SumarPuntos();
             puntuacion.text = "Puntuación: " + puntos.ToString();
 
-            TriosWon();
+            IsWon();
             numCardsTurned = 0;
             trios = 0;
-            /*parejaCorrecta.Play();
-
-            await Task.Delay(500);
-
-
-            turnedCard = null;
-            pairsFound++;
-            puntos = contexto.SumarPuntos();
-            puntuacion.text = "Puntuación: " + puntos.ToString();
-
-            IsWon();
-
-            turno++;
-            numCardsTurned = 0;*/
         }
         else
         {
@@ -83,17 +69,26 @@ public class Trios : Partida
                 IsLost();
             }
             puntuacion.text = "Puntuación: " + puntos.ToString();
-            /*await Task.Delay(200);
-            turnedCard.TurnCard(); card.TurnCard();
-            numCardsTurned = 0;
-            turnedCard = null;
-            turno++;
-            puntos = contexto.RestarPuntos();
-            if (puntos < 0)
-            {
-                IsLost();
-            }
-            puntuacion.text = "Puntuación: " + puntos.ToString();*/
+        }
+    }
+
+    new private void IsWon()
+    {
+        if (pairsFound == tablero.PositionCards.Length / 3)
+        {
+            numCardsTurned = 3;
+            tiempo.partidaTerminada = true;
+            tiempo.comenzarTiempo = false;
+            textPuntuacion.text = "Puntuación: " + puntos;
+            animacionVictoria.SetActive(true);
+            contexto.ResetearPuntuacion();
+            fuenteAudio.Stop();
+
+            DBManager.partidasGanadas++;
+            DBManager.UpdaterData(puntos);
+            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
+
+            base.dBPartida.CallSaveData();
         }
     }
 }

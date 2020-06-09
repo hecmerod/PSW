@@ -29,12 +29,11 @@ public abstract class Partida : MonoBehaviour
     protected Vector3[] positionCards = new Vector3[0];
     protected Vector3 positionTablero = Vector3.zero;
 
-    private DBPartida dBPartida;
+    protected DBPartida dBPartida;
 
     private bool stopMusic = false;
 
     public void Awake() {
-        CargarRecursos();
         LoadSettings();
         InstanciarAnimacion();
         music();
@@ -42,6 +41,11 @@ public abstract class Partida : MonoBehaviour
     }
 
     public void LoadSettings() {
+        gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
+        gameObjectTablero = Resources.Load("Prefabs/Tablero") as GameObject;
+        animacionDerrota = Resources.Load("Prefabs/AnimacionDerrota") as GameObject;
+        animacionVictoria = Resources.Load("Prefabs/AnimacionVictoria") as GameObject;
+
         dBPartida = GameObject.FindObjectOfType<DBPartida>();
 
         GameProperties.PresetSettings(GameProperties.tamaño);
@@ -68,11 +72,6 @@ public abstract class Partida : MonoBehaviour
 
         puntuacion.transform.localPosition = posicionPuntuacion;
         puntuacion.text = "Puntuación: 0";
-
-        /*textContador.transform.localPosition = posicionContador;
-        contador = time;
-        textContador.text = "Tiempo: " + time.ToString();*/
-
     }
 
     public void Update() {
@@ -96,24 +95,7 @@ public abstract class Partida : MonoBehaviour
         }
     }
 
-    /*public void Timer() {
-        if (startedTimer)
-        {
-            timePlayed += Time.deltaTime;
-            contador -= Time.deltaTime;
-            textContador.text = "Tiempo: " + ((int)contador).ToString();
-        }
-        if (timePlayed >= time)
-        {
-            UpdaterData();
-            CallSaveData();
-            IsLost();
-        }
-        
-    }*/
-
     public void IsLost() {
-        //startedTimer = false;
         numCardsTurned = 3;
         tiempo.partidaTerminada = true;
         tiempo.comenzarTiempo = false;
@@ -131,7 +113,6 @@ public abstract class Partida : MonoBehaviour
         if (pairsFound == tablero.PositionCards.Length / 2) {
             categoria.SetActive(false);
             numCardsTurned = 2;
-            //startedTimer = false;
             tiempo.partidaTerminada = true;
             tiempo.comenzarTiempo = false;
             textPuntuacion.text = "Puntuación: " + puntos;
@@ -148,52 +129,7 @@ public abstract class Partida : MonoBehaviour
             dBPartida.CallSaveData();
         }
     }
-    protected void TriosWon()
-    {
-        if (pairsFound == tablero.PositionCards.Length / 3)
-        {
-            numCardsTurned = 3;
-            //startedTimer = false;
-            tiempo.partidaTerminada = true;
-            tiempo.comenzarTiempo = false;
-            textPuntuacion.text = "Puntuación: " + puntos;
-            animacionVictoria.SetActive(true);
-            contexto.ResetearPuntuacion();
-            fuenteAudio.Stop();
 
-            DBManager.partidasGanadas++;
-            DBManager.UpdaterData(puntos);
-            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
-
-            dBPartida.CallSaveData();
-        }
-    }
-    protected void MultijugadorWon()
-    {
-        if(pairsFound == tablero.PositionCards.Length / 2)
-        {
-            numCardsTurned = 3;
-            tiempo.partidaTerminada = true;
-            tiempo.comenzarTiempo = false;
-            if (puntos1 > puntos2)
-            {
-                textPuntuacion.text = "Jugador 1: " + puntos1;
-            }
-            else
-            {
-                textPuntuacion.text = "Jugador 2: " + puntos2;
-            }
-            animacionVictoria.SetActive(true);
-            contexto.ResetearPuntuacion();
-            fuenteAudio.Stop();
-
-            DBManager.partidasGanadas++;
-            DBManager.UpdaterData(puntos);
-            if (DBManager.nivel == GameProperties.level) DBManager.nivel++;
-
-            dBPartida.CallSaveData();
-        }
-    }
 
     protected void InstanciarAnimacion()
     {
@@ -210,14 +146,6 @@ public abstract class Partida : MonoBehaviour
 
         animacionDerrota.transform.localPosition = positionAnimacion;
         animacionVictoria.transform.localPosition = positionAnimacion;
-    }
-
-    protected void CargarRecursos()
-    {
-        gameObjectCard = Resources.Load("Prefabs/Card") as GameObject;
-        gameObjectTablero = Resources.Load("Prefabs/Tablero") as GameObject;
-        animacionDerrota = Resources.Load("Prefabs/AnimacionDerrota") as GameObject;
-        animacionVictoria = Resources.Load("Prefabs/AnimacionVictoria") as GameObject;
     }
 
     abstract public void CheckPair(int n);

@@ -65,10 +65,10 @@
      <Compile Include="Assets\Scripts\Puntuacion\PuntuacionNormal.cs" />
      <None Include="Assets\Scripts\Puntuacion\MainPuntuacion.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/Repos/PSW/TWINS/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>F:/Projects/PSW/TWINS/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/Repos/PSW/TWINS/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>F:/Projects/PSW/TWINS/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -257,10 +257,10 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="GETween">
- <HintPath>E:/Repos/PSW/TWINS/Assets/Resources/GUI Animator/Common/Plugins/GETween.dll</HintPath>
+ <HintPath>F:/Projects/PSW/TWINS/Assets/Resources/GUI Animator/Common/Plugins/GETween.dll</HintPath>
  </Reference>
  <Reference Include="GUIAnimatorFREE">
- <HintPath>E:/Repos/PSW/TWINS/Assets/Resources/GUI Animator/GUI Animator FREE/Plugins/GUIAnimatorFREE.dll</HintPath>
+ <HintPath>F:/Projects/PSW/TWINS/Assets/Resources/GUI Animator/GUI Animator FREE/Plugins/GUIAnimatorFREE.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

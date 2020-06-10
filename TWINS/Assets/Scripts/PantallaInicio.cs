@@ -112,7 +112,7 @@ public class PantallaInicio : MonoBehaviour
             GameProperties.getInstance().trios = false;
             SceneManager.LoadScene("LevelsMap");
         }
-        else Debug.Log("no estás loggeado"); //HACERLO EN PANTALLA
+        else Debug.Log("no estás loggeado");
     }
     public void perfilBoton()
     {
@@ -121,7 +121,6 @@ public class PantallaInicio : MonoBehaviour
 
     public void salir()
     {
-        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
     public void Desafio()

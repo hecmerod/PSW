@@ -12,7 +12,7 @@ public class Perfil : MonoBehaviour
     public Text niveles;
     public Text score;
     public Text nombre;
-    // Start is called before the first frame update
+
     void Start()
     {
         nombre.text = DBManager.getInstance().username;
@@ -20,12 +20,6 @@ public class Perfil : MonoBehaviour
         wins.text = DBManager.getInstance().partidasGanadas.ToString();
         niveles.text = (DBManager.getInstance().nivel - 1).ToString();
         score.text = DBManager.getInstance().puntuacionTotal.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void volverMetodo()
     {

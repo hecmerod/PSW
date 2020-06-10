@@ -44,12 +44,6 @@ public class DBManager
             DBManager.getInstance().nivel = int.Parse(webResults[4]);
             DBManager.getInstance().nivelniños = int.Parse(webResults[5]);
             SceneManager.LoadScene("PantallaInicio");
-
-            /*Debug.Log("Partidas jugadas: " + DBManager.partidasJugadas);
-            Debug.Log("Partidas ganadas: " + DBManager.partidasGanadas);
-            Debug.Log("score: " + DBManager.puntuacionTotal);
-            Debug.Log("nivel: " + DBManager.nivel);*/
-            //Debug.Log("nivelniños" + nivelniños);
         }
         else
         {
@@ -103,10 +97,8 @@ public class DBManager
         string[] webResults = www.text.Split('\t');
         for(int i = 0; i < webResults.Length; i++)
         {
-            scores[i] = int.Parse(webResults[i]);
-            //Debug.Log(scores[i]);
+            scores[i] = int.Parse(webResults[i]); 
         }
-        //Debug.Log("Data succesfully loaded");
     }
     public IEnumerator LoadTopNombres()
     {

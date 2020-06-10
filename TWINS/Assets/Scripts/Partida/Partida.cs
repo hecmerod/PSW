@@ -9,8 +9,9 @@ public abstract class Partida : MonoBehaviour
     public AudioSource fuenteAudio;
 
 
-    protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria;
-    public GameObject gameObjectTiempo; //pasar por codigo
+    protected GameObject gameObjectCard, gameObjectTablero, animacionDerrota, animacionVictoria,
+                         categoria, gameObjectTurno, puntuacion1, puntuacion2;
+    public GameObject gameObjectTiempo;
     protected IPuntuacion puntuacionFacil, puntuacionNormal, puntuacionDificil;
     protected ContextoPuntuacion contexto = new ContextoPuntuacion();
     public int puntos, desafiosDesbloqueados = 0;
@@ -23,9 +24,8 @@ public abstract class Partida : MonoBehaviour
     protected Tiempo tiempo;
     protected int turno = 0, pairsFound = 0, numCardsTurned = 0, trios = 0;
     protected int puntos1, puntos2;
-    protected GameObject categoria, gameObjectTurno, puntuacion1, puntuacion2;
-    Vector3 posicionContador = Vector3.zero;
-    Vector3 posicionPuntuacion = Vector3.zero;
+    private Vector3 posicionContador = Vector3.zero;
+    private Vector3 posicionPuntuacion = Vector3.zero;
     protected Vector3[] positionCards = new Vector3[0];
     protected Vector3 positionTablero = Vector3.zero;
 
